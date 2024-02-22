@@ -15,7 +15,19 @@ export const BUSINESS_ROUTES: Routes = [
     loadComponent: () => import('./loyalty-scan/loyalty-scan.component').then((m) => m.LoyaltyScanComponent),
   },
   {
-    path: 'business-settings',
-    loadChildren: () => import('./business-settings/business-settings.routes').then((m) => m.BUSINESS_SETTINGS_ROUTES),
+    path: 'business-photos',
+    loadComponent: () => import('./business-settings/business-photos/business-photos.component').then((m) => m.BusinessPhotosComponent),
+  },
+  {
+    path: 'loyalty-program',
+    loadComponent: () => import('./business-settings/loyalty-program/loyalty-program.component').then((m) => m.LoyaltyProgramComponent),
+  },
+  {
+    path: 'products',
+    loadComponent: () => import('./business-settings/products/products.component').then((m) => m.ProductsComponent),
+  },
+  {
+    path: 'qr-code',
+    loadComponent: () => import('./business-settings/qr-code/qr-code.component').then((m) => m.QrCodeComponent),
   },
 ];

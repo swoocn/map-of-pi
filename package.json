@@ -1,0 +1,11 @@
+{
+    "name": "map-of-pi",
+    "version": "0.0.2",
+    "description": "Map of Pi App",
+    "scripts": {
+      "start": "npm run -C frontend build && npm run -C backend start"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+  }
+  

@@ -1,0 +1,22 @@
+{
+  "CORE": {
+    "APP_NAME": "Map of Pi"
+  },
+  "HOME": {
+    "ADD_MY_BUSINESS": "Mein Geschäft hinzufügen",
+    "SEARCH_BAR_PLACEHOLDER": "Geschäft suchen..."
+  },
+  "BUSINESS": {
+    "CONTACT_INFORMATION": "Kontaktinformationen",
+    "BUSINESS_NAME": "Geschäftsname",
+    "BUSINESS_TYPE": "Hauptgeschäftsfeld",
+    "LOCATION": "Adresse",
+    "CONFIRM": "Speichern",
+    "PRODUCTS": {
+      "TITLE": "Produkte",
+      "PRODUCTS_ON": "Produkte Eingeschaltet",
+      "IS_PI_PAYMENT_ENABLED": "PI Transaktionen einschalten",
+      "CAN_ORDER_WITHOUT_PAYMENT": "Online Bestellungen ohne PI Zahlung"
+    }
+  }
+}

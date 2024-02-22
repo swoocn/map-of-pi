@@ -1,0 +1,122 @@
+body {
+    background-color: var(--color-background-color);
+}
+
+.cart-content {
+    margin: 1rem;
+    padding: 1rem;
+    font-family: var(--font-family-main);
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 250px;
+}
+
+.cart-content__section {
+    align-self: center;
+}
+
+.cart-content__business-name {
+    color: var(--color-text-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+}
+
+.cart-content__cart-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    color: var(--color-text-color);
+}
+
+.cart-content__prep-time {
+    display: inline;
+    color: var(--color-text-color);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.cart-content__dish-icon {
+    width: 24px;
+    height: auto;
+}
+
+.cart-content__description {
+    font-size: 0.8rem;
+}
+
+#time-remaining::before {
+    content: '';
+    display: block;
+    margin-top: 2px;
+}
+
+.cart-content__total-label {
+    margin-top: 5rem;
+    display: flex;
+    padding: 1rem 0;
+    color: var(--color-text-color);
+}
+
+.cart-content__total-price,
+.cart-content__total-value {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.cart-content__total-value {
+    margin-left: 3.5rem;
+}
+
+.cart-content__pi-icon {
+    margin-left: 1rem;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .cart-content__business-name {
+      font-size: 0.8rem;
+    }
+
+    .minutes, #time-remaining {
+        font-size: 0.8rem;
+    }
+
+    .cart-content__dish-icon {
+        height: 16px;
+        width: 16px;
+    }
+    .cart-content__description {
+        font-size: 0.6rem;
+    }
+
+    .cart-content__prep-time {
+        font-size: 0.6rem;
+    }
+
+    .cart-content__total-price {
+        font-size: 0.8rem;
+    }
+
+    .cart-content__total-value {
+        font-size: 0.8rem;
+    }
+
+    .cart-content__pi-icon{
+        width: 18px;
+        height: 18px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .cart-content {
+        position: absolute;
+        top: 38%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 250px;
+    }
+}

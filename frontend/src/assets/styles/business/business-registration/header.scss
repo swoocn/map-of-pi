@@ -1,0 +1,42 @@
+.business-registration-header {
+    position: relative;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-family: var(--font-family-main);
+}
+
+.business-registration-header__back-button,
+.business-registration-header__brand,
+.business-registration-header__app-name,
+.business-registration-header__logo {
+    margin-top: 1rem;
+}
+  
+.business-registration-header__back-button {
+    position: absolute;
+    top: 25px;
+    display: block;
+    background: none;
+    border: none;
+    color: #1C1B1F;
+}
+  
+.business-registration-header__logo {
+    width: 25px;
+    height: auto;
+}
+
+.business-registration-header__brand {
+    display: flex; /* Flexbox to align logo and app name */
+    justify-content: center; 
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+  
+.business-registration-header__title {
+    margin-top: 2rem; /* Space between app name and title */
+    line-height: 24px;
+    font-size: 1.125rem;
+    font-weight: 600;
+}

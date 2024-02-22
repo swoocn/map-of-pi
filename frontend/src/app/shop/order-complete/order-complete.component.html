@@ -1,0 +1,23 @@
+<header class="order-complete-header">
+    <button class="order-complete__header-back-button" (click)="navigateBack()">
+       <i class="fa-solid fa-arrow-left-long"></i>
+    </button>
+    <div class="order-complete__brand">
+       <img src="../../../assets/images/logo.svg" alt="Logo" class="order-complete__logo">
+       <span class="order-complete__app-name">Map of Pi</span>
+    </div>
+    <h1 class="order-complete__title">Shopping Cart</h1>
+</header>
+
+<main class="order-complete">
+    <section class="order-complete__section">
+      <h2 class="order-complete__business-name">Business name</h2>
+      <p class="order-complete__message">Food is ready.<br><span class="enjoy-text">Enjoy</span></p>
+        <img src="../../../assets/images/shopping/dish-image.svg" alt="Dish image" class="order-complete__dish-image">
+         <div>
+          <button class="order-complete__back-to-store-button" (click)="navigateToStore()">
+            <span><img src="../../../assets/images/shopping/arrow_back.png" alt="Back arrow" class="order-complete__button-arrow"></span>Back to store
+          </button>
+         </div>
+    </section>
+</main>

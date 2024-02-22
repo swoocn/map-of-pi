@@ -1,0 +1,132 @@
+body {
+    background-color: var(--color-background-color);
+}
+
+.cart-content {
+    margin: 1rem;
+    padding: 1rem; /* Padding around the content */
+    font-family: var(--font-family-main);
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds some shadow for depth */
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.cart-content__section {
+    align-self: center;
+}
+
+.cart-content__business-name {
+    color: var(--color-text-color);
+    font-size: 1.5rem; /* Larger font size for business name */
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Space after the business name */
+}
+  
+.cart-content__order-message {
+    margin-bottom: 0.3rem;
+}
+
+.cart-content__cart-item {
+    display: flex;
+    align-items: center; /* Aligns the icon and text vertically */
+    gap: 0.5rem; /* Space between the icon and text */
+    font-weight: bold;
+    color: var(--color-text-color);
+}
+
+.cart-content__dish-icon {
+    width: 24px;
+    height: auto;
+}
+
+.cart-content__description {
+    font-size: 1rem;
+}
+
+.cart-content__prep-time {
+    background-color: #FAD09E;
+    padding: 1rem;
+    color: var(--color-text-color);
+    margin-top: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+}
+  
+.cart-content__total-label {
+    margin-top: 5rem;
+    display: flex;
+    padding: 1rem 0;
+    color: var(--color-text-color);
+}
+  
+.cart-content__total-price,
+.cart-content__total-value {
+    font-size: 1rem; /* Font size for total label and value */
+    font-weight: bold; /* Makes the text bold */
+}
+
+.cart-content__total-value {
+    margin-left: 6.5rem;
+}
+
+.cart-content__pi-icon {
+    margin-left: 1rem;
+}
+  
+.cart-content__order-button {
+    background-color: var(--color-text-color); /* Example button color */
+    color: #fff; /* Text color for the button */
+    border: none;
+    padding: 0.8rem 4rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+  
+/* Add any necessary responsive styles */
+@media (max-width: 1000px) {
+    .cart-content__business-name {
+      font-size: 1rem;
+    }
+    .cart-content__dish-icon {
+        height: 20px;
+        width: 20px;
+    }
+    .cart-content__description {
+        font-size: 0.7rem;
+    }
+
+    .cart-content__prep-time {
+        font-size: 0.7rem;
+    }
+
+    .cart-content__order-message {
+        font-size: 1.1rem;
+        }
+
+    .cart-content__total-price {
+        font-size: 0.8rem;
+    }
+
+    .cart-content__total-value {
+        font-size: 0.8rem;
+    }
+
+    .cart-content__pi-icon{
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .cart-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 400px;
+    } 
+}
+  

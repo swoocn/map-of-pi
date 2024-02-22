@@ -1,0 +1,41 @@
+<header class="wallet-header">
+  <button class="wallet-header__back-button" aria-label="Go back">
+    <i class="fa-solid fa-arrow-left-long"></i>
+  </button>
+  <div class="wallet-header__center-group">
+    <button class="wallet-header__wallet-button" aria-label="Open wallet">
+        <img src="../../../assets/images/Pi-wallet.png" alt="Wallet">
+    </button>
+    <h1 class="wallet-header__title">Wallet</h1>
+    <img src="../../../assets/images/Pi_logo.png" alt="Logo" class="wallet-header__logo" />
+  </div>
+  <button class="wallet-header__dropdown-button" aria-label="Open menu">
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+</header>
+  
+<main class="payment">
+    <section class="payment__info">
+      <div class="payment__header">
+          <h1 class="payment__business-name">Business name</h1>
+          <span class="payment__action">requests</span>
+      </div>
+      <p class="payment__amount">1.0 π</p>
+      <p class="payment__fee">Transaction Fee: 0.01 π</p>
+    </section>
+
+    <section class="payment__recipient">
+      <h2 class="recipient__label">Recipient Address</h2>
+      <p class="recipient__address">GCGQ2...WT643</p>
+    </section>
+
+    <section class="payment__memo">
+      <h2 class="memo__label">Memo:</h2>
+      <p class="memo__text">Buying 100 tokens on <br> Business name</p>
+    </section>
+
+    <section class="payment__actions">
+      <button class="actions__button actions__button--pay" [routerLink]="['/shop/order-complete']">Pay with π</button>
+      <button class="actions__button actions__button--cancel">Cancel</button>
+    </section>
+</main>   

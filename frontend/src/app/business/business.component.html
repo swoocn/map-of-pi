@@ -1,7 +1,6 @@
-<p>business works!</p>
-
-<app-business-settings></app-business-settings>
-
-<app-orders></app-orders>
-
-<app-loyalty-scan></app-loyalty-scan>
+@if (business) {
+  <app-orders></app-orders>
+  <app-loyalty-scan></app-loyalty-scan>
+} @else {
+  <app-business-settings></app-business-settings>
+}

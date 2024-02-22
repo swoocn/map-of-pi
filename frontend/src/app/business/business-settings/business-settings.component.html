@@ -1,9 +1,95 @@
-<p>business-settings works!</p>
+<header class="business-registration-header">
+  <button class="business-registration-header__back-button" aria-label="Go back">
+     <i class="fa-solid fa-arrow-left-long"></i>
+  </button>
+  <div class="business-registration-header__brand">
+     <img src="../../../assets/images/logo.svg" alt="Logo" class="business-registration-header__logo">
+     <span class="business-registration-header__app-name">Map of Pi</span>
+  </div>
+  <h1 class="business-registration-header__title">Contact Information</h1>
+</header>
 
-<app-products></app-products>
+<main class="business-registration">
+  <section class="business-registration__section">
+    <div class="business-registration__field">
+      <label for="business-name" class="business-registration__label">Business name</label>
+      <input type="text" id="business-name" name="business_name" class="business-registration__input" placeholder="Enter business name" required>
+    </div>
 
-<app-loyalty-program></app-loyalty-program>
+    <div class="business-registration__field business-registration__field-middle">
+      <label for="business-type" class="business-registration__label">Business type</label>
+      <select id="business-type" name="business_type" class="business-registration__select">
+        @for (businessType of businessTypes; track businessTypes) {
+          <option [value]="businessType">{{ businessType }}</option>
+        }
+      </select>
+    </div>
 
-<app-business-photos></app-business-photos>
+    <div class="business-registration__field business-registration__field-bottom">
+      <label for="location" class="business-registration__label">Location</label>
+      <input type="text" id="location" name="location" class="business-registration__input" value="" placeholder="123 Main Street, Anytown, AN 12345, Country" required>
+    </div>
 
-<app-qr-code></app-qr-code>
+    <nav class="business-registration__navigation">
+      <ul class="business-registration__list">
+      <li class="business-registration__item"><a href="/menu" class="business-registration__link">Menu<i class="fa-solid fa-arrow-right"></i></a></li>
+      <li class="business-registration__item"><a href="/loyalty-stamps" class="business-registration__link">Loyalty Stamps<i class="fa-solid fa-arrow-right"></i></a></li>
+      <li class="business-registration__item"><a href="/photos" class="business-registration__link">Business Photos<i class="fa-solid fa-arrow-right"></i></a></li>
+      <li class="business-registration__item"><a href="/get-qr" class="business-registration__link">Get QR code<i class="fa-solid fa-arrow-right"></i></a></li>
+      </ul>
+    </nav>
+
+    <div class="business-registration__confirmation">
+      <button type="submit" class="business-registration__button" [routerLink]="['/business/products']">Confirm</button>
+    </div>
+  </section>
+</main>
+
+<!-- DEPRECATED
+  <div class="container-wrapper">
+  <div class="container">
+    <div class="pt-8 text-center italic min-h-16">
+      <p>{{ businessForm.controls.name.value }}</p>
+    </div>
+    <div class="pb-8 text-center">
+      <h1>{{ 'BUSINESS.CONTACT_INFORMATION' | translate }}</h1>
+    </div>
+
+    <form [formGroup]="businessForm">
+      <div class="input-field">
+        <mat-form-field class="w-full">
+          <mat-label>{{ 'BUSINESS.BUSINESS_NAME' | translate }}</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+      </div>
+
+      <div class="input-field">
+        <mat-form-field class="w-full">
+          <mat-label>{{ 'BUSINESS.BUSINESS_TYPE' | translate }}</mat-label>
+          <mat-select formControlName="businessType">
+            @for (businessType of businessTypes; track businessTypes) {
+              <mat-option [value]="businessType">{{ businessType }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-field">
+        <mat-form-field class="w-full">
+          <mat-label>{{ 'BUSINESS.LOCATION' | translate }}</mat-label>
+          <input matInput formControlName="address" />
+        </mat-form-field>
+      </div>
+
+      <div class="input-field">
+        <button mat-flat-button color="accent" class="w-full" [routerLink]="['/business/products']">
+          {{ 'BUSINESS.PRODUCTS.TITLE' | translate }}
+        </button>
+      </div>
+
+      <div class="w-full pt-16 text-center">
+        <button mat-flat-button color="primary" class="w-2/3" (click)="send()">{{ 'BUSINESS.CONFIRM' | translate }}</button>
+      </div>
+    </form>
+  </div>
+</div> -->

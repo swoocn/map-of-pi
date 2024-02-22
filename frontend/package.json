@@ -1,6 +1,6 @@
 {
   "name": "map-of-pi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Map of Pi Team",
   "description": "Map of Pi Frontend App",
   "homepage": "https://mapofpi.com",
@@ -17,13 +17,20 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.1.0",
+    "@angular/cdk": "^17.1.2",
     "@angular/common": "^17.1.0",
     "@angular/compiler": "^17.1.0",
     "@angular/core": "^17.1.0",
     "@angular/forms": "^17.1.0",
+    "@angular/material": "^17.1.2",
     "@angular/platform-browser": "^17.1.0",
     "@angular/platform-browser-dynamic": "^17.1.0",
     "@angular/router": "^17.1.0",
+    "@asymmetrik/ngx-leaflet": "^17.0.0",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
+    "@pinetwork-js/sdk": "^0.7.0",
+    "leaflet": "^1.9.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
@@ -37,9 +44,12 @@
     "@angular-eslint/template-parser": "17.2.1",
     "@angular/cli": "^17.1.2",
     "@angular/compiler-cli": "^17.1.0",
+    "@pinetwork-js/api-typing": "^0.7.0",
     "@types/jasmine": "~5.1.0",
+    "@types/leaflet": "^1.9.8",
     "@typescript-eslint/eslint-plugin": "6.19.0",
     "@typescript-eslint/parser": "6.19.0",
+    "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
@@ -49,8 +59,10 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss": "^8.4.33",
     "prettier": "^3.2.4",
     "prettier-eslint": "^16.3.0",
+    "tailwindcss": "^3.4.1",
     "typescript": "~5.3.2"
   }
 }

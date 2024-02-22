@@ -1,0 +1,19 @@
+<div class="w-full min-w-80 fixed bottom-2 flex justify-center z-500">
+  <div class="w-full p-4">
+    <div class="flex justify-between items-end">
+      <button mat-flat-button color="accent" (click)="navigateToBusiness()">
+        <mat-icon>add_circle</mat-icon>
+        {{ 'HOME.ADD_MY_BUSINESS' | translate }}
+      </button>
+      @if (geoLoading()) {
+        <button mat-mini-fab color="warn" [disabled]="true">
+          <mat-spinner [diameter]="20"></mat-spinner>
+        </button>
+      } @else {
+        <button mat-mini-fab color="accent" (click)="locateMe()">
+          <mat-icon>location_searching</mat-icon>
+        </button>
+      }
+    </div>
+  </div>
+</div>

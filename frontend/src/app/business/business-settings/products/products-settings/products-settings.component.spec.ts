@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ProductsSettingsComponent } from './products-settings.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('ProductsSettingsComponent', () => {
   let component: ProductsSettingsComponent;
@@ -8,10 +8,9 @@ describe('ProductsSettingsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProductsSettingsComponent]
-    })
-    .compileComponents();
-    
+      imports: [ProductsSettingsComponent, TranslateModule.forRoot()],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ProductsSettingsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

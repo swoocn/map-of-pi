@@ -1,0 +1,88 @@
+body {
+    background-color: var(--color-background-color);
+}
+
+.order-complete {
+    margin: 1rem;
+    padding: 1rem;
+    height: 300px;
+    font-family: var(--font-family-main);
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.order-complete__section {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+}
+
+.order-complete__business-name {
+    color: var(--color-text-color);
+    font-size: 1.5rem; 
+    margin-bottom: 0.5rem; 
+}
+  
+.order-complete__order-complete-item {
+    display: flex;
+    align-items: center; 
+    gap: 0.5rem; 
+    font-weight: bold;
+    color: var(--color-text-color);
+}
+
+.order-complete__dish-image {
+    height: auto;
+}
+
+.order-complete__message {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0.7rem;
+}
+
+.enjoy-text {
+    display: flex;
+    justify-content: center;
+}
+  
+.order-complete__back-to-store-button {
+    display: inline-flex; /* Use inline-flex to keep the button's inline behavior */
+    align-items: center; 
+    justify-content: center; 
+    background: none;
+    color: var(--color-text-color);
+    border: 2px solid var(--color-text-color);
+    padding: 0.6rem 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.order-complete__button-arrow {
+    width: 20px; 
+    height: auto; 
+    margin-right: 8px; 
+}
+
+.order-complete__button-arrow {
+    position: relative;
+    right: 10%;
+    top: 50%;
+}
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .order-complete__business-name {
+      font-size: 1rem;
+    }
+    
+    .order-complete__description {
+        font-size: 0.7rem;
+    }
+  } 

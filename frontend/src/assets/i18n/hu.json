@@ -1,0 +1,22 @@
+{
+  "CORE": {
+    "APP_NAME": "Map of Pi"
+  },
+  "HOME": {
+    "ADD_MY_BUSINESS": "Saját üzlet hozzáadása",
+    "SEARCH_BAR_PLACEHOLDER": "Üzletkereső..."
+  },
+  "BUSINESS": {
+    "CONTACT_INFORMATION": "Üzletadatok",
+    "BUSINESS_NAME": "Üzlet neve",
+    "BUSINESS_TYPE": "Tevékenység",
+    "LOCATION": "Cím",
+    "CONFIRM": "Mentés",
+    "PRODUCTS": {
+      "TITLE": "Termékek",
+      "PRODUCTS_ON": "Termékek megjelenítése",
+      "IS_PI_PAYMENT_ENABLED": "PI Tranzakciók engedélyezése",
+      "CAN_ORDER_WITHOUT_PAYMENT": "Online Rendelések PI fizetés nélkül"
+    }
+  }
+}

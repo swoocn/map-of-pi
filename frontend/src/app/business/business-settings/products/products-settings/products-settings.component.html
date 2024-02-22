@@ -1,1 +1,31 @@
-<p>products-settings works!</p>
+<div class="container-wrapper">
+  <div class="container">
+    <div class="pt-8 text-center">
+      <h1>{{ 'BUSINESS.PRODUCTS.TITLE' | translate }}</h1>
+    </div>
+
+    <div class="pt-8">
+      <form [formGroup]="productsForm">
+        <div class="input-field">
+          <mat-slide-toggle formControlName="showProducts" color="primary">{{ 'BUSINESS.PRODUCTS.PRODUCTS_ON' | translate }}</mat-slide-toggle>
+        </div>
+
+        <div class="input-field">
+          <mat-slide-toggle formControlName="isPiPaymentEnabled" color="primary">{{ 'BUSINESS.PRODUCTS.IS_PI_PAYMENT_ENABLED' | translate }}</mat-slide-toggle>
+        </div>
+
+        <div class="input-field">
+          <mat-slide-toggle formControlName="canOrderWithoutPayment" color="primary"
+            >{{ 'BUSINESS.PRODUCTS.CAN_ORDER_WITHOUT_PAYMENT' | translate }}
+          </mat-slide-toggle>
+        </div>
+
+        <div class="w-full pt-8 text-center">
+          <button mat-fab color="primary">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+.cart-header {
+    position: relative;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    background-color: #ffffff;
+    font-family: var(--font-family-main);
+    border-bottom: 1px solid var(--color-text-color);
+}
+
+.cart-header__back-button,
+.cart-header__brand,
+.cart-header__app-name,
+.cart-header__logo {
+    margin-top: 1rem;
+}
+
+.cart-header__back-button {
+    position: absolute;
+    top: 25px;
+    display: block;
+    background: none;
+    border: none;
+    color: #1C1B1F;
+}
+
+.cart-header__logo {
+    width: 25px;
+    height: auto;
+}
+
+.cart-header__brand {
+    display: flex; /* Flexbox to align logo and app name */
+    justify-content: center; 
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.cart-header__title {
+    margin-top: 2rem; /* Space between app name and title */
+    line-height: 24px;
+    font-size: 1.125rem;
+    font-weight: 500;
+}

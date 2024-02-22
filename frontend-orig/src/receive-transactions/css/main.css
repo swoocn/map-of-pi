@@ -1,0 +1,6 @@
+/* @import '/frontend-orig/src/defaults.css'; */
+@import './reset.css';
+@import './fonts.css';
+
+@import './modules/wallet-header.css';
+@import './modules/main-content.css';

@@ -1,0 +1,69 @@
+.business-registration {
+    padding: 1rem;
+    font-family: var(--font-family-main);
+    font-weight: bold;
+}
+
+.business-registration__section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.business-registration__field {
+    display: flex;
+    flex-direction: column;
+}
+
+.business-registration__input,
+.business-registration__select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #090C49;
+}
+
+.business-registration__field-middle {
+    margin-top: 0.5rem;
+}
+
+.business-registration__field-bottom {
+    margin-top: 1.3rem;
+}
+
+#location {
+    padding: 0.5rem;
+}
+
+.business-registration__label {
+    padding-bottom: 5px;
+}
+
+.business-registration__list {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.business-registration__item {
+    padding: 1rem;
+    margin-bottom: 1.5rem; 
+    border-radius: 10px;
+    background-color: var(--color-highlight-color);
+}
+
+.business-registration__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text-color);
+    text-decoration: none;
+}
+
+.business-registration__button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: var(--color-text-color);
+    color: #ffffff;
+}

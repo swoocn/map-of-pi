@@ -1,0 +1,127 @@
+.payment {
+    max-width: 500px;
+    height: 600px;
+    margin: 20px auto ;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.payment__header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    font-family: 'Arial', sans-serif; /* Replace with the actual font used in the design */
+}
+
+.payment__action {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    text-transform: lowercase;
+}
+
+.payment__amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.payment__fee {
+    margin-bottom: 3.5rem;
+    font-size: 0.7rem;
+    color: rgba(102, 102, 102, 0.8);
+}
+
+.payment__recipient {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recipient__label {
+    font-size: 0.75rem;
+    font-weight: lighter;
+    font-family: "Signika", sans-serif;
+}
+
+.recipient__address {
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 0rem;
+}
+
+.payment__memo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Signika", sans-serif;
+    font-weight: lighter;
+    margin-bottom: 3rem;
+}
+
+.memo__label {
+    font-size: 0.75rem;
+    font-weight: lighter;
+}
+
+.memo__text {
+    font-size: 0.75rem;
+    color: rgba(102, 102, 102, 0.6);
+}
+
+.actions__button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.actions__button--pay {
+    background-color: #6f3d92;
+    color: white;
+    font-size: 0.6rem;
+}
+
+.actions__button--pay:active {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.actions__button--cancel {
+    font-size: 0.6rem;
+    background-color: #ffffff;
+    color: #6f3d92;
+    font-weight: bold;
+    border: 2px solid rgba(102, 102, 102, 0.2);
+    border-radius: 10px;
+}
+
+.actions__button--cancel:active {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 576px) {
+    .payment__header, .payment__action {
+       font-size: 0.6rem;
+    }
+
+    .payment__amount {
+        font-size: 1.5rem;
+    }
+
+    .payment__fee {
+        font-size: 0.7rem;
+        margin-bottom: 2rem;
+    }
+
+    .recipient__label, .recipient__address {
+        font-size: 0.6rem;
+        margin-bottom: 0rem;
+    }
+
+    .memo__label, .memo__text {
+        font-size: 0.6rem;
+        margin-bottom: -1rem;
+    }
+}

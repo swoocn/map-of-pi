@@ -1,0 +1,9 @@
+:root {
+    --color-text-color: #090C49;
+    --color-background-color: #F1F7FF;
+}
+
+:focus {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px; 
+}

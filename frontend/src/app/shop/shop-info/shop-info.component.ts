@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-shop-info',
   standalone: true,
   imports: [],
   templateUrl: './shop-info.component.html',
-  styleUrl: './shop-info.component.scss'
+  styleUrl: './shop-info.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ShopInfoComponent {
-
-}
+export class ShopInfoComponent {}

@@ -1,3 +1,17 @@
-<p>header works!</p>
+<mat-toolbar class="justify-between">
+  @if (showBackButton()) {
+    <button mat-icon-button (click)="navigateBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  } @else {
+    <button mat-icon-button class="main-button">
+      <img id="logo-img" src="assets/images/logo.svg" alt="map of pi logo" width="48" height="48" />
+    </button>
+  }
+  <span routerLink="/">{{ 'CORE.APP_NAME' | translate }}</span>
 
-<app-language-switcher></app-language-switcher>
+  <div class="optional-controls">
+    <app-dark-mode-toggler></app-dark-mode-toggler>
+    <app-language-switcher></app-language-switcher>
+  </div>
+</mat-toolbar>
