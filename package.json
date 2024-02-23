@@ -1,9 +1,9 @@
 {
     "name": "map-of-pi",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Map of Pi App",
     "scripts": {
         "install": "npm install --prefix frontend && npm install --prefix backend",
-        "start": "npm run -C frontend build"
+        "build": "npm run -C frontend build"
     }
 }
