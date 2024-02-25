@@ -15,6 +15,10 @@ export const BUSINESS_ROUTES: Routes = [
     loadComponent: () => import('./loyalty-scan/loyalty-scan.component').then((m) => m.LoyaltyScanComponent),
   },
   {
+    path: 'business-config',
+    loadComponent: () => import('./business-settings/business-configuration/business-configuration.component').then((m) => m.BusinessConfigurationComponent),
+  },
+  {
     path: 'business-photos',
     loadComponent: () => import('./business-settings/business-photos/business-photos.component').then((m) => m.BusinessPhotosComponent),
   },

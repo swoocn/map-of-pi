@@ -1,0 +1,43 @@
+.menu-settings-header {
+    position: relative;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-family: var(--font-family-main);
+    border-bottom: 2px solid var(--color-text-color);
+}
+
+.menu-settings-header__back-button,
+.menu-settings-header__brand,
+.menu-settings-header__app-name,
+.menu-settings-header__logo {
+    margin-top: 1rem;
+}
+
+.menu-settings-header__back-button {
+    position: absolute;
+    top: 25px;
+    display: block;
+    background: none;
+    border: none;
+    color: #1C1B1F;
+}
+
+.menu-settings-header__logo {
+    width: 25px;
+    height: auto;
+}
+
+.menu-settings-header__brand {
+    display: flex; /* Flexbox to align logo and app name */
+    justify-content: center; 
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.menu-settings-header__title {
+    margin-top: 2rem; /* Space between app name and title */
+    line-height: 24px;
+    font-size: 1.125rem;
+    font-weight: 600;
+}

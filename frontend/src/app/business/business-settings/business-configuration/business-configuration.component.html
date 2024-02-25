@@ -1,0 +1,41 @@
+<header class="menu-settings-header">
+    <button class="menu-settings-header__back-button" aria-label="Go back">
+        <i class="fa-solid fa-arrow-left-long"></i>
+    </button>
+    <div class="menu-settings-header__brand">
+        <img src="../../../../assets/images/logo.svg" alt="Logo" class="menu-settings-header__logo">
+        <span class="menu-settings-header__app-name">Map of Pi</span>
+    </div>
+    <h1 class="menu-settings-header__title">Menu</h1>
+</header>
+
+<form [formGroup]="businessConfigurationForm">
+    <main class="menu-settings">
+        <section class="menu-settings__section">
+            <div class="menu-settings__toggle" #menuToggleDiv>
+                <label for="menu-toggle" class="menu-settings__label">Menu <span class="toggle-status" #menuStatusLabel>{{ businessConfigurationForm.get('menuEnabled')?.value ? 'on' : 'off' }}</span>
+                    <input type="checkbox" id="menu-toggle" name="menu_toggle" class="menu-settings__checkbox" formControlName="menuEnabled" (change)="onToggleChange('menu-toggle')">
+                <span class="menu-settings__slider"></span>
+                </label>
+            </div>
+            <div class="menu-settings__toggle" #orderToggleDiv [class.hidden]="!businessConfigurationForm.get('menuEnabled')?.value">
+                <label for="order-toggle" class="menu-settings__label">Accept orders <span class="toggle-status" #orderStatusLabel>{{ businessConfigurationForm.get('orderEnabled')?.value ? 'on' : 'off' }}</span>
+                    <input type="checkbox" id="order-toggle" name="order_toggle" class="menu-settings__checkbox" formControlName="orderEnabled" (change)="onToggleChange('order-toggle')">
+                <span class="menu-settings__slider"></span>
+                </label>
+            </div>
+            <div class="menu-settings__toggle" #paymentToggleDiv [class.hidden]="!businessConfigurationForm.get('menuEnabled')?.value">
+                <label for="payment-toggle" class="menu-settings__label">Accept payments <span class="toggle-status" #paymentStatusLabel>{{ businessConfigurationForm.get('paymentEnabled')?.value ? 'on' : 'off' }}</span>
+                    <input type="checkbox" id="payment-toggle" name="payment_toggle" class="menu-settings__checkbox" formControlName="paymentEnabled" (change)="onToggleChange('payment-toggle')">
+                <span class="menu-settings__slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <section class="menu-setting__floating-button-section" #addItemButtonSection>
+            <button class="menu-setting__floating-button" #floatingButtonSection [class.hidden]="!businessConfigurationForm.get('menuEnabled')?.value">
+                <img src="../../../../assets/images/business/menu-add-button.png" alt="Add new item button">
+            </button>
+        </section>
+    </main>
+</form>
