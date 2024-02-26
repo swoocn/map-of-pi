@@ -19,6 +19,10 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
+  imageUrl: string = 'assets/images/logo.svg';
+  hoveredImageUrl: string = 'assets/images/logo-header.svg';
+  isHovered: boolean = false;
+
   @ViewChild(DarkModeTogglerComponent) darkModeToggler!: DarkModeTogglerComponent;
   showBackButton: Signal<boolean>;
 
@@ -32,5 +36,17 @@ export class HeaderComponent {
 
   navigateBack(): void {
     this.location.back();
+  }
+
+  onMouseEnter() {
+    this.isHovered = true;
+    // change the image
+    this.imageUrl = this.hoveredImageUrl;
+  }
+
+  onMouseLeave() {
+    this.isHovered = false;
+    // reset the image
+    this.imageUrl = 'assets/images/logo.svg';
   }
 }

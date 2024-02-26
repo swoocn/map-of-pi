@@ -9,7 +9,17 @@
 @tailwind utilities;
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; min-width: 21rem;}
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  min-width: 21rem;
+  background-image: url('./assets/images/background.svg');
+  background-color: rgba(255, 255, 255, 0.15);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 // define custom dark theme colors
 $dark-primary: mat.define-palette(mat.$amber-palette);
@@ -29,4 +39,5 @@ $angular-dark-theme: mat.define-dark-theme((
   @include mat.all-component-colors($angular-dark-theme); 
   background-color: #2b2b2b;
   color: #ffffff;
+  background-blend-mode: multiply;
 }

@@ -46,7 +46,7 @@ describe('HeaderComponent', () => {
     let optionalControls: HTMLElement;
 
     beforeEach(() => {
-      optionalControls = fixture.nativeElement.querySelector('.optional-controls');
+      optionalControls = fixture.nativeElement.querySelector('.group-controls');
     });
 
     it('should exist', () => {
