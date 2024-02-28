@@ -29,6 +29,8 @@
 }
 
 .menu-setting__floating-button {
+    position: absolute;
+    top: 200px;
     border: none;
     background: none;
     margin-top: 6rem;
@@ -120,5 +122,5 @@ input:checked + .menu-settings__slider:before {
 
 .menu-settings__slider:before {
     border-radius: 50%;
-    background-color: #090C49;
+    background-color: rgba(29,114,75,255);;
 }

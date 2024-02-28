@@ -1,30 +1,94 @@
-<form [formGroup]="businessConfigurationForm">
-    <main class="menu-settings">
-        <section class="menu-settings__section">
-            <div class="menu-settings__toggle" #menuToggleDiv>
-                <label for="menu-toggle" class="menu-settings__label">Menu <span class="toggle-status" #menuStatusLabel>{{ businessConfigurationForm.get('menuEnabled')?.value ? 'on' : 'off' }}</span>
-                    <input type="checkbox" id="menu-toggle" name="menu_toggle" class="menu-settings__checkbox" formControlName="menuEnabled" (change)="onToggleChange('menu-toggle')">
-                <span class="menu-settings__slider"></span>
-                </label>
-            </div>
-            <div class="menu-settings__toggle" #orderToggleDiv [class.hidden]="!businessConfigurationForm.get('menuEnabled')?.value">
-                <label for="order-toggle" class="menu-settings__label">Accept orders <span class="toggle-status" #orderStatusLabel>{{ businessConfigurationForm.get('orderEnabled')?.value ? 'on' : 'off' }}</span>
-                    <input type="checkbox" id="order-toggle" name="order_toggle" class="menu-settings__checkbox" formControlName="orderEnabled" (change)="onToggleChange('order-toggle')">
-                <span class="menu-settings__slider"></span>
-                </label>
-            </div>
-            <div class="menu-settings__toggle" #paymentToggleDiv [class.hidden]="!businessConfigurationForm.get('menuEnabled')?.value">
-                <label for="payment-toggle" class="menu-settings__label">Accept payments <span class="toggle-status" #paymentStatusLabel>{{ businessConfigurationForm.get('paymentEnabled')?.value ? 'on' : 'off' }}</span>
-                    <input type="checkbox" id="payment-toggle" name="payment_toggle" class="menu-settings__checkbox" formControlName="paymentEnabled" (change)="onToggleChange('payment-toggle')">
-                <span class="menu-settings__slider"></span>
-                </label>
-            </div>
-        </section>
+<main class="menu-settings">
+    <section class="menu-settings__section">
+       <div class="menu-settings__toggle">
+          <label for="menu-toggle" class="menu-settings__label">Menu <span class="toggle-status">{{ menuStatusLabel }}</span>
+             <input type="checkbox" id="menu-toggle" name="menu_toggle" class="menu-settings__checkbox" #menuToggle (change)="onToggleChange('menu-toggle')">
+             <span class="menu-settings__slider"></span>
+          </label>
+       </div>
+       <div class="menu-settings__toggle hidden" #orderToggleDiv>
+          <label for="order-toggle" class="menu-settings__label">Accept orders <span class="toggle-status">{{ orderStatusLabel }}</span>
+             <input type="checkbox" id="order-toggle" name="order_toggle" class="menu-settings__checkbox" (change)="onToggleChange('order-toggle')">
+             <span class="menu-settings__slider"></span>
+          </label>
+       </div>
+       <div class="menu-settings__toggle hidden" #paymentToggleDiv>
+          <label for="payment-toggle" class="menu-settings__label">Accept payments <span class="toggle-status">{{ paymentStatusLabel }}</span>
+             <input type="checkbox" id="payment-toggle" name="payment_toggle" class="menu-settings__checkbox" (change)="onToggleChange('payment-toggle')">
+             <span class="menu-settings__slider"></span>
+          </label>
+       </div>
+    </section>
+ 
+    <section class="menu-setting__floating-button-section" #addItemButtonSection>
+       <button class="menu-setting__floating-button hidden" #floatingButton (click)="showModal()">
+          <img src="../../../../assets/images/business/menu-add-button.png" alt="Add new item button">
+       </button>
+    </section>
+    <div id="items-display-area" #itemsDisplayArea></div>
+</main>
 
-        <section class="menu-setting__floating-button-section" #addItemButtonSection>
-            <button class="menu-setting__floating-button" #floatingButtonSection [class.hidden]="!businessConfigurationForm.get('menuEnabled')?.value">
-                <img src="../../../../assets/images/business/menu-add-button.png" alt="Add new item button">
-            </button>
-        </section>
-    </main>
-</form>
+<!-- The modal itself -->
+<div class="modal" #addItemModal [style.display]="isPreviewImageVisible ? 'block' : 'none'">
+    <div class="modal__content">
+
+        <form [formGroup]="businessProductsForm">
+            <button type="button" class="modal__close-button" aria-label="Close"
+                (click)="hideModal($event)">&times;</button>
+
+            <!-- Modal title -->
+            <h2 class="modal__title">Add new item</h2>
+
+            <!-- Add item name -->
+            <div class="modal__item-name">
+                <label for="item-name" class="modal__label">Item name</label>
+                <input type="text" id="item-name" class="modal__input modal__input-item-name"
+                    formControlName="itemName" />
+            </div>
+
+            <!-- Add item button -->
+            <div class="modal__add-item-button">
+                <input type="file" id="item-image-upload" class="modal__input-file" accept="image/*"
+                    style="display: none;" (change)="handleImageUpload($event)" />
+                <label for="item-image-upload" class="modal__add-button" aria-label="Add item">
+                    <img [src]="previewImageSrc ? previewImageSrc : '../../../../assets/images/business/add-item-button.png'"
+                        alt="Add item button" />
+                </label>
+                <div id="image-preview" class="modal__image-preview">
+                    <img [src]="previewImageSrc" alt="Image Preview" *ngIf="isPreviewImageVisible" />
+                    <span class="image-preview__close" (click)="clearPreviewImage()" *ngIf="isPreviewImageVisible">&times;</span>
+                </div>
+            </div>
+
+            <!-- Add price input -->
+            <div class="modal__add-price">
+                <label for="item-price" class="modal__label modal__label-text">Price</label>
+                <input type="text" id="item-price" class="modal__input modal__input--price"
+                    formControlName="itemPrice" />
+                <div class="modal__item-icon">
+                    <img src="../../../../assets/images/business/Pi-logo.png" alt="Pi logo">
+                </div>
+            </div>
+
+            <!-- Preparation time input group -->
+            <div class="modal__prep-time">
+                <label for="prep-time" class="modal__label">How long to prepare this meal?</label>
+                <input type="text" id="prep-time" class="modal__input modal__input-prep-time"
+                    formControlName="prepTime" />
+            </div>
+
+            <!-- Description input group -->
+            <div class="modal__description">
+                <label for="description" class="modal__label">Description</label>
+                <textarea id="description" class="modal__textarea" maxlength="50" rows="4"
+                    formControlName="description"></textarea>
+            </div>
+
+            <!-- Confirm button -->
+            <div class="modal__confirm">
+                <button type="button" class="modal__confirm-btn" (click)="onModalConfirm()">Confirm</button>
+            </div>
+        </form>
+
+    </div>
+</div>

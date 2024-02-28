@@ -1,7 +1,7 @@
 /**
  * Initializes and handles the toggle functionality for menu settings.
  */
-export default function () {
+export default function displayMenuOptions() {
    /**
     * Sets up the initial state and event listeners once the DOM content is fully loaded.
     */
@@ -63,7 +63,23 @@ export default function () {
             }
       }
 
-      
+      /**
+       * Hides the product items display area when the menu toggle is off
+       */
+      function updateItemsDisplayVisibility() {
+         const itemsDisplayArea = document.getElementById('items-display-area');
+         const menuToggle = document.getElementById('menu-toggle');
+     
+         // Check if the menu toggle is checked (on)
+         if (menuToggle.checked) {
+             // If the menu is on, show the items display area
+             itemsDisplayArea.style.display = '';
+         } else {
+             // If the menu is off, hide the items display area
+             itemsDisplayArea.style.display = 'none';
+         }
+     }
+
       /**
        * Updates the labels next to toggles to reflect their current state off/on.
        */
@@ -95,6 +111,7 @@ export default function () {
       document.querySelectorAll('.menu-settings__toggle input').forEach(toggle => {
             toggle.addEventListener('change', function() {
                updateSliderAppearance();
+               updateItemsDisplayVisibility();
                // Additional logic based on specific toggle
                if (toggle.id === 'menu-toggle') {
                   if (toggle.checked) {
@@ -140,14 +157,13 @@ export default function () {
       const toggles = document.querySelectorAll('.menu-settings__toggle input');
    
       toggles.forEach(toggle => {
-            const slider = toggle.nextElementSibling; // Accurately select the slider span related to each toggle
-            const sliderCircle = slider.querySelector('.menu-settings__slider:before'); // Assuming you want to target the pseudo-element (note: pseudo-elements cannot be directly manipulated via JS like this)
+            const slider = toggle.nextElementSibling; // Select the slider span related to each toggle
+            const sliderCircle = slider.querySelector('.menu-settings__slider:before');
 
             if (toggle.checked) {
                slider.classList.remove('menu-settings__slider--off');
             } else {
                slider.classList.add('menu-settings__slider--off');
-               // If you have a specific class to indicate the "off" state that affects the appearance, toggle it here
             }
       });
    }
