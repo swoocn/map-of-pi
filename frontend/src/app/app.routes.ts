@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { AddProductComponent } from './business/manage-business/add-product/add-product.component';
+import { BusinessPhotosComponent } from './business/business-settings/business-photos/business-photos.component';
 
 export const routes: Routes = [
   {
@@ -22,5 +24,13 @@ export const routes: Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full',
+  },
+  {
+    path: 'add-product',
+    component: AddProductComponent,
+  },
+  {
+    path: 'business-photos',
+    component: BusinessPhotosComponent,
   },
 ];

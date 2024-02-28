@@ -3,15 +3,15 @@ import { Component, AfterViewInit, ViewChild, ElementRef, ChangeDetectionStrateg
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-business-configuration',
+  selector: 'app-business-menu',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './business-configuration.component.html',
-  styleUrl: './business-configuration.component.scss',
+  templateUrl: './business-menu.component.html',
+  styleUrl: './business-menu.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class BusinessConfigurationComponent implements AfterViewInit {
+export class BusinessMenuComponent implements AfterViewInit {
   @ViewChild('menuToggle') menuToggle!: ElementRef<HTMLInputElement>;
   @ViewChild('orderToggleDiv') orderToggleDiv!: ElementRef<HTMLDivElement>;
   @ViewChild('paymentToggleDiv') paymentToggleDiv!: ElementRef<HTMLDivElement>;

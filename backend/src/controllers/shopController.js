@@ -23,7 +23,7 @@ const registerShop = async (req, res) => {
     
     await currentUser.shops.push(newShop);
 
-    return res.status(200).json({ message: "shop created successfully", newShop,currentUser });
+    return res.status(200).json({newShop});
   } catch (error) {
     console.log(
       "internal server error while registering new shop: " + error.message

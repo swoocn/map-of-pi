@@ -1,68 +1,73 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { SnackService } from '../../core/service/snack.service';
+import { Router, RouterLink } from '@angular/router';
+import { ShopService } from '../../core/service/shop.service';
 
 @Component({
   selector: 'app-business-settings',
   standalone: true,
   templateUrl: './business-settings.component.html',
   styleUrls: ['./business-settings.component.scss'],
-  imports: [TranslateModule, RouterLink],
+  imports: [TranslateModule, CommonModule, ReactiveFormsModule, MatSlideToggleModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class BusinessSettingsComponent {
-  businessTypes: string[] = ['Restaurant', 'Retail', 'Service'];
+  businessTypes: string[] = ['Restaurant', 'Retail Store', 'Servicing', 'Construction', 'Transportation'];
+  router: Router = inject(Router);
+  showPopup: boolean = false;
 
-  businessForm = this.formBuilder.group({
-    businessName: ['', Validators.required],
-    businessType: ['', Validators.required],
-    location: ['', Validators.required]
+  registerShopForm = new FormGroup({
+    shopName: new FormControl('', Validators.required),
+    shopType: new FormControl('', Validators.required),
+    shopAddress: new FormControl('', Validators.required),
+    shopPhone: new FormControl('', [Validators.required, Validators.minLength(10)]),
+    shopEmail: new FormControl('', [Validators.required, Validators.email]),
+    shopImage: new FormControl('', Validators.required),
+    shopDescription: new FormControl('', Validators.required),
   });
 
-  constructor(private readonly formBuilder: FormBuilder) {}
+  constructor(private snackService: SnackService, private shopServices: ShopService) { }
 
-  send(): void {
-    if (this.businessForm.valid) {
-      console.log('# this.businessForm.value: ', this.businessForm.value);
-      // Add logic here to send the form data to the backend
-    } else {
-      console.error('Form is invalid');
-      // Optionally, you can display an error message to the user
+  onFileChange(event: any) {
+    if (event.target.files) {
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+
+      reader.onload = (e: any) => {
+        this.registerShopForm.value.shopImage = e.target.result;
+      };
     }
   }
+
+  send(): void {
+    if (this.registerShopForm.valid) {
+      this.shopServices.registerShop(this.registerShopForm.value as any).then((response) => {
+        // const { newShop, currentUser } = response.data;
+        if (response.ok) {
+          this.snackService.showMessage('Business successfully registered');
+        } else {
+          this.snackService.showError('Failed to register business');
+          console.log(response);
+        }
+      });
+
+      this.router.navigate(['business', 'manage-business']);
+    } else {
+      this.registerShopForm.markAllAsTouched();
+      console.log('Invalid data');
+    }
+  }
+
+  displayPopup(): void {
+    this.showPopup = true;
+  }
+
+  hidePopup(): void {
+    this.showPopup = false;
+  }
 }
-
-// DEPRECATED
-// import { ChangeDetectionStrategy, Component } from '@angular/core';
-// import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-// import { MatFormFieldModule } from '@angular/material/form-field';
-// import { MatInputModule } from '@angular/material/input';
-// import { MatSelectModule } from '@angular/material/select';
-// import { MatButtonModule } from '@angular/material/button';
-// import { TranslateModule } from '@ngx-translate/core';
-// import { RouterLink } from '@angular/router';
-
-// @Component({
-//   selector: 'app-business-settings',
-//   standalone: true,
-//   imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, TranslateModule, RouterLink],
-//   templateUrl: './business-settings.component.html',
-//   styleUrl: './business-settings.component.scss',
-//   changeDetection: ChangeDetectionStrategy.OnPush,
-// })
-// export class BusinessSettingsComponent {
-//   businessTypes: string[] = ['restaurant', 'garage', 'music-shop'];
-//   businessForm = this.formBuilder.group({
-//     name: ['', Validators.required],
-//     businessType: ['', Validators.required],
-//     address: ['', Validators.required],
-//   });
-
-//   constructor(private readonly formBuilder: FormBuilder) {}
-
-//   send(): void {
-//     console.log('# this.businessForm.value: ', this.businessForm.value);
-//   }
-// }

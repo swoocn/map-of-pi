@@ -1,4 +1,22 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
-@import '../.././../assets/styles/business/business-registration/header.scss';
-@import '../.././../assets/styles/business/business-registration/main.scss';
+@import '../../../assets/styles/business/business-settings/header.scss';
+@import '../../../assets/styles/business/business-settings/main.scss';
+@import '../../../assets/styles/business/business-settings/popup.scss';
+
+// DEPRECATED
+// .container-wrapper {
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .container {
+//   padding: 0 1rem;
+//   max-width: 48rem
+// }
+
+// .input-field {
+//   width: 100%;
+//   padding: 0.2rem 1rem;
+//   text-align: center;
+// }

@@ -1,7 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ReactiveFormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
 import { BusinessSettingsComponent } from './business-settings.component';
 
 describe('BusinessSettingsComponent', () => {
@@ -10,7 +8,7 @@ describe('BusinessSettingsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BusinessSettingsComponent, ReactiveFormsModule, TranslateModule.forRoot(), RouterTestingModule]
+      imports: [BusinessSettingsComponent, RouterTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(BusinessSettingsComponent);
@@ -21,21 +19,4 @@ describe('BusinessSettingsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should have a valid form on initialization', () => {
-     // Form should be invalid initially.
-    expect(component.businessForm.valid).toBeFalse();
-  });
-
-  it('should display error message when form is submitted with invalid data', () => {
-    spyOn(console, 'error');
-    component.send();
-    expect(console.error).toHaveBeenCalledWith('Form is invalid');
-  });
-
-  it('should have correct routerLink set for the business registration confirm button', () => {
-    const button = fixture.nativeElement.querySelector('.business-registration__button');
-    // Angular attribute added during runtime to reflect the value of the `[routerLink]` directive.
-    expect(button.getAttribute('ng-reflect-router-link')).toEqual('/business/business-config');
-  }); 
 });

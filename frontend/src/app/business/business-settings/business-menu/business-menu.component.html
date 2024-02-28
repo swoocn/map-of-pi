@@ -7,13 +7,13 @@
           </label>
        </div>
        <div class="menu-settings__toggle hidden" #orderToggleDiv>
-          <label for="order-toggle" class="menu-settings__label">Accept orders <span class="toggle-status">{{ orderStatusLabel }}</span>
+          <label for="order-toggle" class="menu-settings__label">Accept orders without payment <span class="toggle-status">{{ orderStatusLabel }}</span>
              <input type="checkbox" id="order-toggle" name="order_toggle" class="menu-settings__checkbox" (change)="onToggleChange('order-toggle')">
              <span class="menu-settings__slider"></span>
           </label>
        </div>
        <div class="menu-settings__toggle hidden" #paymentToggleDiv>
-          <label for="payment-toggle" class="menu-settings__label">Accept payments <span class="toggle-status">{{ paymentStatusLabel }}</span>
+          <label for="payment-toggle" class="menu-settings__label">Accept Pi Transactions <span class="toggle-status">{{ paymentStatusLabel }}</span>
              <input type="checkbox" id="payment-toggle" name="payment_toggle" class="menu-settings__checkbox" (change)="onToggleChange('payment-toggle')">
              <span class="menu-settings__slider"></span>
           </label>

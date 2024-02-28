@@ -4,6 +4,7 @@
 
 [![Hackathon](https://img.shields.io/badge/hackathon-PiCommerce-purple.svg)](https://github.com/pi-apps/PiOS/blob/main/pi-commerce.md)
 ![Status](https://img.shields.io/badge/status-active-success.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1d8fa9c7-015b-4531-9b81-ccf16517b39b/deploy-status)](https://app.netlify.com/sites/map-of-pi/deploys)
 ![License](https://img.shields.io/badge/license-PIOS-blue.svg)
 
 </div>
