@@ -1,4 +1,8 @@
-<div id="map" leaflet [leafletOptions]="options" (leafletMapReady)="onMapReady($event)">
+<div
+  id="map"
+  leaflet
+  [leafletOptions]="options"
+  (leafletMapReady)="onMapReady($event)">
   @if (layer) {
     <div [leafletLayer]="layer"></div>
   }

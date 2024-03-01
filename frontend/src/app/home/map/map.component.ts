@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { Map, marker, Marker } from 'leaflet';
+import { Map, marker, Layer } from 'leaflet';
 import { GeolocationService } from '../../core/service/geolocation.service';
 import { SnackService } from '../../core/service/snack.service';
 import { take } from 'rxjs';
+import { ICoordinate, dummyCoordinates } from '../../core/model/business';
 
 @Component({
   selector: 'app-map',
@@ -13,11 +14,13 @@ import { take } from 'rxjs';
   styleUrl: './map.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class MapComponent {
-  layer?: Marker;
+  layer?: Layer;
   map!: Map;
   options;
 
+  coordinates = dummyCoordinates;
   constructor(
     private readonly cdr: ChangeDetectorRef,
     private readonly geolocationService: GeolocationService,
@@ -31,6 +34,8 @@ export class MapComponent {
 
   onMapReady(map: Map): void {
     this.map = map;
+    // Add all coordinates to the map on component initialization
+    this.addAllCoordinatesToMap();
   }
 
   locateMe(): void {
@@ -39,15 +44,34 @@ export class MapComponent {
       .pipe(take(1))
       .subscribe({
         next: (coords: GeolocationCoordinates) => {
-          this.layer = marker([coords.latitude, coords.longitude], { icon: this.geolocationService.getMarkerIcon() })
-            .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+          // Add user's location marker
+          this.layer = marker([coords.latitude, coords.longitude], {
+            icon: this.geolocationService.getUserMarkerIcon(),
+          })
+            .bindPopup('my name here is soleil')
             .openPopup();
+
+          this.map.addLayer(this.layer);
           this.map.flyTo([coords.latitude, coords.longitude], 15);
+
+          // Add all other coordinates to the map
+          this.addAllCoordinatesToMap();
+
           this.cdr.detectChanges();
         },
         error: (error: string) => {
           this.snackService.showError(`Geolocation error: ${error}`);
         },
       });
+  }
+
+  addAllCoordinatesToMap(): void {
+    this.coordinates.forEach((coordinate: ICoordinate) => {
+      const markerLayer = marker([coordinate.lat, coordinate.long], {
+        icon: this.geolocationService.getMarkerIcon(),
+      })
+        .bindPopup('Your custom popup content here')
+        .addTo(this.map);
+    });
   }
 }
