@@ -1,0 +1,213 @@
+/* Business info and business image section */
+.order-menu__content {
+    margin: 10px;
+}
+
+.order-menu__business-name {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.order-menu__type, .order-menu__location {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.order-menu__type img, .order-menu__location img {
+    height: 20px;
+    width: auto;
+}
+
+.order-menu__product-text, .order-menu__location-address {
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+.order-menu__business-images {
+    display: flex;
+    column-gap: 10px;
+}
+
+.order-menu__business-image {
+    width: 94px;
+    height: 114px;
+    border-radius: 10px;
+    margin-top: 1rem;
+    object-fit: cover;
+}
+
+/* Menu switch section*/
+.order-menu__switch-section {
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 1.2rem;
+    border: 1px solid var(--color-text-color);
+}
+
+.order-menu__switch-buttons {
+    display: flex;
+    /* width: 100%; */   
+}
+
+.order-menu__switch-button {
+    flex: 1;
+    padding: 10px 20px;
+    font-size: 0.6rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent; /* Buttons are transparent */
+    transition: background-color 0.3s;
+    position: relative;
+    z-index: 2; /* Make sure buttons are above the colored pseudo-element */
+}
+
+.order-menu__switch-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    transition: left 0.3s;
+    z-index: 1;
+    background-color: var(--color-highlight-color); 
+}
+
+.order-menu__switch-button-text-stamps {
+    color: #ffffff; 
+}
+
+/* Section for order payment message */
+.order-menu__highlight {
+    position: relative;
+    width: calc(100vw - 7px);
+    max-width: 350px;
+    height: 30px;
+    left: -15px;
+    margin-top: 1.2rem;
+    background-color: #FAD09E;
+}
+
+.order-menu__highlight-text {
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Section for menu products and images */
+.order-menu__product-info {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.order-menu__product-text {
+    flex: 1;
+    font-weight: bold;
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.order-menu__product-amount {
+    margin-right: 1rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.order-menu__pi-logo {
+    width: 18px;
+}
+
+.order-menu__product-image {
+    display: flex;
+}
+
+.order-menu__product-image img{
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.order-menu__product-image-text {
+    position: relative;
+    bottom: 1.3rem;
+    padding: 10px;
+    font-size: 0.7rem;
+}
+
+.order-menu__product-quantity {
+    position: relative;
+    bottom: 2rem;
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;
+    margin-bottom: -1.5rem;
+}
+
+.order-menu__quantity-button--decrease, 
+.order-menu__quantity-input, 
+.order-menu__quantity-button--increase {
+    margin: 3px;
+}
+
+.order-menu__quantity-input {
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid var(--color-text-color);
+    padding: 10px;
+    text-align: center;
+}
+
+.order-menu__quantity-button {
+    border-radius: 50px;
+    border: 2px solid var(--color-text-color);
+    width: 20px;
+    height: 20px;
+}
+
+.order-menu__add-button {
+    margin-left: 10px;
+    width: 40px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: var(--color-text-color);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border: 1px solid;
+}
+
+.order-menu__add-button:hover {
+    background-color: var(--color-highlight-color);
+    transform: translate(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.order-menu_add-button-text {
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+.order-menu__delete-button {
+    background: none;
+    border: none;
+}
+
+.order-menu__delete-buttons {
+
+    width: 30px;
+    height: auto;
+}

@@ -25,6 +25,7 @@ describe('Shop Routes', () => {
   it('should contain the expected routes', () => {
     const routes: Routes = SHOP_ROUTES;
     const routePaths = routes.map((r) => r.path);
+    expect(routePaths).toContain('order-menu');
     expect(routePaths).toContain('product-list');
     expect(routePaths).toContain('loyalty-info');
     expect(routePaths).toContain('shop-info');

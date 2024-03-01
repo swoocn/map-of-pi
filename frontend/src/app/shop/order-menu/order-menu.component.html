@@ -1,0 +1,87 @@
+<header class="order-menu__header">
+    <div></div>
+    <div></div>
+    <button class="order-menu__header__cart-button" aria-label="Shopping cart">
+        <img src="../../../assets/images/shopping/Shopping-cart-icon.svg" alt="Shopping cart">
+        <span class="order-menu__header__cart-count">{{ cartItemCount }}</span>
+    </button>
+</header>
+
+<main class="order-menu__content">
+    <!-- Business Information Section -->
+    <section class="order-menu__section">
+        <h1 class="order-menu__business-name">{{ businessName }}</h1>
+        <div class="order-menu__type">
+            <img src="../../../assets/images/shopping/coffee-cup-icon.svg" alt="Coffee shop icon"
+                class="order-menu__product-image">
+            <p class="order-menu__product-text">{{ businessType }}</p>
+        </div>
+        <div class="order-menu__location">
+            <img src="../../../assets/images/shopping/location-marker.svg" alt="Location marker"
+                class="order-menu__location-marker">
+            <address class="order-menu__location-address">
+                {{ businessAddress }}
+            </address>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section class="order-menu__image-section">
+        <div class="order-menu__business-images">
+            <img *ngFor="let image of businessImages" [src]="image.url" [alt]="image.alt"
+                class="order-menu__business-image">
+        </div>
+    </section>
+
+    <!-- Menu switch section-->
+    <section class="order-menu__switch-section">
+        <div class="order-menu__switch-buttons">
+            <button class="order-menu__switch-button" aria-label="Switch to stamp menu" (click)="switchToStampsMenu()">
+                <span class="order-menu__switch-button-text-stamps">{{ stampsButtonText }}</span>
+            </button>
+            <button class="order-menu__switch-button" aria-label="Switch to products menu"
+                (click)="switchToProductsMenu()">
+                <span class="order-menu__switch-button-text">Menu</span>
+            </button>
+        </div>
+    </section>
+
+    <div class="order-menu__highlight">
+        <p class="order-menu__highlight-text">{{ highlightText }}</p>
+    </div>
+
+    <!-- Section for menu products and images-->
+    <section class="order-menu__products">
+        <div class="order-menu__product" *ngFor="let product of products" [attr.data-id]="product.id">
+            <div class="order-menu__product-info">
+                <p class="order-menu__product-text">{{ product.name }}</p>
+                <span class="order-menu__product-amount">{{ product.amount }}</span>
+                <img src="../../../assets/images/shopping/Pi-amount-logo.svg" alt="Logo of Pi transactions"
+                    class="order-menu__pi-logo">
+            </div>
+
+            <div class="order-menu__product-image">
+                <img [src]="product.imageUrl" [alt]="product.imageAlt">
+                <p class="order-menu__product-image-text">{{ product.description }}</p>
+            </div>
+
+            <div class="order-menu__product-quantity">
+                <button class="order-menu__quantity-button order-menu__quantity-button--decrease"
+                        aria-label="Decrease quantity" (click)="decreaseQuantity(product)">-</button>
+                <input type="text" class="order-menu__quantity-input" [(ngModel)]="product.quantity" min="1"
+                        aria-label="Quantity">
+                <button class="order-menu__quantity-button order-menu__quantity-button--increase"
+                        aria-label="Increase quantity" (click)="increaseQuantity(product)">+</button>
+                <button class="order-menu__add-button" *ngIf="product.showAddButton" aria-label="Add items to shopping cart"
+                        (click)="addToCart(product)">
+                    <span class="order-menu_add-button-text" aria-label="Add items to shopping cart">Add</span>
+                </button>
+                <button class="order-menu__delete-button" *ngIf="product.showDeleteButton" aria-label="Delete quantity button"
+                        (click)="removeFromCart(product)">
+                    <img src="../../../assets/images/shopping/delete-button.svg"
+                            alt="Button to delete added items to the shopping cart" class="order-menu__delete-buttons">
+                </button>
+            </div>
+        </div>
+    </section>
+</main>

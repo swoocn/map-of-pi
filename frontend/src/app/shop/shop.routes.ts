@@ -7,6 +7,10 @@ export const SHOP_ROUTES: Routes = [
     component: ShopComponent,
   },
   {
+    path: 'order-menu',
+    loadComponent: () => import('./order-menu/order-menu.component').then((m) => m.OrderMenuComponent),
+  },
+  {
     path: 'product-list',
     loadComponent: () => import('./product-list/product-list.component').then((m) => m.ProductListComponent),
   },
