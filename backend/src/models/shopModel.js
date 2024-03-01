@@ -7,12 +7,27 @@ const shopSchema = new mongoose.Schema({
   address: String,
   city: String,
   state: String,
-  coordinates: [String, String],
+  coordinates: [Number, Number],
   phone: String,
-  email: String,
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   description: String,
   image: String,
-  owner: String,
+  owner_uid: String,
+  owner_username: String,
+  rating: {
+    type: Number,
+    default: 0,
+  },
+  transactionEnabled: { type: Boolean, default: true },
+  orderWithoutPayment: { type: Boolean, default: false },
+  orders: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Order",
+  }],
   products: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -26,7 +41,7 @@ shopSchema.pre("remove", async function (next) {
     await Product.deleteMany({ shop: this._id });
     next();
   } catch (error) {
-    console.log("product failed to be deleted while shop does");
+    console.error("Product failed to be deleted with shop");
     next(error);
   }
 });

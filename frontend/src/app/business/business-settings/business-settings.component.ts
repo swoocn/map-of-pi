@@ -3,8 +3,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { SnackService } from '../../core/service/snack.service';
 import { Router, RouterLink } from '@angular/router';
+import { SnackService } from '../../core/service/snack.service';
 import { ShopService } from '../../core/service/shop.service';
 
 @Component({
@@ -31,15 +31,18 @@ export class BusinessSettingsComponent {
     shopDescription: new FormControl('', Validators.required),
   });
 
-  constructor(private snackService: SnackService, private shopServices: ShopService) { }
+  constructor(
+    private snackService: SnackService,
+    private shopServices: ShopService,
+  ) {}
 
   onFileChange(event: any) {
     if (event.target.files) {
       const reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
 
-      reader.onload = (e: any) => {
-        this.registerShopForm.value.shopImage = e.target.result;
+      reader.onload = (event: any) => {
+        this.registerShopForm.value.shopImage = event.target.result;
       };
     }
   }
@@ -48,15 +51,16 @@ export class BusinessSettingsComponent {
     if (this.registerShopForm.valid) {
       this.shopServices.registerShop(this.registerShopForm.value as any).then((response) => {
         // const { newShop, currentUser } = response.data;
-        if (response.ok) {
-          this.snackService.showMessage('Business successfully registered');
-        } else {
-          this.snackService.showError('Failed to register business');
-          console.log(response);
-        }
+        console.log('reponse from server : ' + JSON.stringify(response));
+        // if (response.ok) {
+        //   this.snackService.showMessage('Business successfully registered');
+        // } else {
+        //   this.snackService.showError('Failed to register business');
+        //   console.log(response);
+        // }
       });
 
-      this.router.navigate(['business', 'manage-business']);
+      // this.router.navigate(['business', 'manage-business']);
     } else {
       this.registerShopForm.markAllAsTouched();
       console.log('Invalid data');

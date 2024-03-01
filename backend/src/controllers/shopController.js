@@ -4,124 +4,96 @@ const Shop = require("../models/shopModel");
 const getAllShops = async (req, res) => {
   try {
     const shops = await Shop.find().populate("products");
-    if (shops.length > 0) {
-      return res.status(200).json({ shops });
-    } else res.status(404).json({ message: "No shops found" });
+    return shops.length > 0
+      ? res.status(200).json({ shops })
+      : res.status(404).json({ message: "No businesses found" });
   } catch (error) {
-    console.log(
-      "internal server error while searching all shops: " + error.message
-    );
-    res.status(500).json({ error: "Internal server error" });
+    console.error("Error while searching all shops:", error.message);
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
 
 const registerShop = async (req, res) => {
   const currentUser = req.currentUser;
-
   try {
     const newShop = await Shop.create({ ...req.body, owner: currentUser.uid });
-    
     await currentUser.shops.push(newShop);
-
-    return res.status(200).json({newShop});
+    return res.status(200).json({ newShop });
   } catch (error) {
-    console.log(
-      "internal server error while registering new shop: " + error.message
-    );
-    res.status(500).json({ error: "Internal server error" });
+    console.error("Error while registering new business:", error.message);
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
 
 const getSingleShop = async (req, res) => {
-  const shopId = req.params.shopId;
+  const { shopId } = req.params;
   try {
     const shop = await Shop.findById(shopId);
-    if (shop) {
-      return res.status(200).json({ shop });
-    } else
-      res.status(404).json({ message: "Shop u are looking for doesnt exists" });
+    return shop
+      ? res.status(200).json({ shop })
+      : res.status(404).json({ message: "No business found" });
   } catch (error) {
-    console.log(
-      "internal server error while searching single shop: " + error.message
-    );
-    res.status(500).json({ error: "Internal server error" });
+    console.error("Error while searching single shop:", error.message);
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
 
 const deleteShop = async (req, res) => {
-  const shopId = req.params.shopId;
-
+  const { shopId } = req.params;
   const currentUser = req.currentUser;
-
   try {
     const shopToDelete = await Shop.findById(shopId);
-
     if (shopToDelete && shopToDelete.owner === currentUser.uid) {
       await Shop.findByIdAndDelete(shopId);
-      console.log("successfully deleted shop : ", shopToDelete);
-      return res.status(200).json({ message: "shop deleted successfully" });
+      console.log("Successfully deleted business:", shopToDelete);
+      return res.status(200).json({ message: "Business deleted successfully" });
     } else {
-      console.log(
-        "u can't delete this shop since u are not the owner nor admin of map of pi"
-      );
-
-      return res.status(401).json({
-        message:
-          "You can't delete this shop, Since you are not the owner of this shop nor admin of map of pi",
-      });
+      console.error("Business removal denied due to lack of permission");
+      return res.status(401).json({ message: "Business removal denied due to lack of permission" });
     }
   } catch (error) {
-    console.log("internal server error while deleting shop : " + error.message);
+    console.error("Error while deleting shop:", error.message);
+    return res.status(500).json({ error: "Internal server error while deleting shop" });
   }
 };
 
 const updateShop = async (req, res) => {
   const { shopId } = req.params;
   const currentUser = req.currentUser;
-
   try {
     const shopToUpdate = await Shop.findById(shopId);
-
     if (shopToUpdate && shopToUpdate.owner === currentUser.uid) {
       await Shop.updateOne({ _id: shopId }, { ...req.body }, { new: true });
-
-      console.log("successfully updated shop : ", shopToUpdate);
-
-      return res.status(200).json({ message: "shop updated successfully" });
+      console.log("Successfully updated business: ", shopToUpdate);
+      return res.status(200).json({ message: "Business updated successfully" });
+    } else {
+      return res.status(401).json({ message: "Unauthorized to update this business" });
     }
   } catch (error) {
-    console.log("error while updating shop : " + error.message);
-    res
-      .status(500)
-      .json({ error: "Internal server error while updating shop" });
+    console.error("Error while updating shop:", error.message);
+    return res.status(500).json({ error: "Internal server error while updating shop" });
   }
 };
 
 
 const getShopProducts = async (req, res) => {
-  const {shopId} = req.params;
-
+  const { shopId } = req.params;
   try {
     const products = await Product.find({ shop: shopId });
-
-    if (products.length > 0) {
-      return res.status(200).json({ products });
-    } else {
-      return res.status(200).json({ message: "Shop doesn't have any products" });
-    }
+    return products.length > 0
+      ? res.status(200).json({ products })
+      : res.status(200).json({ message: "Business has no products" });
   } catch (error) {
-    console.log(
-      "Internal server error while searching products for a shop: " + error.message
-    );
+    console.error("Error while searching products for a shop:", error.message);
     return res.status(500).json({ error: "Internal server error" });
   }
 };
-
 
 module.exports = {
   registerShop,
   getAllShops,
   deleteShop,
   updateShop,
-  getShopProducts
+  getShopProducts,
+  getSingleShop
 };

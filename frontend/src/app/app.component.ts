@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './shared/header/header.component';
-import { UiStateService } from './core/service/ui-state.service';
 import { Pi } from '@pinetwork-js/sdk';
 import { AuthResult } from '@pinetwork-js/sdk/build/types';
+import axios from 'axios';
+import { HeaderComponent } from './shared/header/header.component';
+import { UiStateService } from './core/service/ui-state.service';
+import { ShopService } from './core/service/shop.service';
 import { SnackService } from './core/service/snack.service';
 import { CurrentUserService } from './core/service/current-user.service';
-import axios from 'axios';
-import { ShopService } from './core/service/shop.service';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     Pi.authenticate(['username', 'wallet_address', 'payments'], (p) => console.log(p))
       .then(async (auth: AuthResult) => {
         try {
-          const response = await axios.post('http://localhost:8000/user/signin', {
+          const response = await axios.post('https://api-mapofpi.vercel.app/user/signin', {
             authResult: auth,
           });
           const { currentUser, token } = response.data;

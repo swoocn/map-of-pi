@@ -6,8 +6,9 @@ import { IShopData } from '../model/business';
 @Injectable({
   providedIn: 'root',
 })
+
 export class ShopService {
-  private baseUrl = 'http://localhost:8000/shops';
+  private baseUrl = 'https://api-mapofpi.vercel.app/shops';
   allShops: any[] = [];
 
   constructor(private currentUserService: CurrentUserService) {}
@@ -33,11 +34,11 @@ export class ShopService {
       phone: shopData.shopPhone,
       email: shopData.shopEmail,
       transactionEnabled: shopData.isPiPaymentEnabled,
+      coardinates: [-1.455, 34],
     };
     try {
       const response = await axios.post(`${this.baseUrl}/register`, { ...data }, this.getConfig());
       return response.data;
-      // console.log('user is registering shop : ', data);
     } catch (error) {
       throw new Error('Error registering shop: ');
     }

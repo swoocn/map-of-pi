@@ -1,14 +1,22 @@
 const { search } = require('../../src/controllers/searchController');
 
+const Shop = require('../../src/models/shopModel');
+const Product = require('../../src/models/productModel');
+
+// Mock Shop and Product models
+jest.mock('../../src/models/shopModel');
+jest.mock('../../src/models/productModel');
+
 describe('POST /search', () => {
     let req, res;
 
     beforeEach(() => {
         req = {
-            body: {
+            query: {
                 businessType: 'restaurant',
-                distance: 5,
-                priceRange: '$$'
+                priceRange: '5-10',
+                shopName: 'Example Shop',
+                productName: 'Example Product'
             }
         };
 
@@ -18,43 +26,41 @@ describe('POST /search', () => {
         };
     });
 
-    test('It should return filtered sellers based on criteria', async () => {
+    test('It should return filtered shops based on criteria', async () => {
+        // Mock the response of Shop.find() to return some sample shops
+        const sampleShops = [{ name: 'Example Shop 1' }, { name: 'Example Shop 2' }];
+        Shop.find.mockResolvedValue(sampleShops);
+
+        // Mock the response of Product.find() to return some sample products
+        const sampleProducts = [{ name: 'Product 1', shop: 'Example Shop 1' }, { name: 'Product 2', shop: 'Example Shop 2' }];
+        Product.find.mockResolvedValue(sampleProducts);
+
         await search(req, res);
+
         expect(res.status).toHaveBeenCalledWith(200);
         expect(res.json).toHaveBeenCalledWith({
-            sellers: expect.arrayContaining([
-                expect.objectContaining({
-                    name: 'Seller 1',
-                    type: 'restaurant'
-                })
-            ])
+            shops: sampleShops // Assuming shops is an array of objects
         });
-    });
+    }, 1000); // Increase timeout to 1 second for the sake of testing
 
-    test('It should return 404 if no sellers match the criteria', async () => {
-        req.body.businessType = 'non-existing-type';
+    test('It should return 404 if no shops match the criteria', async () => {
+        // Mock the response of Shop.find() to return an empty array
+        Shop.find.mockResolvedValue([]);
+
         await search(req, res);
+
         expect(res.status).toHaveBeenCalledWith(404);
-        expect(res.json).toHaveBeenCalledWith({
-            message: 'No sellers found matching the criteria.'
-        });
-    });
+        expect(res.json).toHaveBeenCalledWith({message: 'No shops found matching the criteria.'});
+    }, 1000);
 
     test('It should return 500 if an internal server error occurs', async () => {
-        // simulate an internal server error
+        // Mock an error in Shop.find() to simulate an internal server error
         const errorMessage = 'Internal server error';
-        jest.spyOn(console, 'log').mockImplementation(() => {});
-        jest.spyOn(res, 'status').mockImplementation(() => res);
-        jest.spyOn(res, 'json').mockImplementation(() => {});
-
-        // mocking the req.body to throw an error
-        req.body = null;
+        Shop.find.mockRejectedValue(new Error(errorMessage));
 
         await search(req, res);
 
         expect(res.status).toHaveBeenCalledWith(500);
-        expect(res.json).toHaveBeenCalledWith({
-            error: 'Internal server error'
-        });
-    });
+        expect(res.json).toHaveBeenCalledWith({error: 'Internal server error'});
+    }, 1000);
 });

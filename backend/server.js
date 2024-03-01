@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
+  origin: [process.env.FRONTEND_URL,process.env.MAP_OF_PI_URL2,process.env.MAP_OF_PI_URL1],
   credentials: true,
 };
 

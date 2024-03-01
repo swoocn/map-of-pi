@@ -1,37 +1,44 @@
-// TODO: add isAuthenticated middleware
-// TODO: replace sample data with actual data source
+const Shop = require("../models/shopModel");
+const Product = require("../models/productModel");
 
-// sample data for sellers
-const sellers = [
-    { id: 1, name: 'Seller 1', type: 'restaurant', distance: 5, priceRange: '$$', acceptsPiCoin: true },
-    { id: 2, name: 'Seller 2', type: 'clothing store', distance: 10, priceRange: '$$', acceptsPiCoin: true },
-];
-
-// endpoint for searching sellers
 const search = async (req, res) => {
     try {
-        // extract criteria from the request body
-        const { businessType, distance, priceRange } = req.body;
+        const { businessType, priceRange, shopName, productName } = req.query;
 
-        // filter sellers based on criteria (todo: replace with actual data source)
-        const filteredSellers = sellers.filter(seller => {
-            return (
-                seller.type.toLowerCase() === businessType.toLowerCase() &&
-                seller.distance <= distance &&
-                seller.priceRange === priceRange &&
-                seller.acceptsPiCoin
-            );
-        });
+        let shopQuery = {};
+        let productQuery = {};
 
-        if (filteredSellers.length > 0) {
-            console.log("We are here 200.");
-            return res.status(200).json({ sellers: filteredSellers });
-        } else {
-            console.log("We are here 404.");
-            return res.status(404).json({ message: "No sellers found matching the criteria." });
+        if (businessType != null) {
+            shopQuery.businessType = { $regex: new RegExp(businessType, "i") };
         }
+
+        if (shopName != null) {
+            shopQuery.name = { $regex: new RegExp(shopName, "i") };
+        }
+
+        if (productName != null) {
+            productQuery.name = { $regex: new RegExp(productName, "i") };
+        }
+
+        let shops = await Shop.find(shopQuery);
+
+        if (priceRange != null) {
+            const [minPrice, maxPrice] = priceRange.split("-");
+            const products = await Product.find({
+                ...productQuery,
+                price: { $gte: parseInt(minPrice), $lte: parseInt(maxPrice) }
+            });
+            const shopIds = products.map(product => product.shop);
+            shops = await Shop.find({ _id: { $in: shopIds } });
+        }
+        
+        if (shops.length === 0) {
+            return res.status(404).json({ message: 'No shops found matching the criteria.' });
+        }
+
+        res.status(200).json({ shops });
     } catch (error) {
-        console.log("Internal server error while searching sellers: " + error.message);
+        console.error("Internal server error while searching: " + error.message);
         return res.status(500).json({ error: "Internal server error" });
     }
 };
