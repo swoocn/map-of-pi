@@ -6,7 +6,6 @@ import { IShopData } from '../model/business';
 @Injectable({
   providedIn: 'root',
 })
-
 export class ShopService {
   private baseUrl = 'https://api-mapofpi.vercel.app/shops';
   allShops: any[] = [];
@@ -16,10 +15,12 @@ export class ShopService {
   private getConfig(): AxiosRequestConfig {
     const token = this.currentUserService.getToken();
     const config: AxiosRequestConfig = {};
+
+    config.headers = {
+      'Access-Control-Allow-Origin': 'https://mapofpi.com',
+    };
     if (token) {
-      config.headers = {
-        Authorization: `Bearer ${token}`,
-      };
+      config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   }
