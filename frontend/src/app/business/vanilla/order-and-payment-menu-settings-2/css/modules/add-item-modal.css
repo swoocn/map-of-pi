@@ -149,6 +149,8 @@
     background-color: var(--color-text-color);
     color: white;
     cursor: pointer;
+    background-color: #1d724b;
+    border: none;
 }
 
 #items-display-area {

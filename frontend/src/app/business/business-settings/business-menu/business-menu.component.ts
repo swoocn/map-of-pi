@@ -24,8 +24,11 @@ export class BusinessMenuComponent implements AfterViewInit {
   businessProductsForm: FormGroup;
 
   menuStatusLabel: string = 'on';
+  menuStatusLabelColor: string = '#000000';
   orderStatusLabel: string = 'off';
+  orderStatusLabelColor: string = 'gray';
   paymentStatusLabel: string = 'on';
+  paymentStatusLabelColor: string = '#000000';
   previewImageSrc: string | undefined;
   isPreviewImageVisible: boolean = false;
 
@@ -138,14 +141,17 @@ export class BusinessMenuComponent implements AfterViewInit {
     if (this.menuToggle && this.orderToggleDiv && this.paymentToggleDiv) {
       // Update menu toggle label
       this.menuStatusLabel = this.menuToggle.nativeElement.checked ? 'on' : 'off';
+      this.menuStatusLabelColor = this.menuToggle.nativeElement.checked ? '#000000' : 'gray';
 
       // Update order toggle label
       const orderToggleInput = this.orderToggleDiv.nativeElement.querySelector('input');
       this.orderStatusLabel = orderToggleInput ? (orderToggleInput.checked ? 'on' : 'off') : '';
+      this.orderStatusLabelColor = orderToggleInput ? (orderToggleInput.checked ? '#000000' : 'gray') : '';
 
       // Update payment toggle label
       const paymentToggleInput = this.paymentToggleDiv.nativeElement.querySelector('input');
       this.paymentStatusLabel = paymentToggleInput ? (paymentToggleInput.checked ? 'on' : 'off') : '';
+      this.paymentStatusLabelColor = paymentToggleInput ? (paymentToggleInput.checked ? '#000000' : 'gray') : '';
     }
   }
 

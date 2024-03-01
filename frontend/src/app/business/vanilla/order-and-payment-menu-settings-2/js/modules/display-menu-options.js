@@ -91,6 +91,12 @@ export default function displayMenuOptions() {
          menuStatusLabel.textContent = menuToggle.checked ? 'on' : 'off';
          orderStatusLabel.textContent = orderToggleDiv.querySelector('input').checked ? 'on' : 'off';
          paymentStatusLabel.textContent = paymentToggleDiv.querySelector('input').checked ? 'on' : 'off';
+         
+
+         // Update color based on the toggle state
+         menuStatusLabel.style.color = menuToggle.checked ? '#000000' : 'gray';
+         orderStatusLabel.style.color = orderToggleDiv.querySelector('input').checked ? '#000000' : 'gray';
+         paymentStatusLabel.style.color = paymentToggleDiv.querySelector('input').checked ? '#000000' : 'gray';
       }
 
       // Initialize labels based on the current state
