@@ -1,29 +1,25 @@
 <div class="px-4 min-h-screen max-[124px]:">
-  <img
-    src="assets/shop1.jpg_large"
-    alt="business image here"
-    class="w-full h-60 rounded-md mb-1" />
-  <div class="text-lg font-semibold pt-1 pb-2">Soleil Shop here</div>
+  <img src="assets/shop1.jpg_large" alt="business image here" class="w-full h-60 rounded-md mb-1" />
+  <div class="text-lg font-semibold pt-1 pb-2">{{ shop?.name }}</div>
   <p class="text-gray-700 mb-4">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa id expedita
-    beatae placeat quaerat, provident fugit est sunt ex dolore blanditiis odit
-    pariatur sequi non minima. Assumenda doloribus rerum nemo.
+    {{ shop.description }}
   </p>
 
-  <h3
-    class="text-lg font-semibold mb-4 border-b border-gray-700 pb-2 flex justify-between items-center">
+  <div class="bg-blue-300 text-white py-2 rounded-md">
+    owner id is {{ shop?.owner_uid }}
+  </div>
+  <div>currntUser uid is {{ currentuser?.uid }}</div>
+  <div>currntUser shops {{ currentuser?.shops.length }}</div>
+
+  <h3 class="text-lg font-semibold mb-4 border-b border-gray-700 pb-2 flex justify-between items-center">
     <div>My products</div>
     <button class="bg-green-300 px-3 rounded-md" (click)="goToBusiness()">
       Add new product
     </button>
   </h3>
 
-  <div
-    class="flex justify-between gap-2 items-center shadow-md p-3 rounded-md mb-2">
-    <img
-      src="assets/products/shoes2.jpg"
-      alt="products image"
-      class="w-16 h-auto rounded-md" />
+  <div class="flex justify-between gap-2 items-center shadow-md p-3 rounded-md mb-2">
+    <img src="assets/products/shoes2.jpg" alt="products image" class="w-16 h-auto rounded-md" />
     <div>
       <div class="font-semibold">Product name</div>
       <div class="text-gray-400 text-[14px]">
@@ -32,17 +28,18 @@
       <div class="text-green-600">24 PI</div>
     </div>
 
-    <button
-      class="bg-red-500 hover:bg-green-600 px-5 py-1 rounded-md text-white whitespace-nowrap">
+    @if (currentuser.uid === shop.owner_uid) {
+    <button class="bg-green-500 hover:bg-green-600 px-5 py-1 rounded-md text-white whitespace-nowrap">
+      Edit Product
+    </button>
+    } @else {
+    <button class="bg-red-500 hover:bg-green-600 px-5 py-1 rounded-md text-white whitespace-nowrap">
       Buy Now
     </button>
+    }
   </div>
-  <div
-    class="flex justify-between gap-2 items-center shadow-md p-3 rounded-md mb-2">
-    <img
-      src="assets/products/shoes3.webp"
-      alt="products image"
-      class="w-16 h-auto rounded-md" />
+  <div class="flex justify-between gap-2 items-center shadow-md p-3 rounded-md mb-2">
+    <img src="assets/products/shoes3.webp" alt="products image" class="w-16 h-auto rounded-md" />
     <div>
       <div class="font-semibold">Product name</div>
       <div class="text-gray-400 text-[14px]">
@@ -51,17 +48,18 @@
       <div class="text-green-600">24 PI</div>
     </div>
 
-    <button
-      class="bg-red-500 hover:bg-green-600 px-5 py-1 rounded-md text-white whitespace-nowrap">
+    @if (currentuser.uid === shop.owner_uid) {
+    <button class="bg-green-500 hover:bg-green-600 px-5 py-1 rounded-md text-white whitespace-nowrap">
+      Edit Product
+    </button>
+    } @else {
+    <button class="bg-red-500 hover:bg-green-600 px-5 py-1 rounded-md text-white whitespace-nowrap">
       Buy Now
     </button>
+    }
   </div>
-  <div
-    class="flex justify-between gap-2 items-center shadow-md p-3 rounded-md mb-2">
-    <img
-      src="assets/products/shoes1.jpg"
-      alt="products image"
-      class="w-16 h-auto rounded-md" />
+  <div class="flex justify-between gap-2 items-center shadow-md p-3 rounded-md mb-2">
+    <img src="assets/products/shoes1.jpg" alt="products image" class="w-16 h-auto rounded-md" />
     <div>
       <div class="font-semibold">Product name</div>
       <div class="text-gray-400 text-[14px]">
@@ -70,9 +68,14 @@
       <div class="text-green-600">24 PI</div>
     </div>
 
-    <button
-      class="bg-red-500 hover:bg-green-600 px-5 py-1 rounded-md text-white whitespace-nowrap">
+    @if (currentuser.uid === shop.owner_uid) {
+    <button class="bg-green-500 hover:bg-green-600 px-5 py-1 rounded-md text-white whitespace-nowrap">
+      Edit Product
+    </button>
+    } @else {
+    <button class="bg-red-500 hover:bg-green-600 px-5 py-1 rounded-md text-white whitespace-nowrap">
       Buy Now
     </button>
+    }
   </div>
 </div>

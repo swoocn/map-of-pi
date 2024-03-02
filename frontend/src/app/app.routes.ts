@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { AddProductComponent } from './business/manage-business/add-product/add-product.component';
 import { BusinessPhotosComponent } from './business/business-settings/business-photos/business-photos.component';
+import { ManageBusinessComponent } from './business/manage-business/manage-business.component';
 
 export const routes: Routes = [
   {
@@ -32,5 +33,9 @@ export const routes: Routes = [
   {
     path: 'business-photos',
     component: BusinessPhotosComponent,
+  },
+  {
+    path: 'manage-business/:id',
+    component: ManageBusinessComponent,
   },
 ];

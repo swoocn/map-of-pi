@@ -7,12 +7,16 @@ import { AxiosRequestConfig } from 'axios';
 
 export class CurrentUserService {
   private currentUser: any;
+  private currentUserKey: string = 'currentUser';
   private tokenKey: string = 'currentUserAccessToken';
   private token: string | null = null;
-
+  
   constructor() {
-    // Retrieve token from local storage on service initialization
     this.token = localStorage.getItem(this.tokenKey);
+    const storedUser = localStorage.getItem(this.currentUserKey);
+    if (storedUser) {
+      this.currentUser = JSON.parse(storedUser);
+    }
   }
 
   getToken(): string | null {
@@ -22,12 +26,12 @@ export class CurrentUserService {
   setToken(token: string): void {
     this.token = token;
     localStorage.setItem(this.tokenKey, token);
-    console.log('token from backedn : ' + token);
+    console.log('Token from backend : ' + token);
   }
 
   clearToken(): void {
     this.token = null;
-    localStorage.removeItem(this.tokenKey);
+    localStorage.removeItem(this.currentUserKey); // Remove user data when token is cleared
   }
 
   getCurrentUser(): any {
@@ -36,15 +40,17 @@ export class CurrentUserService {
 
   setCurrentUser(user: any): void {
     this.currentUser = user;
-    console.log('from current user : ', this.currentUser);
+    localStorage.setItem(this.currentUserKey, JSON.stringify(user)); // Store user data in localStorage
+    console.log('From current user : ', this.currentUser);
   }
 
   getConfig(): AxiosRequestConfig {
     const config: AxiosRequestConfig = {};
-
-    config.headers = {
-      'Access-Control-Allow-Origin': 'https://mapofpi.com',
-    };
+    if (this.token) {
+      config.headers = {
+        Authorization: `Bearer ${this.token}`,
+      };
+    }
     return config;
   }
 }

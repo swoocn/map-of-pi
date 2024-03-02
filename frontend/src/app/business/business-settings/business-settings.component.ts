@@ -27,7 +27,7 @@ export class BusinessSettingsComponent {
     shopAddress: new FormControl('', Validators.required),
     shopPhone: new FormControl('', [Validators.required, Validators.minLength(10)]),
     shopEmail: new FormControl('', [Validators.required, Validators.email]),
-    shopImage: new FormControl('', Validators.required),
+    // shopImage: new FormControl(''),
     shopDescription: new FormControl('', Validators.required),
   });
 
@@ -36,31 +36,30 @@ export class BusinessSettingsComponent {
     private shopServices: ShopService,
   ) {}
 
-  onFileChange(event: any) {
-    if (event.target.files) {
-      const reader = new FileReader();
-      reader.readAsDataURL(event.target.files[0]);
+  // onFileChange(event: any) {
+  //   if (event.target.files) {
+  //     const reader = new FileReader();
+  //     reader.readAsDataURL(event.target.files[0]);
 
-      reader.onload = (event: any) => {
-        this.registerShopForm.value.shopImage = event.target.result;
-      };
-    }
-  }
+  //     reader.onload = (event: any) => {
+  //       this.registerShopForm.value.shopImage = event.target.result;
+  //     };
+  //   }
+  // }
 
   send(): void {
     if (this.registerShopForm.valid) {
       this.shopServices.registerShop(this.registerShopForm.value as any).then((response) => {
-        // const { newShop, currentUser } = response.data;
-        console.log('reponse from server : ' + JSON.stringify(response));
-        // if (response.ok) {
-        //   this.snackService.showMessage('Business successfully registered');
-        // } else {
-        //   this.snackService.showError('Failed to register business');
-        //   console.log(response);
-        // }
+        // console.log('reponse from server : ' + JSON.stringify(response));
+        if (response.success) {
+          this.snackService.showMessage('Business successfully registered');
+          this.router.navigate(['manage-business', response.data._id]);
+          this.snackService.showMessage(`Redirecting to ${response.data.name} shop`);
+        } else {
+          this.snackService.showError('Failed to register business');
+          console.log(response);
+        }
       });
-
-      // this.router.navigate(['business', 'manage-business']);
     } else {
       this.registerShopForm.markAllAsTouched();
       console.log('Invalid data');

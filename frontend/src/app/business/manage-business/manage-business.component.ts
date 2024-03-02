@@ -1,5 +1,7 @@
-import { Component, inject } from '@angular/core';
-import { Router, RouterLink, RouterModule } from '@angular/router';
+import { Component, OnInit, inject } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink, RouterModule } from '@angular/router';
+import { ShopService } from '../../core/service/shop.service';
+import { CurrentUserService } from '../../core/service/current-user.service';
 
 @Component({
   selector: 'app-manage-business',
@@ -8,11 +10,37 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
   templateUrl: './manage-business.component.html',
   styleUrl: './manage-business.component.scss',
 })
-export class ManageBusinessComponent {
+
+export class ManageBusinessComponent implements OnInit {
+  currentuser: any;
+  shopId: string = '';
+  shop: any;
+  params: ActivatedRoute = inject(ActivatedRoute);
   router: Router = inject(Router);
-  constructor() {}
+
+  constructor(
+    private shopServices: ShopService,
+    private currentUserService: CurrentUserService,
+  ) {
+    this.shopId = this.params.snapshot.params['id'];
+    // this.currentuser = this.currentUserService.getCurrentUser();
+  }
 
   goToBusiness() {
     this.router.navigate(['add-product']);
+  }
+
+  ngOnInit(): void {
+    this.shopServices
+      .getShop(this.shopId)
+      .then((response) => {
+        // console.log('from response in manage busines : ', response);
+        this.shop = response.data;
+        this.currentuser = this.currentUserService.getCurrentUser();
+        console.log(' here is the real shop : ', this.shop);
+      })
+      .catch((err) => {
+        console.log(' error while setting shop : ', err);
+      });
   }
 }

@@ -6,7 +6,8 @@
         <input type="text" formControlName="shopName" id="business-name" name="business_name"
           class="business-registration__input" placeholder="Enter the name of your business" required />
         <span class="text-red-500" *ngIf="
-          registerShopForm.get('shopName')?.invalid && registerShopForm.get('shopName')?.touched
+            registerShopForm.get('shopName')?.invalid &&
+            registerShopForm.get('shopName')?.touched
           ">Business Name is required</span>
       </div>
       <div class="business-registration__field mt-2">
@@ -14,7 +15,8 @@
         <input type="text" formControlName="shopDescription" id="business-description" name="business_description"
           class="business-registration__input" placeholder="Enter a simple description about your business" required />
         <span class="text-red-500" *ngIf="
-            registerShopForm.get('shopDescription')?.invalid && registerShopForm.get('shopDescription')?.touched
+            registerShopForm.get('shopDescription')?.invalid &&
+            registerShopForm.get('shopDescription')?.touched
           ">Business Description is required</span>
       </div>
       <div class="business-registration__field business-registration__field-middle">
@@ -26,7 +28,8 @@
           </option>
         </select>
         <span class="text-red-500" *ngIf="
-            registerShopForm.get('shopType')?.invalid && registerShopForm.get('shopType')?.touched
+            registerShopForm.get('shopType')?.invalid &&
+            registerShopForm.get('shopType')?.touched
           ">Business Type is required</span>
       </div>
       <div class="business-registration__field business-registration__field-bottom">
@@ -34,10 +37,11 @@
         <input type="text" id="location" name="location" formControlName="shopAddress"
           class="business-registration__input" placeholder="Enter the location of your business" required />
         <span class="text-red-500" *ngIf="
-            registerShopForm.get('shopAddress')?.invalid && registerShopForm.get('shopAddress')?.touched
+            registerShopForm.get('shopAddress')?.invalid &&
+            registerShopForm.get('shopAddress')?.touched
           ">Business address is required</span>
       </div>
-      <div class="business-registration__field business-registration__field-bottom">
+      <!-- <div class="business-registration__field business-registration__field-bottom">
         <label for="" class="business-registration__label"></label>
         <label for="image"
           class="business-registration__label flex gap-5 mb-3 items-center bg-blue-200 p-3 rounded-md"><img
@@ -52,13 +56,14 @@
             registerShopForm.get('shopImage')?.invalid &&
             registerShopForm.get('shopImage')?.touched
           ">Business must have an associated image</span>
-      </div>
+      </div> -->
       <div class="business-registration__field business-registration__field-bottom">
         <label for="phone" class="business-registration__label">Business Phone Number</label>
         <input type="text" id="phone" name="phone" formControlName="shopPhone" class="business-registration__input"
           placeholder="+25 078 244 3651" required />
         <span class="text-red-500" *ngIf="
-            registerShopForm.get('shopPhone')?.invalid && registerShopForm.get('shopPhone')?.touched
+            registerShopForm.get('shopPhone')?.invalid &&
+            registerShopForm.get('shopPhone')?.touched
           ">Business phone number is required</span>
       </div>
       <div class="business-registration__field business-registration__field-bottom">
@@ -66,19 +71,28 @@
         <input type="email" id="email" name="email" formControlName="shopEmail" class="business-registration__input"
           placeholder="youremail@gmail.com" required />
         <span class="text-red-500" *ngIf="
-            registerShopForm.get('shopEmail')?.invalid && registerShopForm.get('shopEmail')?.touched
-          ">A valid business email address is required</span>
+          registerShopForm.get('shopEmail')?.invalid &&
+          registerShopForm.get('shopEmail')?.touched
+        ">A valid business email address is required</span>
       </div>
       <nav class="business-registration__navigation">
         <ul class="business-registration__list">
-          <li class="business-registration__item"><a (click)="displayPopup()"
-              class="business-registration__link">Menu<i class="fa-solid fa-arrow-right"></i></a></li>
-          <li class="business-registration__item"><a (click)="displayPopup()"
-              class="business-registration__link">Loyalty Stamps<i class="fa-solid fa-arrow-right"></i></a></li>
-          <li class="business-registration__item"><a (click)="displayPopup()" 
-              class="business-registration__link">Business Photos<i class="fa-solid fa-arrow-right"></i></a></li>
-          <li class="business-registration__item"><a (click)="displayPopup()"
-              class="business-registration__link">Get QR code<i class="fa-solid fa-arrow-right"></i></a></li>
+          <li class="business-registration__item">
+            <a (click)="displayPopup()" class="business-registration__link">Menu<i
+                class="fa-solid fa-arrow-right"></i></a>
+          </li>
+          <li class="business-registration__item">
+            <a (click)="displayPopup()" class="business-registration__link">Loyalty Stamps<i
+                class="fa-solid fa-arrow-right"></i></a>
+          </li>
+          <li class="business-registration__item">
+            <a (click)="displayPopup()" class="business-registration__link">Business Photos<i
+                class="fa-solid fa-arrow-right"></i></a>
+          </li>
+          <li class="business-registration__item">
+            <a (click)="displayPopup()" class="business-registration__link">Get QR code<i
+                class="fa-solid fa-arrow-right"></i></a>
+          </li>
         </ul>
       </nav>
       <div class="business-registration__confirmation mt-5">
@@ -93,7 +107,7 @@
     <div class="popup">
       <span class="close" (click)="hidePopup()">&times;</span>
       <i class="fas fa-tools fa-3x under-construction-icon"></i>
-      <br/>
+      <br />
       <p>This functionality is not fully built yet.</p>
       <button class="btn-ok" (click)="hidePopup()">OK</button>
     </div>

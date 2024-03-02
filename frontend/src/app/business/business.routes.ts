@@ -36,10 +36,6 @@ export const BUSINESS_ROUTES: Routes = [
     loadComponent: () => import('./business-settings/qr-code/qr-code.component').then((m) => m.QrCodeComponent),
   },
   {
-    path: 'manage-business',
-    loadComponent: () => import('./manage-business/manage-business.component').then((m) => m.ManageBusinessComponent),
-  },
-  {
     path: 'add-product',
     component: AddProductComponent,
   },
