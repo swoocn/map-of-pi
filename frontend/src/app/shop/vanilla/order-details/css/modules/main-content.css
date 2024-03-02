@@ -60,13 +60,24 @@ body {
 }
   
 .cart-content__order-button {
-    background-color: var(--color-text-color);
-    color: #fff;
     border: none;
     padding: 0.8rem 3rem;
     font-size: 0.8rem;
     cursor: pointer;
+    background-color: #1d724b;
+    color: #ffffff;
+    font-size: 0.9rem;
     border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.cart-content__order-button:active {
+    background-color: #164c36; 
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
   
 @media (max-width: 1000px) {

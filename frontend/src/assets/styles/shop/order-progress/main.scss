@@ -9,7 +9,7 @@ body {
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    max-width: 250px;
+    max-width: 200px;
 }
 
 .cart-content__section {
@@ -108,13 +108,13 @@ body {
         width: 18px;
         height: 18px;
     }
-
 }
 
+/* Responsiveness for larger screens */
 @media (min-width: 768px) {
     .cart-content {
         position: absolute;
-        top: 38%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         min-width: 250px;

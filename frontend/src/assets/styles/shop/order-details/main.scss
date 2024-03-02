@@ -1,9 +1,10 @@
 body {
     background-color: var(--color-background-color);
 }
+
 .cart-content {
     margin: 1rem;
-    padding: 1rem; 
+    padding: 1rem;
     font-family: var(--font-family-main);
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -13,8 +14,8 @@ body {
 
 .cart-content__business-name {
     color: var(--color-text-color);
-    font-size: 1.5rem; 
-    margin-bottom: 0.5rem; 
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .cart-content__order-message {
@@ -23,8 +24,8 @@ body {
 
 .cart-content__cart-item {
     display: flex;
-    align-items: center; 
-    gap: 0.5rem; 
+    align-items: center;
+    gap: 0.5rem;
     font-weight: bold;
     color: var(--color-text-color);
 }
@@ -47,7 +48,7 @@ body {
 
 .cart-content__total-price,
 .cart-content__total-value {
-    font-size: 1rem; 
+    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -60,13 +61,23 @@ body {
 }
 
 .cart-content__order-button {
-    background-color: var(--color-text-color);
-    color: #fff;
+    background-color: #1d724b;
+    color: #ffffff;
+    font-size: 0.9rem;
     border: none;
-    padding: 0.8rem 3rem;
-    font-size: 0.8rem;
-    cursor: pointer;
     border-radius: 10px;
+    padding: 0.8rem 3rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cart-content__order-button:active {
+    background-color: #164c36;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 1000px) {
@@ -75,7 +86,7 @@ body {
     }
 
     .cart-content__order-message {
-    font-size: 1.1rem;
+        font-size: 1.1rem;
     }
 
     .cart-content__description {
@@ -90,7 +101,7 @@ body {
         font-size: 0.8rem;
     }
 
-    .cart-content__pi-icon{
+    .cart-content__pi-icon {
         width: 18px;
         height: 18px;
     }
@@ -103,5 +114,5 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         min-width: 400px;
-    } 
+    }
 }

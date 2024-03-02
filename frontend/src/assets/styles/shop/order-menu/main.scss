@@ -8,18 +8,21 @@
     margin-bottom: 0;
 }
 
-.order-menu__type, .order-menu__location {
+.order-menu__type,
+.order-menu__location {
     display: flex;
     align-items: center;
     column-gap: 10px;
 }
 
-.order-menu__type img, .order-menu__location img {
+.order-menu__type img,
+.order-menu__location img {
     height: 20px;
     width: auto;
 }
 
-.order-menu__product-text, .order-menu__location-address {
+.order-menu__product-text,
+.order-menu__location-address {
     font-size: 0.8rem;
     margin: 0;
     padding: 0;
@@ -40,7 +43,8 @@
 
 /* Menu switch section*/
 .order-menu__switch-section {
-    width: 100%;
+    max-width: 300px;
+    max-width: 300px;
     background-color: #ffffff;
     position: relative;
     border-radius: 10px;
@@ -50,7 +54,7 @@
 
 .order-menu__switch-buttons {
     display: flex;
-    /* width: 100%; */   
+    /* width: 100%; */
 }
 
 .order-menu__switch-button {
@@ -60,10 +64,12 @@
     border: none;
     outline: none;
     cursor: pointer;
-    background-color: transparent; /* Buttons are transparent */
+    background-color: transparent;
+    /* Buttons are transparent */
     transition: background-color 0.3s;
     position: relative;
-    z-index: 2; /* Make sure buttons are above the colored pseudo-element */
+    z-index: 2;
+    /* Make sure buttons are above the colored pseudo-element */
 }
 
 .order-menu__switch-section::before {
@@ -76,20 +82,19 @@
     border-radius: 10px;
     transition: left 0.3s;
     z-index: 1;
-    background-color: var(--color-highlight-color); 
+    background-color: var(--color-highlight-color);
 }
 
 .order-menu__switch-button-text-stamps {
-    color: #ffffff; 
+    color: #ffffff;
 }
 
 /* Section for order payment message */
 .order-menu__highlight {
     position: relative;
-    width: calc(100vw - 7px);
-    max-width: 350px;
+    max-width: 300px;
+    max-width: 300px;
     height: 30px;
-    left: -15px;
     margin-top: 1.2rem;
     background-color: #FAD09E;
 }
@@ -102,9 +107,13 @@
 }
 
 /* Section for menu products and images */
+.order-menu__products {
+    max-width: 300px;
+}
+
 .order-menu__product-info {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
 }
 
@@ -129,7 +138,7 @@
     display: flex;
 }
 
-.order-menu__product-image img{
+.order-menu__product-image img {
     width: 64px;
     height: 64px;
     object-fit: cover;
@@ -147,13 +156,13 @@
     position: relative;
     bottom: 2rem;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: flex-end;
     margin-bottom: -1.5rem;
 }
 
-.order-menu__quantity-button--decrease, 
-.order-menu__quantity-input, 
+.order-menu__quantity-button--decrease,
+.order-menu__quantity-input,
 .order-menu__quantity-button--increase {
     margin: 3px;
 }
@@ -179,18 +188,18 @@
     width: 40px;
     height: 25px;
     border-radius: 10px;
-    background-color: var(--color-text-color);
+    background-color: var(--color-highlight-color);
     color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    border: 1px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: none;
 }
 
 .order-menu__add-button:hover {
-    background-color: var(--color-highlight-color);
-    transform: translate(-2px);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    background-color: #164c36;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .order-menu_add-button-text {
@@ -207,7 +216,16 @@
 }
 
 .order-menu__delete-buttons {
-
     width: 30px;
     height: auto;
+}
+
+/* Responsiveness for larger screens */
+@media (min-width: 576px) {
+    .order-menu__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -46%);
+    }
 }

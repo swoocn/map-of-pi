@@ -86,8 +86,8 @@ The Map of Pi Front End Project was generated with [Angular CLI](https://github.
 - Philip Jennings
 
 ### Marketing
-- Joseph Ciccone 
 - Bonnie Ford
+- Joseph Ciccone 
 
 ### Solution Design / UX
 - Femma Ashraf
@@ -98,12 +98,11 @@ The Map of Pi Front End Project was generated with [Angular CLI](https://github.
 - Danny Lee
 
 ### Frontend Developers
-- Zoltan Magyar
 - Darin Hajou
+- Zoltan Magyar
 
 ### Backend Developers
 - Rokundo Soleil
-- Dhaval Bhatti
 
 ## <a name='contributions'></a>Contributions
 

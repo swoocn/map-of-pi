@@ -4,129 +4,96 @@ body {
 
 .cart-content {
     margin: 1rem;
-    padding: 1rem; /* Padding around the content */
+    padding: 1rem;
     font-family: var(--font-family-main);
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds some shadow for depth */
-    max-width: 400px;
-    border-radius: 10px;
-}
-
-.cart-content__section {
-    align-self: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cart-content__business-name {
     color: var(--color-text-color);
-    font-size: 1.5rem; /* Larger font size for business name */
-    font-weight: bold;
-    margin-bottom: 0.5rem; /* Space after the business name */
+    font-size: 1rem;
 }
-  
+
 .cart-content__order-message {
     margin-bottom: 0.3rem;
 }
 
 .cart-content__cart-item {
     display: flex;
-    align-items: center; /* Aligns the icon and text vertically */
-    gap: 0.5rem; /* Space between the icon and text */
+    align-items: center;
+    gap: 0.5rem;
     font-weight: bold;
     color: var(--color-text-color);
 }
 
 .cart-content__dish-icon {
-    width: 24px;
+    width: 18px;
     height: auto;
 }
 
 .cart-content__description {
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .cart-content__prep-time {
     background-color: #FAD09E;
-    padding: 1rem;
+    padding: 0.5rem;
     color: var(--color-text-color);
-    margin-top: 2rem;
-    font-size: 0.875rem;
+    margin-top: 1rem;
+    font-size: 0.6rem;
     font-weight: 600;
     text-align: center;
 }
-  
+
 .cart-content__total-label {
-    margin-top: 5rem;
+    margin-top: 3rem;
     display: flex;
+    justify-content: space-between;
     padding: 1rem 0;
     color: var(--color-text-color);
 }
-  
+
 .cart-content__total-price,
 .cart-content__total-value {
-    font-size: 1rem; /* Font size for total label and value */
-    font-weight: bold; /* Makes the text bold */
-}
-
-.cart-content__total-value {
-    margin-left: 6.5rem;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .cart-content__pi-icon {
-    margin-left: 1rem;
+    position: relative;
+    right: 3rem;
+    width: 18px;
+    height: 18px;
 }
-  
+
 .cart-content__order-button {
-    background-color: var(--color-text-color); /* Example button color */
-    color: #fff; /* Text color for the button */
-    border: none;
-    padding: 0.8rem 4rem;
-    font-size: 0.8rem;
-    cursor: pointer;
+    width: 50%;
+    padding: 0.7rem;
+    background-color: #1d724b;
+    color: #ffffff;
+    font-size: 0.9rem;
     border-radius: 10px;
-}
-  
-/* Add any necessary responsive styles */
-@media (max-width: 1000px) {
-    .cart-content__business-name {
-      font-size: 1rem;
-    }
-    .cart-content__dish-icon {
-        height: 20px;
-        width: 20px;
-    }
-    .cart-content__description {
-        font-size: 0.7rem;
-    }
-
-    .cart-content__prep-time {
-        font-size: 0.7rem;
-    }
-
-    .cart-content__order-message {
-        font-size: 1.1rem;
-        }
-
-    .cart-content__total-price {
-        font-size: 0.8rem;
-    }
-
-    .cart-content__total-value {
-        font-size: 0.8rem;
-    }
-
-    .cart-content__pi-icon{
-        width: 18px;
-        height: 18px;
-    }
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-@media (min-width: 1000px) {
+.cart-content__order-button:active {
+    background-color: #164c36;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive styles for larger screens*/
+@media (min-width: 576px) {
     .cart-content {
-        position: absolute;
+        position: relative;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        min-width: 400px;
-    } 
+        transform: translate(-50%);
+        width: 300px;
+    }
 }
-  

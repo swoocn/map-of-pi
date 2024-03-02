@@ -49,7 +49,7 @@
     padding: 1rem;
     margin-bottom: 1.5rem;
     border-radius: 10px;
-    background-color: var(--color-highlight-color);
+    background-color: #ffc153;
 }
 
 .business-registration__link {
@@ -62,14 +62,23 @@
 
 .business-registration__button {
     width: 100%;
-    padding: 1rem;
-    border-radius: 10px;
-    background-color: var(--color-text-color);
+    padding: 0.7rem;
+    background-color: #1d724b;
     color: #ffffff;
+    font-size: 0.9rem;
+    padding: 0.7rem;
+    background-color: #1d724b;
+    color: #ffffff;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-main {
-    max-width: 400px;
-    margin: auto;
-  }
+.business-registration__button:active {
+    background-color: #164c36; 
+}
   

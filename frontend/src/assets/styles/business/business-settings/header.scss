@@ -27,7 +27,7 @@
 }
 
 .business-registration-header__brand {
-    display: flex; /* Flexbox to align logo and app name */
+    display: flex;
     justify-content: center; 
     align-items: center;
     font-size: 1rem;
@@ -35,7 +35,7 @@
 }
   
 .business-registration-header__title {
-    margin-top: 2rem; /* Space between app name and title */
+    margin-top: 2rem;
     line-height: 24px;
     font-size: 1.125rem;
     font-weight: 600;
