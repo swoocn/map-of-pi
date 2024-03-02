@@ -16,9 +16,33 @@ mat-toolbar {
   align-items: center;
 }
 
-.hovered-img {
-  max-width: 100%;
-  max-height: 100%;
-  transition: all 1s ease;
-  transform: scale(5);
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+#logo-img {
+  transition: transform 0.3s ease;
+}
+
+.text-container {
+  display: none;
+  position: absolute;
+  top: 65%;
+  left: 100%;
+  transform: translate(-100%, -50%);
+  padding: 10px;
+  transition: left 0.3s ease, opacity 1s ease 1s;
+  outline: none;
+  cursor: help;
+}
+
+.image-container:hover #logo-img {
+  transform: translateX(-90px);
+}
+
+.image-container:hover .text-container {
+  display: block;
+  left: calc(100% + 10px);
+  opacity: 1;
 }

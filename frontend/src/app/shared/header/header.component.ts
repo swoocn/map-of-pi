@@ -40,13 +40,9 @@ export class HeaderComponent {
 
   onMouseEnter() {
     this.isHovered = true;
-    // change the image
-    this.imageUrl = this.hoveredImageUrl;
   }
 
   onMouseLeave() {
     this.isHovered = false;
-    // reset the image
-    this.imageUrl = 'assets/images/logo.svg';
   }
 }
