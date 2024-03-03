@@ -29,12 +29,21 @@
         "BUSINESS_PHONE_NUMBER": "输入您的业务电话号码",
         "BUSINESS_EMAIL_ADDRESS": "输入您的业务邮箱地址"
       },
+      "VALIDATIONS": {
+        "BUSINESS_NAME": "需要企业名称",
+        "BUSINESS_DESCRIPTION": "需要企业描述",
+        "BUSINESS_TYPE": "需要企业类型",
+        "BUSINESS_LOCATION": "需要企业地址",
+        "BUSINESS_PHONE_NUMBER": "需要企业电话号码",
+        "BUSINESS_EMAIL_ADDRESS": "需要企业电子邮件地址"
+      },
       "BUTTONS": {
         "MENU": "菜单",
         "LOYALTY_STAMPS": "忠诚印记",
         "BUSINESS_PHOTOS": "商家照片",
         "QR_CODE": "获取QR码",
-        "CONFIRM": "确认业务设置"
+        "CONFIRM": "确认业务设置",
+        "UNDER_CONSTRUCTION": "此功能尚未完全构建"
       }
     }
   },

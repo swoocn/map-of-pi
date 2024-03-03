@@ -29,12 +29,21 @@
         "BUSINESS_PHONE_NUMBER": "Ingrese el número de teléfono de su negocio",
         "BUSINESS_EMAIL_ADDRESS": "Ingrese la dirección de correo electrónico de su negocio"
       },
+      "VALIDATIONS": {
+        "BUSINESS_NAME": "El nombre del negocio es obligatorio",
+        "BUSINESS_DESCRIPTION": "La descripción del negocio es obligatoria",
+        "BUSINESS_TYPE": "El tipo de negocio es obligatorio",
+        "BUSINESS_LOCATION": "La dirección del negocio es obligatoria",
+        "BUSINESS_PHONE_NUMBER": "El número de teléfono del negocio es obligatorio",
+        "BUSINESS_EMAIL_ADDRESS": "La dirección de correo electrónico del negocio es obligatoria"
+      },
       "BUTTONS": {
         "MENU": "Menú",
         "LOYALTY_STAMPS": "Sellos de lealtad",
         "BUSINESS_PHOTOS": "Fotos del negocio",
         "QR_CODE": "Obtener código QR",
-        "CONFIRM": "Confirmar configuración del negocio"
+        "CONFIRM": "Confirmar configuración del negocio",
+        "UNDER_CONSTRUCTION": "Esta funcionalidad aún no está completamente desarrollada"
       }
     }
   },

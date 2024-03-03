@@ -29,12 +29,21 @@
         "BUSINESS_PHONE_NUMBER": "비즈니스 전화번호를 입력하세요",
         "BUSINESS_EMAIL_ADDRESS": "비즈니스 이메일 주소를 입력하세요"
       },
+      "VALIDATIONS": {
+        "BUSINESS_NAME": "사업 이름이 필요합니다",
+        "BUSINESS_DESCRIPTION": "사업 설명이 필요합니다",
+        "BUSINESS_TYPE": "사업 유형이 필요합니다",
+        "BUSINESS_LOCATION": "사업 주소가 필요합니다",
+        "BUSINESS_PHONE_NUMBER": "사업 전화 번호가 필요합니다",
+        "BUSINESS_EMAIL_ADDRESS": "사업 이메일 주소가 필요합니다"
+      },
       "BUTTONS": {
         "MENU": "메뉴",
         "LOYALTY_STAMPS": "충성 스탬프",
         "BUSINESS_PHOTOS": "비즈니스 사진",
         "QR_CODE": "QR 코드 가져오기",
-        "CONFIRM": "비즈니스 설정 확인"
+        "CONFIRM": "비즈니스 설정 확인",
+        "UNDER_CONSTRUCTION": "이 기능은 아직 완전히 구현되지 않았습니다"
       }
     }
   },

@@ -29,12 +29,21 @@
         "BUSINESS_PHONE_NUMBER": "Adja meg üzletének telefonszámát",
         "BUSINESS_EMAIL_ADDRESS": "Adja meg üzletének e-mail címét"
       },
+      "VALIDATIONS": {
+        "BUSINESS_NAME": "A vállalkozás neve kötelező",
+        "BUSINESS_DESCRIPTION": "A vállalkozás leírása kötelező",
+        "BUSINESS_TYPE": "A vállalkozás típusa kötelező",
+        "BUSINESS_LOCATION": "A vállalkozás címe kötelező",
+        "BUSINESS_PHONE_NUMBER": "A vállalkozás telefonszáma kötelező",
+        "BUSINESS_EMAIL_ADDRESS": "A vállalkozás e-mail címe kötelező"
+      },
       "BUTTONS": {
         "MENU": "Menü",
         "LOYALTY_STAMPS": "Hűségbélyegek",
         "BUSINESS_PHOTOS": "Üzleti fotók",
         "QR_CODE": "QR-kód beszerzése",
-        "CONFIRM": "Üzleti beállítások megerősítése"
+        "CONFIRM": "Üzleti beállítások megerősítése",
+        "UNDER_CONSTRUCTION": "Ez a funkcionalitás még nincs teljesen elkészítve"
       }
     }
   },

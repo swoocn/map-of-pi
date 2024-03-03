@@ -29,12 +29,21 @@
         "BUSINESS_PHONE_NUMBER": "ビジネスの電話番号を入力してください",
         "BUSINESS_EMAIL_ADDRESS": "ビジネスのメールアドレスを入力してください"
       },
+      "VALIDATIONS": {
+        "BUSINESS_NAME": "事業名が必要です",
+        "BUSINESS_DESCRIPTION": "事業の説明が必要です",
+        "BUSINESS_TYPE": "事業タイプが必要です",
+        "BUSINESS_LOCATION": "事業所の住所が必要です",
+        "BUSINESS_PHONE_NUMBER": "事業所の電話番号が必要です",
+        "BUSINESS_EMAIL_ADDRESS": "事業所のメールアドレスが必要です"
+      },
       "BUTTONS": {
         "MENU": "メニュー",
         "LOYALTY_STAMPS": "忠誠ポイント",
         "BUSINESS_PHOTOS": "ビジネスの写真",
         "QR_CODE": "QRコードを取得",
-        "CONFIRM": "ビジネス設定を確認"
+        "CONFIRM": "ビジネス設定を確認",
+        "UNDER_CONSTRUCTION": "この機能はまだ完全に構築されていません"
       }
     }
   },

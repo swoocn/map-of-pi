@@ -29,12 +29,21 @@
         "BUSINESS_PHONE_NUMBER": "Geben Sie die Telefonnummer Ihres Unternehmens ein",
         "BUSINESS_EMAIL_ADDRESS": "Geben Sie die E-Mail-Adresse Ihres Unternehmens ein"
       },
+      "VALIDATIONS": {
+        "BUSINESS_NAME": "Geschäftsname ist erforderlich",
+        "BUSINESS_DESCRIPTION": "Geschäftsbeschreibung ist erforderlich",
+        "BUSINESS_TYPE": "Geschäftstyp ist erforderlich",
+        "BUSINESS_LOCATION": "Geschäftsadresse ist erforderlich",
+        "BUSINESS_PHONE_NUMBER": "Geschäftstelefonnummer ist erforderlich",
+        "BUSINESS_EMAIL_ADDRESS": "Geschäfts-E-Mail-Adresse ist erforderlich"
+      },
       "BUTTONS": {
         "MENU": "Menü",
         "LOYALTY_STAMPS": "Treuepunkte",
         "BUSINESS_PHOTOS": "Unternehmensfotos",
         "QR_CODE": "QR-Code erhalten",
-        "CONFIRM": "Geschäftseinstellungen bestätigen"
+        "CONFIRM": "Geschäftseinstellungen bestätigen",
+        "UNDER_CONSTRUCTION": "Diese Funktion ist noch nicht vollständig entwickelt"
       }
     }
   },
