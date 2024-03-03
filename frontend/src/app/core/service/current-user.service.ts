@@ -4,13 +4,11 @@ import { AxiosRequestConfig } from 'axios';
 @Injectable({
   providedIn: 'root',
 })
-
 export class CurrentUserService {
-  private currentUser: any;
   private currentUserKey: string = 'currentUser';
   private tokenKey: string = 'currentUserAccessToken';
   private token: string | null = null;
-  
+
   constructor() {
     this.token = localStorage.getItem(this.tokenKey);
     const storedUser = localStorage.getItem(this.currentUserKey);
@@ -18,6 +16,8 @@ export class CurrentUserService {
       this.currentUser = JSON.parse(storedUser);
     }
   }
+
+  private currentUser: any;
 
   getToken(): string | null {
     return this.token;
@@ -31,6 +31,7 @@ export class CurrentUserService {
 
   clearToken(): void {
     this.token = null;
+    localStorage.removeItem(this.tokenKey);
     localStorage.removeItem(this.currentUserKey); // Remove user data when token is cleared
   }
 
@@ -51,6 +52,7 @@ export class CurrentUserService {
         Authorization: `Bearer ${this.token}`,
       };
     }
+
     return config;
   }
 }

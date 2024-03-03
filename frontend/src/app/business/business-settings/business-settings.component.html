@@ -41,7 +41,7 @@
             registerShopForm.get('shopAddress')?.touched
           ">Business address is required</span>
       </div>
-      <!-- <div class="business-registration__field business-registration__field-bottom">
+      <div class="business-registration__field business-registration__field-bottom">
         <label for="" class="business-registration__label"></label>
         <label for="image"
           class="business-registration__label flex gap-5 mb-3 items-center bg-blue-200 p-3 rounded-md"><img
@@ -50,13 +50,13 @@
         </label>
         <input type="file" id="image" name="image" (change)="onFileChange($event)" formControlName="shopImage"
           class="business-registration__input hidden" placeholder="Upload your images here" required />
-        <img [src]="registerShopForm.value.shopImage" alt="shop image"
-          class="w-[130px] h-[150px] flex justify-center items-center" />
+        <!-- <img [src]="registerShopForm.value.shopImage" alt="shop image"
+          class="w-[130px] h-[150px] flex justify-center items-center" /> -->
         <span class="text-red-500" *ngIf="
             registerShopForm.get('shopImage')?.invalid &&
             registerShopForm.get('shopImage')?.touched
           ">Business must have an associated image</span>
-      </div> -->
+      </div>
       <div class="business-registration__field business-registration__field-bottom">
         <label for="phone" class="business-registration__label">Business Phone Number</label>
         <input type="text" id="phone" name="phone" formControlName="shopPhone" class="business-registration__input"

@@ -1,14 +1,14 @@
 import { Injectable, signal } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Icon, icon, latLng, MapOptions, tileLayer } from 'leaflet';
+import axios from 'axios';
 
 @Injectable({
   providedIn: 'root',
 })
-
 export class GeolocationService {
-  private readonly initZoomLevel = 12;
-  private readonly initCoords = latLng(28.1, -15.45);
+  private readonly initZoomLevel = 15;
+  initCoords: number[] = [];
   private readonly geolocationTrigger = new Subject<void>();
   private readonly maxZoomLevel = 18;
   private readonly tileLayer = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -17,6 +17,10 @@ export class GeolocationService {
 
   triggerGeolocation(): void {
     this.geolocationTrigger.next();
+  }
+
+  setInitialCoordinates(arr: number[]): void {
+    this.initCoords = [arr[0], arr[1]];
   }
 
   getCurrentPosition(): Observable<GeolocationCoordinates> {
@@ -50,7 +54,7 @@ export class GeolocationService {
         }),
       ],
       zoom: this.initZoomLevel,
-      center: this.initCoords,
+      center: [37.5665, 126.978],
     };
   }
 
@@ -69,5 +73,14 @@ export class GeolocationService {
       iconRetinaUrl: 'assets/marker-icon.png',
       shadowUrl: 'assets/marker-shadow.png',
     });
+  }
+
+  async getUserPositionManualy() {
+    const response = await axios.get('https://ipapi.co/json/');
+
+    const { data } = response;
+
+    const coordinates = [data.latitude, data.longitude];
+    return coordinates;
   }
 }

@@ -1,0 +1,33 @@
+<h2 mat-dialog-title class="text-2xl font-bold text-center relative">
+  <span>Map Of Pi Invitation</span>
+  <span
+    mat-dialog-close="true"
+    class="absolute top-4 right-4 py-2 px-4 bg-blue-500 rounded-full"
+    >X</span
+  >
+</h2>
+<mat-dialog-content class="text-lg mb-6">
+  <p>
+    Dear <span class="font-extrabold">{{ data.name }}</span
+    >,
+  </p>
+  <p class="mb-2">
+    We're excited to have you on board! Please keep in mind that Map of Pi is
+    still a work in progress, but together, we can make it even better.
+  </p>
+  <p class="mb-2">
+    We invite you to join our social media community, where you can:
+  </p>
+  <ul class="list-disc pl-6 mb-4">
+    <li>Report any issues or bugs you encounter.</li>
+    <li>Suggest new features you'd like to see in the app.</li>
+  </ul>
+  <p>Let's build Map of Pi together!</p>
+</mat-dialog-content>
+<div class="flex justify-center items-center">
+  <mat-dialog-actions class="flex justify-center items-center">
+    <button mat-button mat-dialog-close mat-dialog-close="false">
+      <span class="px-4 py-2 bg-yellow-600 text-white rounded-md">Join Us</span>
+    </button>
+  </mat-dialog-actions>
+</div>

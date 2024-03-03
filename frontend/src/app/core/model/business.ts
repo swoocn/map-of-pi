@@ -43,6 +43,8 @@ export const dummyCoordinates: ICoordinate[] = [
   { lat: 28.1245, long: -15.4359 },
   { lat: 28.1215, long: -15.4412 },
   { lat: 28.1283, long: -15.4389 },
+  { lat: 28.1, long: -15.45 },
+  { lat: -1.9676713450672898, long: 30.190665829199233 },
   { lat: 28.1267, long: -15.4432 },
   { lat: 28.1211, long: -15.4467 },
   { lat: 28.1189, long: -15.4355 },
