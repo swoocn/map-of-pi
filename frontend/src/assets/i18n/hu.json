@@ -50,6 +50,7 @@
   "PRIVACY_POLICY": {
     "TITLE": "Adatvédelmi irányelvek",
     "LAST_UPDATED": "Utolsó frissítés",
+    "EMAIL_ADDRESS": "Email cím",
     "SECTIONS": {
       "HEADER_1": "Bevezetés",
       "CONTENT_1": "Köszöntjük a Pi térkép alkalmazásban, amelyet a Pi térkép csapata fejlesztett ki a Pi közösség együttműködésével. Ez az adatvédelmi irányelv részletezi, hogyan gyűjtjük, használjuk, közöljük és védelmezzük személyes adatait, amikor mobilalkalmazásunkat használja.",
@@ -76,16 +77,16 @@
       "CONTENT_4_2_1": "Információkat oszthatunk meg harmadik felekkel az alkalmazás funkcionalitásához, elemzéshez és fizetési feldolgozáshoz.",
 
       "HEADER_5": "Biztonsági intézkedések",
-      "SUBHEADER_5_1": "Általános biztonsági intézkedéseket alkalmazunk az információk védelme érdekében. Az interneten keresztüli továbbítás vagy az elektronikus tárolás azonban nem teljesen biztonságos.",
+      "CONTENT_5_1": "Általános biztonsági intézkedéseket alkalmazunk az információk védelme érdekében. Az interneten keresztüli továbbítás vagy az elektronikus tárolás azonban nem teljesen biztonságos.",
 
       "HEADER_6": "Az Ön választásai",
-      "SUBHEADER_6_1": "A fiókadatait az alkalmazás beállításaiban frissítheti vagy törölheti. Le is mondhat a promóciós kommunikációkról.",
+      "CONTENT_6_1": "A fiókadatait az alkalmazás beállításaiban frissítheti vagy törölheti. Le is mondhat a promóciós kommunikációkról.",
 
       "HEADER_7": "Az adatvédelmi irányelvek módosítása",
-      "SUBHEADER_7_1": "Szükség esetén frissíthetjük az adatvédelmi irányelveket. A legfrissebb verzió weboldalunkon vagy az alkalmazásban lesz közzétéve.",
+      "CONTENT_7_1": "Szükség esetén frissíthetjük az adatvédelmi irányelveket. A legfrissebb verzió weboldalunkon vagy az alkalmazásban lesz közzétéve.",
 
       "HEADER_8": "Kapcsolat",
-      "SUBHEADER_8_1": "Ha kérdése vagy aggálya van az adatvédelmi irányelvekkel kapcsolatban, kérjük, lépjen kapcsolatba velünk."
+      "CONTENT_8_1": "Ha kérdése vagy aggálya van az adatvédelmi irányelvekkel kapcsolatban, kérjük, lépjen kapcsolatba velünk."
     }
   }
 }

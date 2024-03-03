@@ -50,6 +50,7 @@
   "PRIVACY_POLICY": {
     "TITLE": "Política de privacidad",
     "LAST_UPDATED": "Última actualización",
+    "EMAIL_ADDRESS": "Correo electrónico",
     "SECTIONS": {
       "HEADER_1": "Introducción",
       "CONTENT_1": "Bienvenido a la aplicación Mapa de Pi, desarrollada por el equipo de Mapa de Pi en colaboración con la Comunidad Pi. Esta política de privacidad describe cómo recopilamos, usamos, divulgamos y protegemos su información personal cuando utiliza nuestra aplicación móvil.",
@@ -76,16 +77,16 @@
       "CONTENT_4_2_1": "Podemos compartir información con proveedores de servicios de terceros para la funcionalidad de la aplicación, análisis y procesamiento de pagos.",
 
       "HEADER_5": "Medidas de seguridad",
-      "SUBHEADER_5_1": "Utilizamos medidas de seguridad estándar de la industria para proteger su información. Sin embargo, ningún método de transmisión a través de Internet o almacenamiento electrónico es completamente seguro.",
+      "CONTENT_5_1": "Utilizamos medidas de seguridad estándar de la industria para proteger su información. Sin embargo, ningún método de transmisión a través de Internet o almacenamiento electrónico es completamente seguro.",
 
       "HEADER_6": "Sus opciones",
-      "SUBHEADER_6_1": "Puede actualizar o eliminar su información de cuenta a través de la configuración de la aplicación. También puede optar por no participar en comunicaciones promocionales.",
+      "CONTENT_6_1": "Puede actualizar o eliminar su información de cuenta a través de la configuración de la aplicación. También puede optar por no participar en comunicaciones promocionales.",
 
       "HEADER_7": "Cambios en esta política de privacidad",
-      "SUBHEADER_7_1": "Podemos actualizar esta política de privacidad según sea necesario. La última versión se publicará en nuestro sitio web o dentro de la aplicación.",
+      "CONTENT_7_1": "Podemos actualizar esta política de privacidad según sea necesario. La última versión se publicará en nuestro sitio web o dentro de la aplicación.",
 
       "HEADER_8": "Contáctenos",
-      "SUBHEADER_8_1": "Si tiene alguna pregunta o inquietud sobre esta política de privacidad, contáctenos."
+      "CONTENT_8_1": "Si tiene alguna pregunta o inquietud sobre esta política de privacidad, contáctenos."
     }
   }
 }

@@ -29,18 +29,28 @@
         "BUSINESS_PHONE_NUMBER": "Enter the phone number of your business",
         "BUSINESS_EMAIL_ADDRESS": "Enter the email address of your business"
       },
+      "VALIDATIONS": {
+        "BUSINESS_NAME": "Business Name is required",
+        "BUSINESS_DESCRIPTION": "Business Description is required",
+        "BUSINESS_TYPE": "Business Type is required",
+        "BUSINESS_LOCATION": "Business address is required",
+        "BUSINESS_PHONE_NUMBER": "Business phone number is required",
+        "BUSINESS_EMAIL_ADDRESS": "Business email address is required"
+      },
       "BUTTONS": {
         "MENU": "Menu",
         "LOYALTY_STAMPS": "Loyalty Stamps",
         "BUSINESS_PHOTOS": "Business Photos",
         "QR_CODE": "Get QR Code",
-        "CONFIRM": "Confirm Business Settings"
+        "CONFIRM": "Confirm Business Settings",
+        "UNDER_CONSTRUCTION": "This functionality is not fully built yet"
       }
     }
   },
   "PRIVACY_POLICY": {
     "TITLE": "Privacy Policy",
     "LAST_UPDATED": "Last Updated",
+    "EMAIL_ADDRESS": "Email Address",
     "SECTIONS": {
       "HEADER_1": "Introduction",
       "CONTENT_1": "Welcome to the Map of Pi app, developed by the Map of Pi team in collaboration with the Pi Community. This Privacy Policy outlines how we collect, use, disclose, and protect your personal information when you use our mobile application.",
@@ -67,16 +77,16 @@
       "CONTENT_4_2_1": "We may share information with third-party service providers for app functionality, analytics, and payment processing.",
 
       "HEADER_5": "Security Measures",
-      "SUBHEADER_5_1": "We employ industry-standard security measures to protect your information. However, no method of transmission over the internet or electronic storage is completely secure.",
+      "CONTENT_5_1": "We employ industry-standard security measures to protect your information. However, no method of transmission over the internet or electronic storage is completely secure.",
 
       "HEADER_6": "Your Choices",
-      "SUBHEADER_6_1": "You can update or delete your account information through the app settings. You may also opt-out of promotional communications.",
+      "CONTENT_6_1": "You can update or delete your account information through the app settings. You may also opt-out of promotional communications.",
 
       "HEADER_7": "Changes to This Privacy Policy",
-      "SUBHEADER_7_1": "We may update this Privacy Policy as necessary. The latest version will be posted on our website or within the app.",
+      "CONTENT_7_1": "We may update this Privacy Policy as necessary. The latest version will be posted on our website or within the app.",
 
       "HEADER_8": "Contact Us",
-      "SUBHEADER_8_1": "If you have any questions or concerns about this Privacy Policy, please contact us "
+      "CONTENT_8_1": "If you have any questions or concerns about this Privacy Policy, please contact us "
     }
   }
 }

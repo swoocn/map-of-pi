@@ -50,6 +50,7 @@
   "PRIVACY_POLICY": {
     "TITLE": "Datenschutz-Bestimmungen",
     "LAST_UPDATED": "Letzte Aktualisierung",
+    "EMAIL_ADDRESS": "E-Mail-Adresse",
     "SECTIONS": {
       "HEADER_1": "Einführung",
       "CONTENT_1": "Willkommen bei der Map of Pi-App, entwickelt vom Map of Pi-Team in Zusammenarbeit mit der Pi-Community. Diese Datenschutzrichtlinie erläutert, wie wir Ihre persönlichen Daten erfassen, verwenden, offenlegen und schützen, wenn Sie unsere mobile Anwendung nutzen.",
@@ -76,16 +77,16 @@
       "CONTENT_4_2_1": "Wir können Informationen mit Drittanbietern für App-Funktionalitäten, Analytik und Zahlungsabwicklung teilen.",
 
       "HEADER_5": "Sicherheitsmaßnahmen",
-      "SUBHEADER_5_1": "Wir verwenden branchenübliche Sicherheitsmaßnahmen zum Schutz Ihrer Informationen. Keine Übertragung über das Internet oder elektronische Speicherung ist jedoch vollständig sicher.",
+      "CONTENT_5_1": "Wir verwenden branchenübliche Sicherheitsmaßnahmen zum Schutz Ihrer Informationen. Keine Übertragung über das Internet oder elektronische Speicherung ist jedoch vollständig sicher.",
 
       "HEADER_6": "Ihre Wahlmöglichkeiten",
-      "SUBHEADER_6_1": "Sie können Ihre Kontoinformationen über die App-Einstellungen aktualisieren oder löschen. Sie können sich auch von Werbekommunikationen abmelden.",
+      "CONTENT_6_1": "Sie können Ihre Kontoinformationen über die App-Einstellungen aktualisieren oder löschen. Sie können sich auch von Werbekommunikationen abmelden.",
 
       "HEADER_7": "Änderungen an diesen Datenschutzbestimmungen",
-      "SUBHEADER_7_1": "Wir können diese Datenschutzrichtlinie bei Bedarf aktualisieren. Die neueste Version wird auf unserer Website oder innerhalb der App veröffentlicht.",
+      "CONTENT_7_1": "Wir können diese Datenschutzrichtlinie bei Bedarf aktualisieren. Die neueste Version wird auf unserer Website oder innerhalb der App veröffentlicht.",
 
       "HEADER_8": "Kontaktieren Sie uns",
-      "SUBHEADER_8_1": "Wenn Sie Fragen oder Bedenken zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte "
+      "CONTENT_8_1": "Wenn Sie Fragen oder Bedenken zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte "
     }
   }
 }
