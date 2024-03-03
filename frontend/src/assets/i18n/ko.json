@@ -1,0 +1,82 @@
+{
+  "CORE": {
+    "APP_NAME": "파이 지도"
+  },
+  "HOME": {
+    "ADD_MY_BUSINESS": "내 비즈니스 추가",
+    "SEARCH_BAR_PLACEHOLDER": "비즈니스 검색..."
+  },
+  "BUSINESS": {
+    "REGISTRATION": {
+      "LABELS": {
+        "BUSINESS_NAME": "비즈니스 이름",
+        "BUSINESS_DESCRIPTION": "비즈니스 설명",
+        "BUSINESS_TYPE": {
+          "RESTAURANT": "레스토랑",
+          "RETAIL_STORE": "소매점",
+          "SERVICE": "서비스",
+          "CONSTRUCTION": "건설",
+          "TRANSPORTATION": "교통"
+        },
+        "BUSINESS_LOCATION": "비즈니스 위치",
+        "BUSINESS_PHONE_NUMBER": "비즈니스 전화번호",
+        "BUSINESS_EMAIL_ADDRESS": "비즈니스 이메일 주소"
+      },
+      "PLACEHOLDERS": {
+        "BUSINESS_NAME": "비즈니스 이름을 입력하세요",
+        "BUSINESS_DESCRIPTION": "비즈니스에 대한 간단한 설명을 입력하세요",
+        "BUSINESS_LOCATION": "비즈니스 위치를 입력하세요",
+        "BUSINESS_PHONE_NUMBER": "비즈니스 전화번호를 입력하세요",
+        "BUSINESS_EMAIL_ADDRESS": "비즈니스 이메일 주소를 입력하세요"
+      },
+      "BUTTONS": {
+        "MENU": "메뉴",
+        "LOYALTY_STAMPS": "충성 스탬프",
+        "BUSINESS_PHOTOS": "비즈니스 사진",
+        "QR_CODE": "QR 코드 가져오기",
+        "CONFIRM": "비즈니스 설정 확인"
+      }
+    }
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "개인정보 처리방침",
+    "LAST_UPDATED": "최근 업데이트",
+    "SECTIONS": {
+      "HEADER_1": "소개",
+      "CONTENT_1": "파이 지도 앱에 오신 것을 환영합니다. 파이 지도 팀이 Pi 커뮤니티와 협력하여 개발한 이 개인정보 처리방침은 모바일 애플리케이션 사용 시 개인 정보를 수집, 사용, 공개 및 보호하는 방법을 설명합니다.",
+      
+      "HEADER_2": "수집하는 정보",
+      "SUBHEADER_2_1": "사용자 정보",
+      "CONTENT_2_1_1": "사용자로 등록할 때 이름, 이메일 주소, 사용자 이름 및 기타 관련 세부 정보를 수집할 수 있습니다.",
+      "CONTENT_2_1_2": "기기 유형, 운영 체제 및 고유 기기 식별자를 포함한 기기 정보를 수집할 수 있습니다.",
+      "SUBHEADER_2_2": "공급업체 정보",
+      "CONTENT_2_2_1": "플랫폼에 등록하는 공급업체는 비즈니스 이름, 위치 및 연락처 정보를 제공해야 할 수 있습니다.",
+
+      "HEADER_3": "정보 사용 방법",
+      "SUBHEADER_3_1": "서비스 제공",
+      "CONTENT_3_1_1": "사용자 및 공급업체 기능을 포함한 파이 지도 앱 서비스를 제공하고 개선하기 위해 귀하의 정보를 사용합니다.",
+      "SUBHEADER_3_2": "통신",
+      "CONTENT_3_2_1": "파이 지도 앱과 관련된 업데이트, 알림 및 프로모션 메시지를 전송하기 위해 귀하의 연락처 정보를 사용할 수 있습니다.",
+      "SUBHEADER_3_3": "분석",
+      "CONTENT_3_3_1": "앱의 성능, 기능 및 기능을 개선하기 위해 데이터를 수집하고 분석합니다.",
+
+      "HEADER_4": "정보 공유",
+      "SUBHEADER_4_1": "공급업체와",
+      "CONTENT_4_1_1": "주문 처리 및 커뮤니케이션 목적으로 사용자 정보를 공유할 수 있습니다.",
+      "SUBHEADER_4_2": "제 3자와",
+      "CONTENT_4_2_1": "앱 기능, 분석 및 결제 처리를 위해 제 3자 서비스 제공업체와 정보를 공유할 수 있습니다.",
+
+      "HEADER_5": "보안 조치",
+      "SUBHEADER_5_1": "귀하의 정보를 보호하기 위해 산업 표준 보안 조치를 채택하고 있습니다. 그러나 인터넷을 통한 전송 또는 전자 저장 방법은 완전히 안전하지 않을 수 있습니다.",
+
+      "HEADER_6": "귀하의 선택",
+      "SUBHEADER_6_1": "앱 설정을 통해 계정 정보를 업데이트하거나 삭제할 수 있습니다. 또한 프로모션 통신을 거부할 수 있습니다.",
+
+      "HEADER_7": "개인정보 처리방침 변경",
+      "SUBHEADER_7_1": "필요에 따라 개인정보 처리방침을 업데이트할 수 있습니다. 최신 버전은 웹사이트나 앱 내에서 공개될 것입니다.",
+
+      "HEADER_8": "문의하기",
+      "SUBHEADER_8_1": "이 개인정보 처리방침에 관한 질문이나 걱정이 있으시면 저희에게 문의하세요."
+    }
+  }
+}

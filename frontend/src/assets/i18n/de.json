@@ -1,22 +1,82 @@
 {
   "CORE": {
-    "APP_NAME": "Map of Pi"
+    "APP_NAME": "Karte von Pi"
   },
   "HOME": {
     "ADD_MY_BUSINESS": "Mein Geschäft hinzufügen",
     "SEARCH_BAR_PLACEHOLDER": "Geschäft suchen..."
   },
   "BUSINESS": {
-    "CONTACT_INFORMATION": "Kontaktinformationen",
-    "BUSINESS_NAME": "Geschäftsname",
-    "BUSINESS_TYPE": "Hauptgeschäftsfeld",
-    "LOCATION": "Adresse",
-    "CONFIRM": "Speichern",
-    "PRODUCTS": {
-      "TITLE": "Produkte",
-      "PRODUCTS_ON": "Produkte Eingeschaltet",
-      "IS_PI_PAYMENT_ENABLED": "PI Transaktionen einschalten",
-      "CAN_ORDER_WITHOUT_PAYMENT": "Online Bestellungen ohne PI Zahlung"
+    "REGISTRATION": {
+      "LABELS": {
+        "BUSINESS_NAME": "Firmenname",
+        "BUSINESS_DESCRIPTION": "Firmenbeschreibung",
+        "BUSINESS_TYPE": {
+          "RESTAURANT": "Restaurant",
+          "RETAIL_STORE": "Einzelhandelsgeschäft",
+          "SERVICE": "Dienstleistung",
+          "CONSTRUCTION": "Bau",
+          "TRANSPORTATION": "Transport"
+        },
+        "BUSINESS_LOCATION": "Standort des Unternehmens",
+        "BUSINESS_PHONE_NUMBER": "Telefonnummer des Unternehmens",
+        "BUSINESS_EMAIL_ADDRESS": "E-Mail-Adresse des Unternehmens"
+      },
+      "PLACEHOLDERS": {
+        "BUSINESS_NAME": "Geben Sie den Namen Ihres Unternehmens ein",
+        "BUSINESS_DESCRIPTION": "Geben Sie eine kurze Beschreibung Ihres Unternehmens ein",
+        "BUSINESS_LOCATION": "Geben Sie den Standort Ihres Unternehmens ein",
+        "BUSINESS_PHONE_NUMBER": "Geben Sie die Telefonnummer Ihres Unternehmens ein",
+        "BUSINESS_EMAIL_ADDRESS": "Geben Sie die E-Mail-Adresse Ihres Unternehmens ein"
+      },
+      "BUTTONS": {
+        "MENU": "Menü",
+        "LOYALTY_STAMPS": "Treuepunkte",
+        "BUSINESS_PHOTOS": "Unternehmensfotos",
+        "QR_CODE": "QR-Code erhalten",
+        "CONFIRM": "Geschäftseinstellungen bestätigen"
+      }
+    }
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "Datenschutz-Bestimmungen",
+    "LAST_UPDATED": "Letzte Aktualisierung",
+    "SECTIONS": {
+      "HEADER_1": "Einführung",
+      "CONTENT_1": "Willkommen bei der Map of Pi-App, entwickelt vom Map of Pi-Team in Zusammenarbeit mit der Pi-Community. Diese Datenschutzrichtlinie erläutert, wie wir Ihre persönlichen Daten erfassen, verwenden, offenlegen und schützen, wenn Sie unsere mobile Anwendung nutzen.",
+      
+      "HEADER_2": "Informationen, die wir erfassen",
+      "SUBHEADER_2_1": "Benutzerinformationen",
+      "CONTENT_2_1_1": "Wenn Sie sich als Benutzer registrieren, können wir Ihren Namen, Ihre E-Mail-Adresse, Ihren Benutzernamen und andere relevante Details erfassen.",
+      "CONTENT_2_1_2": "Wir können Informationen über Ihr Gerät erfassen, einschließlich Gerätetyp, Betriebssystem und eindeutige Gerätekennungen.",
+      "SUBHEADER_2_2": "Anbieterinformationen",
+      "CONTENT_2_2_1": "Anbieter, die sich auf der Plattform registrieren, müssen möglicherweise Unternehmensinformationen wie den Firmennamen, den Standort und die Kontaktdaten angeben.",
+
+      "HEADER_3": "Wie wir Ihre Informationen verwenden",
+      "SUBHEADER_3_1": "Bereitstellung von Dienstleistungen",
+      "CONTENT_3_1_1": "Wir verwenden Ihre Informationen, um die Dienste der Map of Pi-App zu bereitzustellen und zu verbessern, einschließlich Benutzer- und Anbieterfunktionalitäten.",
+      "SUBHEADER_3_2": "Kommunikation",
+      "CONTENT_3_2_1": "Wir können Ihre Kontaktinformationen verwenden, um Ihnen Updates, Benachrichtigungen und Werbebotschaften im Zusammenhang mit der Map of Pi-App zu senden.",
+      "SUBHEADER_3_3": "Analytik",
+      "CONTENT_3_3_1": "Wir erfassen und analysieren Daten, um die Leistung, Funktionen und Funktionalität der App zu verbessern.",
+
+      "HEADER_4": "Teilen Ihrer Informationen",
+      "SUBHEADER_4_1": "Mit Anbietern",
+      "CONTENT_4_1_1": "Benutzerinformationen können mit Anbietern zum Zweck der Auftragsabwicklung und Kommunikation geteilt werden.",
+      "SUBHEADER_4_2": "Mit Dritten",
+      "CONTENT_4_2_1": "Wir können Informationen mit Drittanbietern für App-Funktionalitäten, Analytik und Zahlungsabwicklung teilen.",
+
+      "HEADER_5": "Sicherheitsmaßnahmen",
+      "SUBHEADER_5_1": "Wir verwenden branchenübliche Sicherheitsmaßnahmen zum Schutz Ihrer Informationen. Keine Übertragung über das Internet oder elektronische Speicherung ist jedoch vollständig sicher.",
+
+      "HEADER_6": "Ihre Wahlmöglichkeiten",
+      "SUBHEADER_6_1": "Sie können Ihre Kontoinformationen über die App-Einstellungen aktualisieren oder löschen. Sie können sich auch von Werbekommunikationen abmelden.",
+
+      "HEADER_7": "Änderungen an diesen Datenschutzbestimmungen",
+      "SUBHEADER_7_1": "Wir können diese Datenschutzrichtlinie bei Bedarf aktualisieren. Die neueste Version wird auf unserer Website oder innerhalb der App veröffentlicht.",
+
+      "HEADER_8": "Kontaktieren Sie uns",
+      "SUBHEADER_8_1": "Wenn Sie Fragen oder Bedenken zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte "
     }
   }
 }

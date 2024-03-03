@@ -1,0 +1,82 @@
+{
+  "CORE": {
+    "APP_NAME": "Pi地图"
+  },
+  "HOME": {
+    "ADD_MY_BUSINESS": "添加我的业务",
+    "SEARCH_BAR_PLACEHOLDER": "搜索业务..."
+  },
+  "BUSINESS": {
+    "REGISTRATION": {
+      "LABELS": {
+        "BUSINESS_NAME": "商家名称",
+        "BUSINESS_DESCRIPTION": "商家描述",
+        "BUSINESS_TYPE": {
+          "RESTAURANT": "餐厅",
+          "RETAIL_STORE": "零售店",
+          "SERVICE": "服务",
+          "CONSTRUCTION": "建筑",
+          "TRANSPORTATION": "运输"
+        },
+        "BUSINESS_LOCATION": "商家地址",
+        "BUSINESS_PHONE_NUMBER": "商家电话",
+        "BUSINESS_EMAIL_ADDRESS": "商家邮箱"
+      },
+      "PLACEHOLDERS": {
+        "BUSINESS_NAME": "输入您的业务名称",
+        "BUSINESS_DESCRIPTION": "输入关于您的业务的简单描述",
+        "BUSINESS_LOCATION": "输入您的业务地址",
+        "BUSINESS_PHONE_NUMBER": "输入您的业务电话号码",
+        "BUSINESS_EMAIL_ADDRESS": "输入您的业务邮箱地址"
+      },
+      "BUTTONS": {
+        "MENU": "菜单",
+        "LOYALTY_STAMPS": "忠诚印记",
+        "BUSINESS_PHOTOS": "商家照片",
+        "QR_CODE": "获取QR码",
+        "CONFIRM": "确认业务设置"
+      }
+    }
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "隐私政策",
+    "LAST_UPDATED": "最近更新",
+    "SECTIONS": {
+      "HEADER_1": "介绍",
+      "CONTENT_1": "欢迎使用Pi地图应用，由Pi地图团队与Pi社区合作开发。本隐私政策概述了您在使用我们的移动应用程序时我们如何收集、使用、披露和保护您的个人信息。",
+
+      "HEADER_2": "我们收集的信息",
+      "SUBHEADER_2_1": "用户信息",
+      "CONTENT_2_1_1": "当您注册用户时，我们可能会收集您的姓名、电子邮件地址、用户名和其他相关详细信息。",
+      "CONTENT_2_1_2": "我们可能会收集关于您的设备的信息，包括设备类型、操作系统和唯一设备标识符。",
+      "SUBHEADER_2_2": "供应商信息",
+      "CONTENT_2_2_1": "在平台上注册的供应商可能需要提供业务信息，包括商家名称、位置和联系方式。",
+
+      "HEADER_3": "我们如何使用您的信息",
+      "SUBHEADER_3_1": "提供服务",
+      "CONTENT_3_1_1": "我们使用您的信息提供和增强Pi地图应用服务，包括用户和供应商功能。",
+      "SUBHEADER_3_2": "沟通",
+      "CONTENT_3_2_1": "我们可能使用您的联系信息向您发送与Pi地图应用相关的更新、通知和促销信息。",
+      "SUBHEADER_3_3": "分析",
+      "CONTENT_3_3_1": "我们收集和分析数据，以改善应用程序的性能、功能和功能。",
+
+      "HEADER_4": "分享您的信息",
+      "SUBHEADER_4_1": "与供应商分享",
+      "CONTENT_4_1_1": "用户信息可能会与供应商分享，用于订单履行和沟通目的。",
+      "SUBHEADER_4_2": "与第三方分享",
+      "CONTENT_4_2_1": "我们可能会与第三方服务提供商分享信息，用于应用程序功能、分析和支付处理。",
+
+      "HEADER_5": "安全措施",
+      "SUBHEADER_5_1": "我们采用行业标准的安全措施来保护您的信息。但是，通过互联网传输或电子存储的方法并不完全安全。",
+
+      "HEADER_6": "您的选择",
+      "SUBHEADER_6_1": "您可以通过应用程序设置更新或删除您的帐户信息。您也可以选择不接收促销通信。",
+
+      "HEADER_7": "隐私政策的变更",
+      "SUBHEADER_7_1": "我们可能会根据需要更新本隐私政策。最新版本将在我们的网站或应用程序内发布。",
+
+      "HEADER_8": "联系我们",
+      "SUBHEADER_8_1": "如果您对本隐私政策有任何疑问或担忧，请与我们联系。"
+    }
+  }
+}

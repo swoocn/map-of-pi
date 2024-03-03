@@ -1,22 +1,82 @@
 {
   "CORE": {
-    "APP_NAME": "Map of Pi"
+    "APP_NAME": "Pi térképe"
   },
   "HOME": {
-    "ADD_MY_BUSINESS": "Saját üzlet hozzáadása",
-    "SEARCH_BAR_PLACEHOLDER": "Üzletkereső..."
+    "ADD_MY_BUSINESS": "Saját üzletem hozzáadása",
+    "SEARCH_BAR_PLACEHOLDER": "Üzlet keresése..."
   },
   "BUSINESS": {
-    "CONTACT_INFORMATION": "Üzletadatok",
-    "BUSINESS_NAME": "Üzlet neve",
-    "BUSINESS_TYPE": "Tevékenység",
-    "LOCATION": "Cím",
-    "CONFIRM": "Mentés",
-    "PRODUCTS": {
-      "TITLE": "Termékek",
-      "PRODUCTS_ON": "Termékek megjelenítése",
-      "IS_PI_PAYMENT_ENABLED": "PI Tranzakciók engedélyezése",
-      "CAN_ORDER_WITHOUT_PAYMENT": "Online Rendelések PI fizetés nélkül"
+    "REGISTRATION": {
+      "LABELS": {
+        "BUSINESS_NAME": "Üzlet neve",
+        "BUSINESS_DESCRIPTION": "Üzlet leírása",
+        "BUSINESS_TYPE": {
+          "RESTAURANT": "Étterem",
+          "RETAIL_STORE": "Kiskereskedelmi üzlet",
+          "SERVICE": "Szolgáltatás",
+          "CONSTRUCTION": "Építészet",
+          "TRANSPORTATION": "Közlekedés"
+        },
+        "BUSINESS_LOCATION": "Üzlet helyszíne",
+        "BUSINESS_PHONE_NUMBER": "Üzlet telefonszáma",
+        "BUSINESS_EMAIL_ADDRESS": "Üzlet e-mail címe"
+      },
+      "PLACEHOLDERS": {
+        "BUSINESS_NAME": "Adja meg üzletének nevét",
+        "BUSINESS_DESCRIPTION": "Adjon meg egy egyszerű leírást az üzletéről",
+        "BUSINESS_LOCATION": "Adja meg üzletének helyszínét",
+        "BUSINESS_PHONE_NUMBER": "Adja meg üzletének telefonszámát",
+        "BUSINESS_EMAIL_ADDRESS": "Adja meg üzletének e-mail címét"
+      },
+      "BUTTONS": {
+        "MENU": "Menü",
+        "LOYALTY_STAMPS": "Hűségbélyegek",
+        "BUSINESS_PHOTOS": "Üzleti fotók",
+        "QR_CODE": "QR-kód beszerzése",
+        "CONFIRM": "Üzleti beállítások megerősítése"
+      }
+    }
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "Adatvédelmi irányelvek",
+    "LAST_UPDATED": "Utolsó frissítés",
+    "SECTIONS": {
+      "HEADER_1": "Bevezetés",
+      "CONTENT_1": "Köszöntjük a Pi térkép alkalmazásban, amelyet a Pi térkép csapata fejlesztett ki a Pi közösség együttműködésével. Ez az adatvédelmi irányelv részletezi, hogyan gyűjtjük, használjuk, közöljük és védelmezzük személyes adatait, amikor mobilalkalmazásunkat használja.",
+      
+      "HEADER_2": "Általunk gyűjtött információk",
+      "SUBHEADER_2_1": "Felhasználói információk",
+      "CONTENT_2_1_1": "Amikor felhasználóként regisztrál, gyűjthetjük nevét, e-mail címét, felhasználónevét és egyéb releváns adatokat.",
+      "CONTENT_2_1_2": "Információkat gyűjthetünk eszközéről, beleértve az eszköz típusát, operációs rendszerét és egyedi azonosítóit.",
+      "SUBHEADER_2_2": "Szolgáltatói információk",
+      "CONTENT_2_2_1": "A platformra regisztráló szolgáltatóknak üzleti információkat, beleértve a vállalkozás nevét, helyét és elérhetőségi adatait kell megadniuk.",
+
+      "HEADER_3": "Hogyan használjuk az Ön információit",
+      "SUBHEADER_3_1": "Szolgáltatások nyújtása",
+      "CONTENT_3_1_1": "Az Ön információit arra használjuk, hogy javítsuk és kiegészítsük a Pi térkép alkalmazás szolgáltatásait, beleértve a felhasználói és szolgáltatói funkciókat.",
+      "SUBHEADER_3_2": "Kommunikáció",
+      "CONTENT_3_2_1": "Kapcsolati információit használhatjuk arra, hogy frissítéseket, értesítéseket és promóciós üzeneteket küldjünk Önnek a Pi térkép alkalmazással kapcsolatosan.",
+      "SUBHEADER_3_3": "Elemzések",
+      "CONTENT_3_3_1": "Adatokat gyűjtünk és elemzünk az alkalmazás teljesítményének, funkcióinak és funkcionalitásának javítása érdekében.",
+
+      "HEADER_4": "Az információk megosztása",
+      "SUBHEADER_4_1": "Szolgáltatókkal",
+      "CONTENT_4_1_1": "A felhasználói információkat szolgáltatókkal is megoszthatjuk a rendelések teljesítése és a kommunikáció céljából.",
+      "SUBHEADER_4_2": "Harmadik felekkel",
+      "CONTENT_4_2_1": "Információkat oszthatunk meg harmadik felekkel az alkalmazás funkcionalitásához, elemzéshez és fizetési feldolgozáshoz.",
+
+      "HEADER_5": "Biztonsági intézkedések",
+      "SUBHEADER_5_1": "Általános biztonsági intézkedéseket alkalmazunk az információk védelme érdekében. Az interneten keresztüli továbbítás vagy az elektronikus tárolás azonban nem teljesen biztonságos.",
+
+      "HEADER_6": "Az Ön választásai",
+      "SUBHEADER_6_1": "A fiókadatait az alkalmazás beállításaiban frissítheti vagy törölheti. Le is mondhat a promóciós kommunikációkról.",
+
+      "HEADER_7": "Az adatvédelmi irányelvek módosítása",
+      "SUBHEADER_7_1": "Szükség esetén frissíthetjük az adatvédelmi irányelveket. A legfrissebb verzió weboldalunkon vagy az alkalmazásban lesz közzétéve.",
+
+      "HEADER_8": "Kapcsolat",
+      "SUBHEADER_8_1": "Ha kérdése vagy aggálya van az adatvédelmi irányelvekkel kapcsolatban, kérjük, lépjen kapcsolatba velünk."
     }
   }
 }
