@@ -2,25 +2,25 @@
   <section class="business-registration__section">
     <form [formGroup]="registerShopForm" (ngSubmit)="send()">
       <div class="business-registration__field">
-        <label for="business-name" class="business-registration__label">{{ 'BUSINESS.REGISTRATION.LABELS_BUSINESS_NAME' | translate }}</label>
+        <label for="business-name" class="business-registration__label">{{ 'BUSINESS.REGISTRATION.LABELS.BUSINESS_NAME' | translate }}</label>
         <input type="text" formControlName="shopName" id="business-name" name="business_name"
           class="business-registration__input" placeholder="{{ 'BUSINESS.REGISTRATION.PLACEHOLDERS.BUSINESS_NAME' | translate }}" required />
         <span class="text-red-500" *ngIf="
             registerShopForm.get('shopName')?.invalid &&
             registerShopForm.get('shopName')?.touched
-          ">{{ 'BUSINESS.REGISTRATION.VALIDATIONS_BUSINESS_NAME' | translate }}</span>
+          ">{{ 'BUSINESS.REGISTRATION.VALIDATIONS.BUSINESS_NAME' | translate }}</span>
       </div>
       <div class="business-registration__field mt-2">
-        <label for="business-description" class="business-registration__label">{{ 'BUSINESS.REGISTRATION.LABELS_BUSINESS_DESCRIPTION' | translate }}</label>
+        <label for="business-description" class="business-registration__label">{{ 'BUSINESS.REGISTRATION.LABELS.BUSINESS_DESCRIPTION' | translate }}</label>
         <input type="text" formControlName="shopDescription" id="business-description" name="business_description"
-          class="business-registration__input" placeholder="{{ 'BUSINESS.REGISTRATION.PLACEHOLDERS_BUSINESS_DESCRIPTION' | translate }}" required />
+          class="business-registration__input" placeholder="{{ 'BUSINESS.REGISTRATION.PLACEHOLDERS.BUSINESS_DESCRIPTION' | translate }}" required />
         <span class="text-red-500" *ngIf="
             registerShopForm.get('shopDescription')?.invalid &&
             registerShopForm.get('shopDescription')?.touched
-          ">{{ 'BUSINESS.REGISTRATION.VALIDATIONS_BUSINESS_DESCRIPTION' | translate }}</span>
+          ">{{ 'BUSINESS.REGISTRATION.VALIDATIONS.BUSINESS_DESCRIPTION' | translate }}</span>
       </div>
       <div class="business-registration__field business-registration__field-middle">
-        <label for="business-type" class="business-registration__label">{{ 'BUSINESS.REGISTRATION.LABELS_BUSINESS_TYPE' | translate }}</label>
+        <label for="business-type" class="business-registration__label">{{ 'BUSINESS.REGISTRATION.LABELS.BUSINESS_TYPE' | translate }}</label>
         <select id="business-type" name="business_type" formControlName="shopType"
           class="business-registration__select">
           <option *ngFor="let businessType of businessTypes" [value]="businessType">
@@ -30,16 +30,16 @@
         <span class="text-red-500" *ngIf="
             registerShopForm.get('shopType')?.invalid &&
             registerShopForm.get('shopType')?.touched
-          ">{{ 'BUSINESS.REGISTRATION.VALIDATIONS_BUSINESS_TYPE' | translate }}</span>
+          ">{{ 'BUSINESS.REGISTRATION.VALIDATIONS.BUSINESS_TYPE' | translate }}</span>
       </div>
       <div class="business-registration__field business-registration__field-bottom">
-        <label for="location" class="business-registration__label">{{ 'BUSINESS.REGISTRATION.LABELS_BUSINESS_LOCATION' | translate }}</label>
+        <label for="location" class="business-registration__label">{{ 'BUSINESS.REGISTRATION.LABELS.BUSINESS_LOCATION' | translate }}</label>
         <input type="text" id="location" name="location" formControlName="shopAddress"
-          class="business-registration__input" placeholder="{{ 'BUSINESS.REGISTRATION.PLACEHOLDERS_BUSINESS_LOCATION' | translate }}" required />
+          class="business-registration__input" placeholder="{{ 'BUSINESS.REGISTRATION.PLACEHOLDERS.BUSINESS_LOCATION' | translate }}" required />
         <span class="text-red-500" *ngIf="
             registerShopForm.get('shopAddress')?.invalid &&
             registerShopForm.get('shopAddress')?.touched
-          ">{{ 'BUSINESS.REGISTRATION.VALIDATIONS_BUSINESS_LOCATION' | translate }}</span>
+          ">{{ 'BUSINESS.REGISTRATION.VALIDATIONS.BUSINESS_LOCATION' | translate }}</span>
       </div>
       <!-- <div class="business-registration__field business-registration__field-bottom">
         <label for="" class="business-registration__label"></label>
@@ -58,22 +58,22 @@
           ">Business must have an associated image</span>
       </div> -->
       <div class="business-registration__field business-registration__field-bottom">
-        <label for="phone" class="business-registration__label">{{ 'BUSINESS.REGISTRATION.LABELS_BUSINESS_PHONE_NUMBER' | translate }}</label>
+        <label for="phone" class="business-registration__label">{{ 'BUSINESS.REGISTRATION.LABELS.BUSINESS_PHONE_NUMBER' | translate }}</label>
         <input type="text" id="phone" name="phone" formControlName="shopPhone" class="business-registration__input"
-          placeholder="{{ 'BUSINESS.REGISTRATION.PLACEHOLDERS_BUSINESS_PHONE_NUMBER' | translate }}" required />
+          placeholder="{{ 'BUSINESS.REGISTRATION.PLACEHOLDERS.BUSINESS_PHONE_NUMBER' | translate }}" required />
         <span class="text-red-500" *ngIf="
             registerShopForm.get('shopPhone')?.invalid &&
             registerShopForm.get('shopPhone')?.touched
-          ">{{ 'BUSINESS.REGISTRATION.VALIDATIONS_BUSINESS_PHONE_NUMBER' | translate }}</span>
+          ">{{ 'BUSINESS.REGISTRATION.VALIDATIONS.BUSINESS_PHONE_NUMBER' | translate }}</span>
       </div>
       <div class="business-registration__field business-registration__field-bottom">
-        <label for="email" class="business-registration__label">{{ 'BUSINESS.REGISTRATION.LABELS_BUSINESS_EMAIL_ADDRESS' | translate }}</label>
+        <label for="email" class="business-registration__label">{{ 'BUSINESS.REGISTRATION.LABELS.BUSINESS_EMAIL_ADDRESS' | translate }}</label>
         <input type="email" id="email" name="email" formControlName="shopEmail" class="business-registration__input"
-          placeholder="{{ 'BUSINESS.REGISTRATION.PLACEHOLDERS_BUSINESS_EMAIL_ADDRESS' | translate }}" required />
+          placeholder="{{ 'BUSINESS.REGISTRATION.PLACEHOLDERS.BUSINESS_EMAIL_ADDRESS' | translate }}" required />
         <span class="text-red-500" *ngIf="
           registerShopForm.get('shopEmail')?.invalid &&
           registerShopForm.get('shopEmail')?.touched
-        ">{{ 'BUSINESS.REGISTRATION.VALIDATIONS_BUSINESS_EMAIL_ADDRESS' | translate }}</span>
+        ">{{ 'BUSINESS.REGISTRATION.VALIDATIONS.BUSINESS_EMAIL_ADDRESS' | translate }}</span>
       </div>
       <nav class="business-registration__navigation">
         <ul class="business-registration__list">
