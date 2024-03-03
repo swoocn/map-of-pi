@@ -19,7 +19,7 @@
   <div class="image-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
     <img id="logo-img" [src]="imageUrl" alt="Map of Pi" width="48" height="48" [class.hovered-img]="isHovered" />
     <div class="text-container" [routerLink]="['/privacy-policy']">
-        <p>Map of Pi</p>
+        <p>{{ 'CORE.APP_NAME' | translate }}</p>
     </div>
   </div>
 

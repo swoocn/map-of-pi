@@ -29,8 +29,7 @@ mat-toolbar {
   display: none;
   position: absolute;
   top: 65%;
-  left: 100%;
-  transform: translate(-100%, -50%);
+  transform: translateY(-50%);
   padding: 10px;
   transition: left 0.3s ease, opacity 1s ease 1s;
   outline: none;
@@ -38,11 +37,10 @@ mat-toolbar {
 }
 
 .image-container:hover #logo-img {
-  transform: translateX(-90px);
+  transform: translateX(-40px);
 }
 
 .image-container:hover .text-container {
   display: block;
-  left: calc(100% + 10px);
   opacity: 1;
 }
