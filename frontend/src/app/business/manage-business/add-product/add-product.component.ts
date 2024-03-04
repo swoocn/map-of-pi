@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-add-product',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [TranslateModule, ReactiveFormsModule, CommonModule],
   templateUrl: './add-product.component.html',
   styleUrl: './add-product.component.scss',
 })

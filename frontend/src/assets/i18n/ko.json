@@ -49,6 +49,34 @@
         "CONFIRM": "비즈니스 설정 확인",
         "UNDER_CONSTRUCTION": "이 기능은 아직 완전히 구현되지 않았습니다"
       }
+    },
+    "ADD_PRODUCT": {
+      "LABELS": {
+        "PRODUCT_NAME": "제품 이름",
+        "PRODUCT_DESCRIPTION": "제품 설명",
+        "PRODUCT_IMAGES": "제품 이미지",
+        "PRODUCT_PRICE": "제품 가격",
+        "PRODUCT_QUANTITY": "제품 수량",
+        "SHIPPING_TYPE": "배송 유형"
+      },
+      "PLACEHOLDERS": {
+        "PRODUCT_IMAGES": "제품 이미지 업로드",
+        "PRODUCT_IMAGES_MAX": "제품 이미지 (제한: 3)"
+      },
+      "VALIDATIONS": {
+        "PRODUCT_IMAGES": "제품 이미지가 선택되지 않았습니다"
+      },
+      "OPTIONS": {
+        "SHIPPING_TYPES": {
+          "FREE_SHIPPING": "무료 배송",
+          "PAID_SHIPPING": "유료 배송",
+          "PICKUP": "픽업",
+          "PAY_ON_DELIVERY": "배송 시 현금 결제"
+        }
+      },
+      "BUTTONS": {
+        "SUBMIT": "제출"
+      }
     }
   },
   "PRIVACY_POLICY": {

@@ -49,6 +49,34 @@
         "CONFIRM": "Confirmar configuración del negocio",
         "UNDER_CONSTRUCTION": "Esta funcionalidad aún no está completamente desarrollada"
       }
+    },
+    "ADD_PRODUCT": {
+      "LABELS": {
+        "PRODUCT_NAME": "Nombre del Producto",
+        "PRODUCT_DESCRIPTION": "Descripción del Producto",
+        "PRODUCT_IMAGES": "Imágenes del Producto",
+        "PRODUCT_PRICE": "Precio del Producto",
+        "PRODUCT_QUANTITY": "Cantidad del Producto",
+        "SHIPPING_TYPE": "Tipo de Envío"
+      },
+      "PLACEHOLDERS": {
+        "PRODUCT_IMAGES": "Subir Imágenes del Producto",
+        "PRODUCT_IMAGES_MAX": "Imágenes del Producto (Límite: 3)"
+      },
+      "VALIDATIONS": {
+        "PRODUCT_IMAGES": "No se han seleccionado imágenes del producto"
+      },
+      "OPTIONS": {
+        "SHIPPING_TYPES": {
+          "FREE_SHIPPING": "Envío Gratuito",
+          "PAID_SHIPPING": "Envío Pago",
+          "PICKUP": "Recoger",
+          "PAY_ON_DELIVERY": "Pagar al recibir"
+        }
+      },
+      "BUTTONS": {
+        "SUBMIT": "Enviar"
+      }
     }
   },
   "PRIVACY_POLICY": {

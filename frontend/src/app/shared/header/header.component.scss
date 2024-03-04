@@ -98,6 +98,7 @@ mat-toolbar {
   padding: 20px;
   text-align: center;
   width: 600px;
+  margin: 0 auto;
   cursor: crosshair;
 }
 
@@ -134,7 +135,7 @@ mat-toolbar {
 
 .social-media-link {
   display: block;
-  margin: 0 25px;
+  margin: 0 10px;
   font-size: 30px;
   text-decoration: none;
   color: #000000;
@@ -146,8 +147,12 @@ mat-toolbar {
 }
 
 .privacy-policy-content {
+  max-width: calc(100% - 40px);
+  margin: 0 auto;
+  text-align: left;
   max-height: 400px;
   overflow-y: auto;
+  word-wrap: break-word;
 }
 
 .privacy-policy-link {
@@ -162,10 +167,12 @@ mat-toolbar {
 .privacy-policy-content body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
-  text-align: justify;
+  text-align: left;
   padding: 20px;
+  width: 400px;
   max-width: 100%;
   margin: 0 auto;
+  word-wrap: break-word;
 }
 
 .privacy-policy-content h1, h2 {
@@ -189,7 +196,7 @@ mat-toolbar {
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .popup {
-    width: 75%;
+    width: 90%;
     max-width: none;
   }
 }
