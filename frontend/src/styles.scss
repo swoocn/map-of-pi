@@ -38,7 +38,19 @@ $angular-dark-theme: mat.define-dark-theme((
 
 .dark-mode { 
   @include mat.all-component-colors($angular-dark-theme); 
-  background-color: #2b2b2b;
+  background-color: #111d11;
   color: #ffffff;
   background-blend-mode: multiply;
+
+  .business-registration__input, .business-registration__select {
+    background-color: #092709;
+  }
+
+  .popup {
+    background-color: #111d11;
+  }
+
+  .input {
+    background-color: #111d11;
+  }
 }
