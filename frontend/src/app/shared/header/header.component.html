@@ -1,30 +1,151 @@
 <mat-toolbar class="justify-between">
   @if (showBackButton()) {
-    <div class="group-controls">
-      <button mat-icon-button (click)="navigateBack()">
-        <mat-icon>arrow_back</mat-icon>
-      </button>
-      <span [routerLink]="['/home']">
-        <button mat-icon-button>
-          <mat-icon>home</mat-icon>
-        </button>
-      </span>
-    </div>
-  } @else {
-    <button mat-icon-button>
-      <mat-icon>home</mat-icon>
+  <div class="group-controls">
+    <button mat-icon-button (click)="navigateBack()">
+      <mat-icon>arrow_back</mat-icon>
     </button>
+    <span [routerLink]="['/home']">
+      <button mat-icon-button>
+        <mat-icon>home</mat-icon>
+      </button>
+    </span>
+  </div>
+  } @else {
+  <button mat-icon-button>
+    <mat-icon>home</mat-icon>
+  </button>
   }
 
   <div class="image-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
     <img id="logo-img" [src]="imageUrl" alt="Map of Pi" width="48" height="48" [class.hovered-img]="isHovered" />
-    <div class="text-container" [routerLink]="['/privacy-policy']">
-        <p>Map of Pi</p>
+    <div class="text-container">
+      <p>{{ 'CORE.APP_NAME' | translate }}</p>
     </div>
   </div>
 
   <div class="group-controls">
+    <button mat-icon-button (click)="displayPopup()">
+      <mat-icon>help</mat-icon>
+    </button>
     <app-dark-mode-toggler></app-dark-mode-toggler>
     <app-language-switcher></app-language-switcher>
   </div>
 </mat-toolbar>
+
+<!-- Popup -->
+<div class="popup-container" *ngIf="showPopup">
+  <div class="popup">
+    <span class="close" (click)="hidePopup()">&times;</span>
+    <h2 *ngIf="!showPrivacyPolicy">Welcome to Map of Pi</h2>
+    <h4 *ngIf="!showPrivacyPolicy">[Alpha Version]</h4>
+    <br />
+    <p (click)="showPrivacyPolicyPopup()" *ngIf="!showPrivacyPolicy" class="privacy-policy-link">Privacy Policy</p>
+    <br />
+    <div *ngIf="!showPrivacyPolicy">
+      <br />
+      <div class="social-media-links">
+        <a href="mailto:info@mapofpi.com" class="social-media-link" target="_blank">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://facebook.com/mapofpi" class="social-media-link" target="_blank">
+          <i class="fab fa-facebook-square"></i>
+        </a>
+        <a href="https://instagram.com/mapofpi" class="social-media-link" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com/mapofpi" class="social-media-link" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      <button class="btn-ok" (click)="hidePopup()">OK</button>
+    </div>
+    <div *ngIf="showPrivacyPolicy" class="privacy-policy-content">
+      <!-- Privacy policy content -->
+      <br />
+
+      <body>
+        <h2><strong>Map of Pi {{ 'PRIVACY_POLICY.TITLE' | translate }}</strong></h2>
+        <h4>{{ 'PRIVACY_POLICY.LAST_UPDATED' | translate }}: {{ lastUpdated }}</h4>
+        <h4>{{ 'PRIVACY_POLICY.EMAIL_ADDRESS' | translate }}: {{ emailAddress }}</h4>
+        <br />
+
+        <h2>1. {{ 'PRIVACY_POLICY.SECTIONS.HEADER_1' | translate }}</h2>
+        <ul>
+          <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_1' | translate }}</li>
+        </ul>
+
+        <h2>2. {{ 'PRIVACY_POLICY.SECTIONS.HEADER_2' | translate }}t</h2>
+        <ul>
+          <li><strong>2.1 {{ 'PRIVACY_POLICY.SECTIONS.SUBHEADER_2_1' | translate }}</strong>
+            <ul>
+              <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_2_1_1' | translate }}</li>
+              <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_2_1_2' | translate }}</li>
+            </ul>
+          </li>
+          <li><strong>2.2 {{ 'PRIVACY_POLICY.SECTIONS.SUBHEADER_2_2' | translate }}</strong>
+            <ul>
+              <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_2_2_1' | translate }}</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>3. {{ 'PRIVACY_POLICY.SECTIONS.HEADER_3' | translate }}</h2>
+        <ul>
+          <li><strong>3.1 {{ 'PRIVACY_POLICY.SECTIONS.SUBHEADER_3_1' | translate }}</strong>
+            <ul>
+              <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_3_1_1' | translate }}</li>
+            </ul>
+          </li>
+          <li><strong>3.2 {{ 'PRIVACY_POLICY.SECTIONS.SUBHEADER_3_2' | translate }}</strong>
+            <ul>
+              <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_3_2_1' | translate }}</li>
+            </ul>
+          </li>
+          <li><strong>3.3 {{ 'PRIVACY_POLICY.SECTIONS.SUBHEADER_3_3' | translate }}</strong>
+            <ul>
+              <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_3_3_1' | translate }}</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>4. {{ 'PRIVACY_POLICY.SECTIONS.HEADER_4' | translate }}</h2>
+        <ul>
+          <li><strong>4.1 {{ 'PRIVACY_POLICY.SECTIONS.SUBHEADER_4_1' | translate }}</strong>
+            <ul>
+              <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_4_1_1' | translate }}</li>
+            </ul>
+          </li>
+          <li><strong>4.2 {{ 'PRIVACY_POLICY.SECTIONS.SUBHEADER_4_2' | translate }}</strong>
+            <ul>
+              <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_4_2_1' | translate }}</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>5. {{ 'PRIVACY_POLICY.SECTIONS.HEADER_5' | translate }}</h2>
+        <ul>
+          <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_5_1' | translate }}</li>
+        </ul>
+
+        <h2>6. {{ 'PRIVACY_POLICY.SECTIONS.HEADER_6' | translate }}</h2>
+        <ul>
+          <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_6_1' | translate }}</li>
+        </ul>
+
+        <h2>7. {{ 'PRIVACY_POLICY.SECTIONS.HEADER_7' | translate }}</h2>
+        <ul>
+          <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_7_1' | translate }}</li>
+        </ul>
+
+        <h2>8. {{ 'PRIVACY_POLICY.SECTIONS.HEADER_8' | translate }}</h2>
+        <ul>
+          <li>{{ 'PRIVACY_POLICY.SECTIONS.CONTENT_8_1' | translate }} &#64; <strong><a
+                href="mailto:contact@email.com">Map of
+                Pi.</a></strong>.</li>
+        </ul>
+
+      </body>
+    </div>
+    <button class="btn-ok" *ngIf="showPrivacyPolicy" (click)="hidePrivacyPolicyPopup()">OK</button>
+  </div>
+</div>

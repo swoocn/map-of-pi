@@ -22,8 +22,8 @@ export interface LangMenuItem {
 export class LanguageSwitcherComponent {
   protected readonly languages: LangMenuItem[] = [
     { code: 'en', name: 'English' },
-    { code: 'de', name: 'German' },
-    { code: 'hu', name: 'Hungarian' },
+    { code: 'es', name: 'Spanish' },
+    { code: 'ko', name: 'Korean' }
   ];
 
   constructor(private readonly translateService: TranslateService) {}

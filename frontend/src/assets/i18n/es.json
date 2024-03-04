@@ -1,0 +1,96 @@
+{
+  "CORE": {
+    "APP_NAME": "Mapa de Pi"
+  },
+  "HOME": {
+    "ADD_MY_BUSINESS": "Agregar mi negocio",
+    "SEARCH_BAR_PLACEHOLDER": "Buscar negocio..."
+  },
+  "BUSINESS": {
+    "REGISTRATION": {
+      "LABELS": {
+        "BUSINESS_NAME": "Nombre del negocio",
+        "BUSINESS_DESCRIPTION": "Descripción del negocio",
+        "BUSINESS_TYPE": "Tipo de Negocio",
+        "BUSINESS_TYPES": {
+          "RESTAURANT": "Restaurante",
+          "RETAIL_STORE": "Tienda Minorista",
+          "SERVICE": "Servicio",
+          "CONSTRUCTION": "Construcción",
+          "TRANSPORTATION": "Transporte"
+        },        
+        "BUSINESS_LOCATION": "Ubicación del negocio",
+        "BUSINESS_IMAGES": "Imágenes del negocio",
+        "BUSINESS_PHONE_NUMBER": "Número de teléfono del negocio",
+        "BUSINESS_EMAIL_ADDRESS": "Correo electrónico del negocio"
+      },
+      "PLACEHOLDERS": {
+        "BUSINESS_NAME": "Ingrese el nombre de su negocio",
+        "BUSINESS_DESCRIPTION": "Ingrese una descripción breve de su negocio",
+        "BUSINESS_LOCATION": "Ingrese la ubicación de su negocio",
+        "BUSINESS_IMAGES": "Sube tus imágenes aquí",
+        "BUSINESS_PHONE_NUMBER": "Ingrese el número de teléfono de su negocio",
+        "BUSINESS_EMAIL_ADDRESS": "Ingrese la dirección de correo electrónico de su negocio"
+      },
+      "VALIDATIONS": {
+        "BUSINESS_NAME": "El nombre del negocio es obligatorio",
+        "BUSINESS_DESCRIPTION": "La descripción del negocio es obligatoria",
+        "BUSINESS_TYPE": "El tipo de negocio es obligatorio",
+        "BUSINESS_LOCATION": "La dirección del negocio es obligatoria",
+        "BUSINESS_IMAGES": "El negocio debe tener una imagen asociada",
+        "BUSINESS_PHONE_NUMBER": "El número de teléfono del negocio es obligatorio",
+        "BUSINESS_EMAIL_ADDRESS": "La dirección de correo electrónico del negocio es obligatoria"
+      },
+      "BUTTONS": {
+        "MENU": "Menú",
+        "LOYALTY_STAMPS": "Sellos de lealtad",
+        "BUSINESS_PHOTOS": "Fotos del negocio",
+        "QR_CODE": "Obtener código QR",
+        "CONFIRM": "Confirmar configuración del negocio",
+        "UNDER_CONSTRUCTION": "Esta funcionalidad aún no está completamente desarrollada"
+      }
+    }
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "Política de privacidad",
+    "LAST_UPDATED": "Última actualización",
+    "EMAIL_ADDRESS": "Correo electrónico",
+    "SECTIONS": {
+      "HEADER_1": "Introducción",
+      "CONTENT_1": "Bienvenido a la aplicación Mapa de Pi, desarrollada por el equipo de Mapa de Pi en colaboración con la Comunidad Pi. Esta política de privacidad describe cómo recopilamos, usamos, divulgamos y protegemos su información personal cuando utiliza nuestra aplicación móvil.",
+      
+      "HEADER_2": "Información que recopilamos",
+      "SUBHEADER_2_1": "Información del usuario",
+      "CONTENT_2_1_1": "Cuando se registra como usuario, podemos recopilar su nombre, dirección de correo electrónico, nombre de usuario y otros detalles relevantes.",
+      "CONTENT_2_1_2": "Podemos recopilar información sobre su dispositivo, incluido el tipo de dispositivo, el sistema operativo y los identificadores únicos del dispositivo.",
+      "SUBHEADER_2_2": "Información del proveedor",
+      "CONTENT_2_2_1": "Los proveedores que se registran en la plataforma pueden estar obligados a proporcionar información comercial, incluido el nombre del negocio, la ubicación y los detalles de contacto.",
+
+      "HEADER_3": "Cómo utilizamos su información",
+      "SUBHEADER_3_1": "Proporcionar servicios",
+      "CONTENT_3_1_1": "Utilizamos su información para proporcionar y mejorar los servicios de la aplicación Mapa de Pi, incluidas las funcionalidades de usuario y proveedor.",
+      "SUBHEADER_3_2": "Comunicaciones",
+      "CONTENT_3_2_1": "Podemos utilizar su información de contacto para enviarle actualizaciones, notificaciones y mensajes promocionales relacionados con la aplicación Mapa de Pi.",
+      "SUBHEADER_3_3": "Análisis",
+      "CONTENT_3_3_1": "Recopilamos y analizamos datos para mejorar el rendimiento, las características y la funcionalidad de la aplicación.",
+
+      "HEADER_4": "Cómo compartimos su información",
+      "SUBHEADER_4_1": "Con proveedores",
+      "CONTENT_4_1_1": "La información del usuario puede compartirse con proveedores para el cumplimiento de pedidos y fines de comunicación.",
+      "SUBHEADER_4_2": "Con terceros",
+      "CONTENT_4_2_1": "Podemos compartir información con proveedores de servicios de terceros para la funcionalidad de la aplicación, análisis y procesamiento de pagos.",
+
+      "HEADER_5": "Medidas de seguridad",
+      "CONTENT_5_1": "Utilizamos medidas de seguridad estándar de la industria para proteger su información. Sin embargo, ningún método de transmisión a través de Internet o almacenamiento electrónico es completamente seguro.",
+
+      "HEADER_6": "Sus opciones",
+      "CONTENT_6_1": "Puede actualizar o eliminar su información de cuenta a través de la configuración de la aplicación. También puede optar por no participar en comunicaciones promocionales.",
+
+      "HEADER_7": "Cambios en esta política de privacidad",
+      "CONTENT_7_1": "Podemos actualizar esta política de privacidad según sea necesario. La última versión se publicará en nuestro sitio web o dentro de la aplicación.",
+
+      "HEADER_8": "Contáctenos",
+      "CONTENT_8_1": "Si tiene alguna pregunta o inquietud sobre esta política de privacidad, contáctenos."
+    }
+  }
+}

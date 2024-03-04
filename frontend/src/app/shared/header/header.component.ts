@@ -18,10 +18,16 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class HeaderComponent {
   imageUrl: string = 'assets/images/logo.svg';
   hoveredImageUrl: string = 'assets/images/logo-header.svg';
   isHovered: boolean = false;
+  showPopup: boolean = false;
+  showPrivacyPolicy: boolean = false;
+
+  lastUpdated!: string;
+  emailAddress!: string;
 
   @ViewChild(DarkModeTogglerComponent) darkModeToggler!: DarkModeTogglerComponent;
   showBackButton: Signal<boolean>;
@@ -32,6 +38,8 @@ export class HeaderComponent {
     public readonly darkModeService: DarkModeService,
   ) {
     this.showBackButton = this.uiStateService.showBackButton;
+    this.lastUpdated = "3/1/2024";
+    this.emailAddress = "info@mapofpi.com";
   }
 
   navigateBack(): void {
@@ -44,5 +52,23 @@ export class HeaderComponent {
 
   onMouseLeave() {
     this.isHovered = false;
+  }
+
+  displayPopup(): void {
+    this.showPopup = true;
+  }
+
+  hidePopup(): void {
+    this.showPopup = false;
+    this.showPrivacyPolicy = false;
+  }
+
+  showPrivacyPolicyPopup() {
+    this.showPopup = true;
+    this.showPrivacyPolicy = true;
+  }
+
+  hidePrivacyPolicyPopup() {
+    this.showPrivacyPolicy = false;
   }
 }

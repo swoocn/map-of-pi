@@ -7,16 +7,90 @@
     "SEARCH_BAR_PLACEHOLDER": "Search Business..."
   },
   "BUSINESS": {
-    "CONTACT_INFORMATION": "Contact information",
-    "BUSINESS_NAME": "Business name",
-    "BUSINESS_TYPE": "Business type",
-    "LOCATION": "Location",
-    "CONFIRM": "Confirm",
-    "PRODUCTS": {
-      "TITLE": "Products",
-      "PRODUCTS_ON": "Products On",
-      "IS_PI_PAYMENT_ENABLED": "Enable PI Transactions",
-      "CAN_ORDER_WITHOUT_PAYMENT": "Online Orders without PI Payment On"
+    "REGISTRATION": {
+      "LABELS": {
+        "BUSINESS_NAME": "Business Name",
+        "BUSINESS_DESCRIPTION": "Business Description",
+        "BUSINESS_TYPE": "Business Type",
+        "BUSINESS_TYPES": {
+          "RESTAURANT": "Restaurant",
+          "RETAIL_STORE": "Retail Store",
+          "SERVICE": "Service",
+          "CONSTRUCTION": "Construction",
+          "TRANSPORTATION": "Transportation"
+        },
+        "BUSINESS_LOCATION": "Business Location",
+        "BUSINESS_IMAGES": "Business Images",
+        "BUSINESS_PHONE_NUMBER": "Business Phone Number",
+        "BUSINESS_EMAIL_ADDRESS": "Business Email Address"
+      },
+      "PLACEHOLDERS": {
+        "BUSINESS_NAME": "Enter the name of your business",
+        "BUSINESS_DESCRIPTION": "Enter a simple description about your business",
+        "BUSINESS_LOCATION": "Enter the location of your business",
+        "BUSINESS_IMAGES": "Upload your images here",
+        "BUSINESS_PHONE_NUMBER": "Enter the phone number of your business",
+        "BUSINESS_EMAIL_ADDRESS": "Enter the email address of your business"
+      },
+      "VALIDATIONS": {
+        "BUSINESS_NAME": "Business Name is required",
+        "BUSINESS_DESCRIPTION": "Business Description is required",
+        "BUSINESS_TYPE": "Business Type is required",
+        "BUSINESS_LOCATION": "Business address is required",
+        "BUSINESS_IMAGES": "Business must have an associated image",
+        "BUSINESS_PHONE_NUMBER": "Business phone number is required",
+        "BUSINESS_EMAIL_ADDRESS": "Business email address is required"
+      },
+      "BUTTONS": {
+        "MENU": "Menu",
+        "LOYALTY_STAMPS": "Loyalty Stamps",
+        "BUSINESS_PHOTOS": "Business Photos",
+        "QR_CODE": "Get QR Code",
+        "CONFIRM": "Confirm Business Settings",
+        "UNDER_CONSTRUCTION": "This functionality is not fully built yet"
+      }
+    }
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "Privacy Policy",
+    "LAST_UPDATED": "Last Updated",
+    "EMAIL_ADDRESS": "Email Address",
+    "SECTIONS": {
+      "HEADER_1": "Introduction",
+      "CONTENT_1": "Welcome to the Map of Pi app, developed by the Map of Pi team in collaboration with the Pi Community. This Privacy Policy outlines how we collect, use, disclose, and protect your personal information when you use our mobile application.",
+      
+      "HEADER_2": "Information We Collect",
+      "SUBHEADER_2_1": "User Information",
+      "CONTENT_2_1_1": "When you register as a user, we may collect your name, email address, username, and other relevant details.",
+      "CONTENT_2_1_2": "We may collect information about your device, including device type, operating system, and unique device identifiers.",
+      "SUBHEADER_2_2": "Vendor Information",
+      "CONTENT_2_2_1": "Vendors registering on the platform may be required to provide business information, including business name, location, and contact details.",
+
+      "HEADER_3": "How We Use Your Information",
+      "SUBHEADER_3_1": "Providing Services",
+      "CONTENT_3_1_1": "We use your information to provide and enhance the Map of Pi app services, including user and vendor functionalities.",
+      "SUBHEADER_3_2": "Communications",
+      "CONTENT_3_2_1": "We may use your contact information to send you updates, notifications, and promotional messages related to the Map of Pi app.",
+      "SUBHEADER_3_3": "Analytics",
+      "CONTENT_3_3_1": "We collect and analyze data to improve the performance, features, and functionality of the app.",
+
+      "HEADER_4": "Sharing Your Information",
+      "SUBHEADER_4_1": "With Vendors",
+      "CONTENT_4_1_1": "User information may be shared with vendors for order fulfillment and communication purposes.",
+      "SUBHEADER_4_2": "With Third Parties",
+      "CONTENT_4_2_1": "We may share information with third-party service providers for app functionality, analytics, and payment processing.",
+
+      "HEADER_5": "Security Measures",
+      "CONTENT_5_1": "We employ industry-standard security measures to protect your information. However, no method of transmission over the internet or electronic storage is completely secure.",
+
+      "HEADER_6": "Your Choices",
+      "CONTENT_6_1": "You can update or delete your account information through the app settings. You may also opt-out of promotional communications.",
+
+      "HEADER_7": "Changes to This Privacy Policy",
+      "CONTENT_7_1": "We may update this Privacy Policy as necessary. The latest version will be posted on our website or within the app.",
+
+      "HEADER_8": "Contact Us",
+      "CONTENT_8_1": "If you have any questions or concerns about this Privacy Policy, please contact us "
     }
   }
 }
