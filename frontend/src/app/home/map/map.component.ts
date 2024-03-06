@@ -4,8 +4,8 @@ import { Map, marker, Layer } from 'leaflet';
 import { GeolocationService } from '../../core/service/geolocation.service';
 import { SnackService } from '../../core/service/snack.service';
 import { take } from 'rxjs';
-import { ICoordinate, dummyCoordinates } from '../../core/model/business';
-import { Router, RouterLink, RouterModule } from '@angular/router';
+import { dummyCoordinates } from '../../core/model/business';
+import { Router, RouterModule } from '@angular/router';
 import { ShopService } from '../../core/service/shop.service';
 import axios from 'axios';
 
@@ -17,7 +17,6 @@ import axios from 'axios';
   styleUrl: './map.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
 export class MapComponent implements OnInit {
   layer?: Layer;
   map!: Map;
@@ -26,6 +25,7 @@ export class MapComponent implements OnInit {
   navigator: Router = inject(Router);
   showPopup: boolean = false;
   allShops: any[] = [];
+  userPositions: any[] = [];
 
   coordinates = dummyCoordinates;
   constructor(
@@ -38,6 +38,8 @@ export class MapComponent implements OnInit {
     this.geolocationService.geolocationTriggerEvent$.subscribe(() => {
       this.locateMe();
     });
+
+    this.userPositions = this.shopService.getUserPosition();
   }
 
   onMapReady(map: Map): void {
@@ -53,7 +55,7 @@ export class MapComponent implements OnInit {
       .subscribe({
         next: (coords: GeolocationCoordinates) => {
           this.layer = marker([coords.latitude, coords.longitude], {
-            icon: this.geolocationService.getMarkerIcon(),
+            icon: this.geolocationService.getUserMarkerIcon(),
           })
             .bindPopup('A pretty CSS popup.<br> Easily customizable.')
             .openPopup();
@@ -72,6 +74,29 @@ export class MapComponent implements OnInit {
       });
   }
 
+  async track() {
+    this.snackService.showMessage(`Locating your position`);
+
+    console.log('Coordinates from shop in track: ', this.shopService.getUserPosition());
+
+    const location = await axios.get('https://ipapi.co/json/');
+
+    const { data } = location;
+
+    const coordinates = [[data.latitude, data.longitude]];
+
+    coordinates.map((coord) => {
+      const userMarker = marker([coord[0], coord[1]], {
+        icon: this.geolocationService.getUserMarkerIcon(),
+      })
+        .bindPopup('User location')
+        .openPopup();
+
+      this.map.addLayer(userMarker);
+      this.map.flyTo([coord[0], coord[1]], 15);
+    });
+  }
+
   addAllCoordinatesToMap(): void {
     this.allShops.forEach((shop: any, index: number) => {
       const markerLayer = marker([shop.coordinates[0], shop.coordinates[1]], {
@@ -79,7 +104,7 @@ export class MapComponent implements OnInit {
       })
         .bindPopup(
           `<div class="max-w-sm rounded-md overflow-hidden">
-  <img class="w-full" src="https://newsway.com.ng/wp-content/uploads/2023/10/Screenshot_20231015-144313-1024x555.jpg" alt="Shop Image">
+  <img class="w-full" src="${shop.image}" alt="Shop Image">
   <div class="flex items-center justify-between my-2">
     <div class="font-bold text-md ">${shop.name}</div>
     <img src="assets/shops/star.png" alt="rating"  class="max-w-[50px] w-full"/>
@@ -119,10 +144,7 @@ export class MapComponent implements OnInit {
   <div class="bg-red-400 w-[100px]  text-center rounded-md text-white py-1 mt-1" id="${shop._id}">Visit Shop</div>
   <div class="bg-blue-400 w-[100px]  text-center rounded-md text-white py-1 mt-1" id="comming">Take Route</div>
 </div>
-</div>
-
-
-`,
+</div>`,
         )
         .addTo(this.map)
         .addEventListener('click', (e) => {
@@ -157,11 +179,13 @@ export class MapComponent implements OnInit {
       this.addAllCoordinatesToMap();
 
       console.log(
-        'All shop after fetching them from DB ',
+        'All shops after fetching them from DB ',
         this.allShops.map((shop) => shop.coordinates),
       );
     } catch (error) {
       console.log(error);
     }
+
+    this.track();
   }
 }

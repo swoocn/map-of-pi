@@ -31,6 +31,10 @@ export class ShopService {
     this.coordinates = arr;
   }
 
+  getUserPosition() {
+    return this.coordinates;
+  }
+
   async registerShop(shopData: IShopData) {
     const data: any = {
       name: shopData.shopName,
