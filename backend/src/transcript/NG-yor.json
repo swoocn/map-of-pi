@@ -1,0 +1,124 @@
+{
+  "CORE": {
+    "APP_NAME": "Map of Pi"
+  },
+  "HOME": {
+    "ADD_MY_BUSINESS": "Fi Ọjà/Òwò mi l'éde",
+    "SEARCH_BAR_PLACEHOLDER": "Wá Ọjà tàbí Òwò..."
+  },
+  "BUSINESS": {
+    "REGISTRATION": {
+      "LABELS": {
+        "BUSINESS_NAME": "Orúkọ Òwò/Ilé-Iṣẹ́",
+        "BUSINESS_DESCRIPTION": "Ìjúwé nípa Òwò",
+        "BUSINESS_TYPE": "Irú Òwò",
+        "BUSINESS_TYPES": {
+          "RESTAURANT": "Ilé Oúnjẹ",
+          "RETAIL_STORE": "Oníṣòwò/Alágbàtà",
+          "SERVICE": "Iṣẹ́-ọwọ́",
+          "CONSTRUCTION": "Ilé-kíkọ́/Ọ̀nà-Túntúnṣe",
+          "TRANSPORTATION": "Awakọ̀"
+        },
+        "BUSINESS_LOCATION": "Agbègbè tí Òwò náá wà",
+        "BUSINESS_IMAGES": "Àwọn Àwòrán nípa Òwò",
+        "BUSINESS_PHONE_NUMBER": "Ẹ̀rọ Ìbánisọ̀rọ̀ Olówò/Òṣìsé",
+        "BUSINESS_EMAIL_ADDRESS": "Ẹ̀rọ Ìfi-Ọ̀rọ̀ Ránṣẹ́ Ímeèli Olówò/Òṣìṣẹ́"
+      },
+      "PLACEHOLDERS": {
+        "BUSINESS_NAME": "Tẹ Orúkọ Òwò/Iṣẹ́ rẹ s'íbí",
+        "BUSINESS_DESCRIPTION": "Ṣe Àlàyé ṣókí nípa Ówó tàbí Iṣẹ́ tí o bá ńṣe s'íbí",
+        "BUSINESS_LOCATION": "Ṣe Ìjúwé-agbègbè tí Òwò tàbí Iṣẹ́ rẹ́ wà",
+        "BUSINESS_IMAGES": "Fi Àwọn Àworán nípa Iṣẹ́/Òwò rẹ s'íbí",
+        "BUSINESS_PHONE_NUMBER": "Tẹ Ẹ̀rọ Ìbánisọ̀rọ̀ nípa Iṣẹ́/Òwò rẹ s'íbí",
+        "BUSINESS_EMAIL_ADDRESS": "Tẹ Ẹ̀rọ Ìfi-Ọ̀rọ̀ Ránṣẹ́ Ímeèlì Iṣẹ́ rẹ s'íbí"
+      },
+      "VALIDATIONS": {
+        "BUSINESS_NAME": "O kò tíì fi Orúkọ Òwò síi",
+        "BUSINESS_DESCRIPTION": "O kò tíì fi Àlàyé nípa Òwò síi",
+        "BUSINESS_TYPE": "O kò tíì fi Irú Òwò síi",
+        "BUSINESS_LOCATION": "O kò tíì fi Ìjúwé-agbégbé Òwò/Iṣẹ́ rẹ síi",
+        "BUSINESS_IMAGES": "O kò tíì fi àwòrán nípa Òwò/Iṣẹ́ rẹ síi",
+        "BUSINESS_PHONE_NUMBER": "O kò tíì fi Ẹ̀rọ-Ìbánísọ̀rọ̀ Iṣẹ́/Òwò rẹ síi",
+        "BUSINESS_EMAIL_ADDRESS": "O kò tíì fi Ẹ̀rọ-Àtẹ̀jíṣẹ́ Ímeèli Iṣẹ́ rẹ síi"
+      },
+      "BUTTONS": {
+        "MENU": "Èròja Atọ́kùn",
+        "LOYALTY_STAMPS": "Òntẹ̀ Ìṣe-déédé",
+        "BUSINESS_PHOTOS": "Àwòrán Nípa Òwò/Iṣẹ́",
+        "QR_CODE": "Wo Àwòrán QR Code",
+        "CONFIRM": "Fi Ìfiléde Iṣẹ́/Òwò mi Pamọ́":,
+        "UNDER_CONSTRUCTION": "À ń ṣiṣẹ̀ nípa Èròjà yí l'ọ́wọ́"
+      }
+    },
+    "ADD_PRODUCT": {
+      "LABELS": {
+        "PRODUCT_NAME": "Orúkọ Ọjà",
+        "PRODUCT_DESCRIPTION": "Àlàyé Ṣókí nípa Ọjà yí",
+        "PRODUCT_IMAGES": "Àwọn Àwòrán nípa Ọjà yí",
+        "PRODUCT_PRICE": "Iye Owó Ọjà",
+        "PRODUCT_QUANTITY": "Iye Ónka Ọjà",
+        "SHIPPING_TYPE": "Àwọn Oríṣí Ọ̀nà làti fi Ọjà ránṣẹ́ sí Olùrajà"
+      },
+      "PLACEHOLDERS": {
+        "PRODUCT_IMAGES": "Tẹ ibí láti fi Àwọn Àwòrán nípa Ọjà rẹ síi",
+        "PRODUCT_IMAGES_MAX": "Ó kéré jù, Àwòrán Mẹ́ta(tàbí Jubẹ́ẹ́lọ)"
+      },
+      "VALIDATIONS": {
+        "PRODUCT_IMAGES": "O kò tíì fi Àwòrán nípa Ọjà rẹ síì"
+      },
+      "OPTIONS": {
+        "SHIPPING_TYPES": {
+          "FREE_SHIPPING": "Fífi Ọjà Ránṣe sí Olùrajà l'ọ́fẹ̀",
+          "PAID_SHIPPING": "Sísan Owó Ìfi Ọjà Ránṣẹ́",
+          "PICKUP": "Kí Olùrajà wá Gba Ọjà rẹ̀ nì Ilé-Iṣẹ́ wa",
+          "PAY_ON_DELIVERY": "Kí Olùrajà san owó Ọjà lẹ́yìn Ìgbà tí a bá gbé Ọjà rẹ̀ lọ fún"
+        }
+      },
+      "BUTTONS": {
+        "SUBMIT": "Ó ti parí"
+      }
+    }
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "ÌLÀNÀ ÌPA Ọ̀RỌ̀ MỌ́",
+    "LAST_UPDATED": "Last Updated",
+    "EMAIL_ADDRESS": "Email Address",
+    "SECTIONS": {
+      "HEADER_1": "Introduction",
+      "CONTENT_1": "Welcome to the Map of Pi app, developed by the Map of Pi team in collaboration with the Pi Community. This Privacy Policy outlines how we collect, use, disclose, and protect your personal information when you use our mobile application.",
+      
+      "HEADER_2": "Information We Collect",
+      "SUBHEADER_2_1": "User Information",
+      "CONTENT_2_1_1": "When you register as a user, we may collect your name, email address, username, and other relevant details.",
+      "CONTENT_2_1_2": "We may collect information about your device, including device type, operating system, and unique device identifiers.",
+      "SUBHEADER_2_2": "Vendor Information",
+      "CONTENT_2_2_1": "Vendors registering on the platform may be required to provide business information, including business name, location, and contact details.",
+
+      "HEADER_3": "How We Use Your Information",
+      "SUBHEADER_3_1": "Providing Services",
+      "CONTENT_3_1_1": "We use your information to provide and enhance the Map of Pi app services, including user and vendor functionalities.",
+      "SUBHEADER_3_2": "Communications",
+      "CONTENT_3_2_1": "We may use your contact information to send you updates, notifications, and promotional messages related to the Map of Pi app.",
+      "SUBHEADER_3_3": "Analytics",
+      "CONTENT_3_3_1": "We collect and analyze data to improve the performance, features, and functionality of the app.",
+
+      "HEADER_4": "Sharing Your Information",
+      "SUBHEADER_4_1": "With Vendors",
+      "CONTENT_4_1_1": "User information may be shared with vendors for order fulfillment and communication purposes.",
+      "SUBHEADER_4_2": "With Third Parties",
+      "CONTENT_4_2_1": "We may share information with third-party service providers for app functionality, analytics, and payment processing.",
+
+      "HEADER_5": "Security Measures",
+      "CONTENT_5_1": "We employ industry-standard security measures to protect your information. However, no method of transmission over the internet or electronic storage is completely secure.",
+
+      "HEADER_6": "Your Choices",
+      "CONTENT_6_1": "You can update or delete your account information through the app settings. You may also opt-out of promotional communications.",
+
+      "HEADER_7": "Changes to This Privacy Policy",
+      "CONTENT_7_1": "We may update this Privacy Policy as necessary. The latest version will be posted on our website or within the app.",
+
+      "HEADER_8": "Contact Us",
+      "CONTENT_8_1": "If you have any questions or concerns about this Privacy Policy, please contact us "
+    }
+  }
+}
