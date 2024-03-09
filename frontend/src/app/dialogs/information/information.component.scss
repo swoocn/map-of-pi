@@ -1,0 +1,85 @@
+.popup {
+    width: 300px;
+    max-width: 300px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 10;
+    cursor: crosshair;
+}
+
+.popup .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.popup .logo img {
+    max-width: 150px;
+    max-height: auto;
+}
+
+.popup .title {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #1D724B;
+    padding: 5px 10px;
+    border-bottom: 3px solid #FFC153;
+}
+
+.popup .title h1 {
+    color: #FFC153;
+    margin: 0;
+    font-size: 24px;
+    text-align: center; 
+}
+
+.popup .version {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    
+}
+
+.popup .update-notes {
+    border-radius: 10px;
+    margin: 10px 10px 10px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #e6e2dd;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.popup .update-notes h3 {
+    font-size: 16px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.popup .update-notes h4 {
+    margin-left: 10px;
+    margin-bottom: -5px;
+    font-size: 14px;
+    font-weight: bold;  
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 40px;
+}
+
+li {
+    font-size: 14px;
+    line-height: 1.0;
+    padding-top: 10px;
+}
+
+ul li:last-child {
+    padding-bottom: 10px;
+}

@@ -1,0 +1,11 @@
+.action-row-container {
+    position: fixed;
+    top: 70%; /* Adjust this value as needed */
+    width: 100%;
+    min-width: 80px;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+}
+  

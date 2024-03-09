@@ -1,0 +1,20 @@
+<div class="popup" *ngIf="showPopup" (click)="stopPropagation($event)">
+  <div class="logo">
+    <img src="{{ logo }}" alt="Map of Pi">
+  </div>
+  <div class="title">
+    <h1>Map of Pi</h1>
+  </div>
+  <div class="version">
+    <h3>{{ version }}</h3>
+  </div>
+  <div class="update-notes">
+    <h3>Latest Updates</h3>
+    <div class="items">
+      <h4>{{ date }}</h4>
+      <ul>
+        <li *ngFor="let item of updateItems">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.privacy-policy-content {
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    background-color: #fff;
+    z-index: 700;
+
+    h1, h2 {
+      color: #1d724b;
+    }
+
+    h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-bottom: 20px;
+    }
+}

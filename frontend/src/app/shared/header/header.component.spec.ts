@@ -6,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Observable, of } from 'rxjs';
 
-
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
