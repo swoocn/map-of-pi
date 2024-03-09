@@ -21,6 +21,7 @@ export class InformationComponent {
     'Added footer.', 
     'Added information popup for latest updates.', 
   ];
+  email: string = 'info@mapofpi.com';
 
   stopPropagation(event: MouseEvent): void {
     // prevent the click event from reaching the parent container.

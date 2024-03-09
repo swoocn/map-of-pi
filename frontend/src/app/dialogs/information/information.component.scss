@@ -52,7 +52,6 @@
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #e6e2dd;
-    height: 300px;
     overflow-y: auto;
 }
 
@@ -82,4 +81,15 @@ li {
 
 ul li:last-child {
     padding-bottom: 10px;
+}
+
+.defects-contact {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.defects-contact span {
+    font-size: 12px;
+    color: #ff0000;
 }
