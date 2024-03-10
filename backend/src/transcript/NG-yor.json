@@ -81,44 +81,44 @@
   },
   "PRIVACY_POLICY": {
     "TITLE": "ÌLÀNÀ ÌPA Ọ̀RỌ̀ MỌ́",
-    "LAST_UPDATED": "Last Updated",
-    "EMAIL_ADDRESS": "Email Address",
+    "LAST_UPDATED": "Ìgbà tí a ṣe àtúnṣe kányìn",
+    "EMAIL_ADDRESS": "Ẹ̀rọ Àtẹ̀jíṣẹ́ Ímèèlì wa",
     "SECTIONS": {
-      "HEADER_1": "Introduction",
-      "CONTENT_1": "Welcome to the Map of Pi app, developed by the Map of Pi team in collaboration with the Pi Community. This Privacy Policy outlines how we collect, use, disclose, and protect your personal information when you use our mobile application.",
+      "HEADER_1": "Àlàyé Nípa Àkọ́lé yí",
+      "CONTENT_1": "Ẹ káábọ̀ sí inú Èròja Káràkátà Map of Pi, èyí tí àwọn Ìgbìmọ Map of Pi dá sílẹ̀, ní Ìfọwọ́sowọ́pọ̀ gbogbo àwùjọ àti àwọn ìkànì Pi. Ìlànà Ìpa Ọ̀rọ̀ mọ́ yí ṣàlàyé bí a ṣe má n gba ọ̀rọ̀, lo ọ̀rọ̀, ṣàfihàn ọ̀rọ̀, àti bí a ṣe má n dáàbò bo àwọn àtẹ̀jíṣẹ́ ọ̀rọ̀ yín nígbà tí ẹ bá n lo Èròja Káràkátà wa.",
       
-      "HEADER_2": "Information We Collect",
-      "SUBHEADER_2_1": "User Information",
-      "CONTENT_2_1_1": "When you register as a user, we may collect your name, email address, username, and other relevant details.",
-      "CONTENT_2_1_2": "We may collect information about your device, including device type, operating system, and unique device identifiers.",
-      "SUBHEADER_2_2": "Vendor Information",
-      "CONTENT_2_2_1": "Vendors registering on the platform may be required to provide business information, including business name, location, and contact details.",
+      "HEADER_2": "Àwọn Ọ̀rọ̀ tí à ń Gbà",
+      "SUBHEADER_2_1": "Ọ̀rọ̀ nípa Olùlo-Èròjà",
+      "CONTENT_2_1_1": "Tí ẹ bá fi Orúkọ sílẹ̀ gẹ́gẹ́ bí Olùlo-Èròja Káràkátà yí, a máa ní láti gba Orúkọ yín, Ẹ̀rọ Àtẹ̀jíṣẹ́ Íméélì yín, Àlàjẹ́ tàbí Àpèmọ́-Orúkọ yín, àti àwọn Ọ̀rọ̀ pàtàkì míràn.",
+      "CONTENT_2_1_2": "Fún raraarẹ̀ ni Èròja Káràkátà yí máa ní láti gba àwọn Ọ̀rọ̀-àtọ́kasí nípa Ẹ̀rọ Ayára-bí àṣá yín, bíi Irúu Ẹ̀rọ tí ó bá jẹ́, Irúu Irinṣẹ́ àìfojúrí tí ó fí n ṣisẹ́, àti àwọn ọ̀rọ̀ ìtọ́kasí pàtàkì nípa rẹ̀.",
+      "SUBHEADER_2_2": "Àwọn Ọ̀rọ̀ Olùtajà",
+      "CONTENT_2_2_1": "Àwọn Olùtajà tí wọn ń fi Orúkọ s'ílẹ̀ nínúu Èròja Káràkátà yí máa ní láti fi àwọn Ọ̀rọ̀ nípa Òwò/Iṣẹ́/Ilé-iṣẹ́ wọn s'ílẹ̀, bíi Orúkọ Òwò/Iṣẹ́/Ilé-iṣẹ́ wọn, Agbègbè tí ó wà, àti àwọn ẹ̀rọ ìbánisọ̀rọ̀ tàbí ìlànà láti kàn síwọn.",
 
-      "HEADER_3": "How We Use Your Information",
-      "SUBHEADER_3_1": "Providing Services",
-      "CONTENT_3_1_1": "We use your information to provide and enhance the Map of Pi app services, including user and vendor functionalities.",
-      "SUBHEADER_3_2": "Communications",
-      "CONTENT_3_2_1": "We may use your contact information to send you updates, notifications, and promotional messages related to the Map of Pi app.",
-      "SUBHEADER_3_3": "Analytics",
-      "CONTENT_3_3_1": "We collect and analyze data to improve the performance, features, and functionality of the app.",
+      "HEADER_3": "Bí a ṣe máa ńlo àwón Ọ̀rọ̀ tí ẹ fi s'ílẹ̀",
+      "SUBHEADER_3_1": "Láti fi ṣe Ìpèsè/Àlékún/Àtúnṣe Iṣẹ́ wa",
+      "CONTENT_3_1_1": "À ńlo àwọn ọ̀rọ̀ tí ẹ fi s'ílẹ̀ láti fi ṣe Ìpèsè, Àtúnṣe àti Àlékún iṣẹ́ wa nínú Èròja Káràkátà Map of Pi, bíi gbogbo àwọn èèlò tí Olúrajà àti Olútajà máa máa lò nínúu Èròja Káràkátà yí.",
+      "SUBHEADER_3_2": "Ọ̀nà Ìkànsíra-Ẹni",
+      "CONTENT_3_2_1": "A máa lo Ẹ̀rọ Àtẹ̀jíṣẹ́ Ímeèlì yín láti máa fún yín ní àwọn Ìròyìn, Àkíyèsí, àti àwọn Ọ̀nà Ìtẹ̀síwájú nípa Èròja Káràkátà Map of Pi.",
+      "SUBHEADER_3_3": "Àtúpalẹ̀",
+      "CONTENT_3_3_1": "A má ńṣe Àtúpalẹ̀ àwọn Ọ̀rọ̀ tí a gbà làti fi ṣe Àtúnṣe ọnà ìgbàṣiṣẹ́, àwọn èèlò, àti àwọn ǹkan míràn nípa Èròja Káràkátà yi.",
 
-      "HEADER_4": "Sharing Your Information",
-      "SUBHEADER_4_1": "With Vendors",
-      "CONTENT_4_1_1": "User information may be shared with vendors for order fulfillment and communication purposes.",
-      "SUBHEADER_4_2": "With Third Parties",
-      "CONTENT_4_2_1": "We may share information with third-party service providers for app functionality, analytics, and payment processing.",
+      "HEADER_4": "Ṣíṣe Àfihàn Àwọn Ọ̀rọ̀ tí ẹ fi s'ílẹ̀",
+      "SUBHEADER_4_1": "Fún/Pẹ̀lúu Àwọn Olùtajà",
+      "CONTENT_4_1_1": "A máa ṣ'àfihàn àwọn Ọ̀rọ̀ tí Olùrajà bá fi s'ílẹ̀ fún àwọn Olùtajà, láti lòó fún mímọ irúu Ọjà tí wọn fẹ́ tà fúnwọn, àti bí wọ́n ṣe máa kàn sí wọn.",
+      "SUBHEADER_4_2": "Pẹ̀lúu Ẹnì Kẹ̀ta tàbí Ilé-iṣẹ́ míràn",
+      "CONTENT_4_2_1": "A lè ní láti lo àwọn Ọ̀rọ̀ tí a gbà fún ìṣàfihàn pẹ̀lúu Ilé-iṣẹ́ míràn, fún síse-dáada Ẹ̀ròja Káràkátà yí, àti fún Àtúpalẹ̀, àti fùn àwọn ètò pẹ̀lú ílànà láti san owó.",
 
-      "HEADER_5": "Security Measures",
-      "CONTENT_5_1": "We employ industry-standard security measures to protect your information. However, no method of transmission over the internet or electronic storage is completely secure.",
+      "HEADER_5": "Ìgbésẹ̀ Nípa Ètò-Àbò",
+      "CONTENT_5_1": "A ti ṣe ètò àbò orì-afẹ́fẹ́ tí ó múná dóko, láti dáábò bo àwọn ọ̀rọ̀ àti ìfiléde yín. Síbẹ̀síbẹ̀ náà, kò tíì sí ìfi-ọ̀rọ̀ ránṣẹ́ tàbí ìfi-ọ̀rọ̀ pamọ́ lóríi ìtàkùn ayélujàra tàbí lóríi afẹ́fẹ́, tí ètò àbo rẹ̀ dájú tán.",
 
-      "HEADER_6": "Your Choices",
-      "CONTENT_6_1": "You can update or delete your account information through the app settings. You may also opt-out of promotional communications.",
+      "HEADER_6": "Àwọn Àṣàyàn Rẹ",
+      "CONTENT_6_1": "O lè ṣe àtúnkọ tàbí kí o pa àwọn ọ̀rọ̀-ìfiléde rẹ rẹ́, nì inúu èèlo-ètò Èròjà yí. Tí o bá sì fẹ́, o lè wọ́gi lé àwọn àtẹ̀jìṣẹ́ ìròyìn àti àkíyèsí Ímeèlì tí a fí n ránṣẹ́.",
 
-      "HEADER_7": "Changes to This Privacy Policy",
-      "CONTENT_7_1": "We may update this Privacy Policy as necessary. The latest version will be posted on our website or within the app.",
+      "HEADER_7": "Àtúnṣe Nípa Ìlànà Ìpa Ọ̀rọ̀ mọ́ yí",
+      "CONTENT_7_1": "A ó máa ṣe àtúnṣe Ìlànà Ìpa Ọ̀rọ̀ mọ́ yí ní ìgbàkúúgbà. Tuntun tí a bá ṣe yío máa wà ní inú ìtàkùn ayélujára wa tàbí ní inú Èròja Káràkátà yí.",
 
-      "HEADER_8": "Contact Us",
-      "CONTENT_8_1": "If you have any questions or concerns about this Privacy Policy, please contact us "
+      "HEADER_8": "Ẹ Kàn Síwa",
+      "CONTENT_8_1": "Tí ẹ bá ní ìbéérè tàbí Ìrújú nípa Ìlànà Ìpa Ọ̀rọ̀ mọ́ yí, Ẹjọ̀wọ́ ẹ kàn síwa."
     }
   }
 }
