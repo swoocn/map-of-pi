@@ -15,7 +15,6 @@ import { ShopService } from '../../core/service/shop.service';
   imports: [TranslateModule, CommonModule, ReactiveFormsModule, MatSlideToggleModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
 export class BusinessSettingsComponent {
   businessTypes: string[] = ['Restaurant', 'Retail Store', 'Servicing', 'Construction', 'Transportation'];
   router: Router = inject(Router);
@@ -52,7 +51,7 @@ export class BusinessSettingsComponent {
       };
     }
   }
-  
+
   // onFileChange(event: any) {
   //   if (event.target.files && event.target.files.length > 0) {
   //     const reader = new FileReader();
@@ -76,15 +75,14 @@ export class BusinessSettingsComponent {
       this.shopServices.registerShop(this.registerShopForm.value as any).then((response) => {
         if (response.success) {
           this.snackService.showMessage('Business successfully registered');
-          this.router.navigate(['manage-business', response.data._id]);
+          this.router.navigate(['business-config', response.newShop._id]);
+          // this.router.navigate(['manage-business', response.data._id]);
           this.snackService.showMessage(` redirecting to ${response.data.name} shop`);
         } else {
-          this.snackService.showError('Failed to register business');
+          this.snackService.showError(`Email address is already registered to a business. Please try a different email address.🙏`);
           console.log(response);
         }
       });
-      // console.log(this.selectedImages[0]);
-      // console.log('registered shop : ', this.registerShopForm.value);
     } else {
       this.registerShopForm.markAllAsTouched();
       console.log('Invalid data');

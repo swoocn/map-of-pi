@@ -60,6 +60,8 @@ export class MapComponent implements OnInit {
 
     const { data } = location;
 
+    console.log('user data: ', data);
+
     const coordinates = [[data.latitude, data.longitude]];
 
     coordinates.map((coord) => {
@@ -222,7 +224,9 @@ export class MapComponent implements OnInit {
   }
 
   clicked(id: any): void {
-    this.navigator.navigate(['manage-business', id]);
+    // this.navigator.navigate(['manage-business', id]);
+    // this.navigator.navigate(['shop', 'order-menu']);
+    this.navigator.navigate(['view-shop', id]);
   }
 
   async ngOnInit(): Promise<void> {

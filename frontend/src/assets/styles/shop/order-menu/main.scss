@@ -24,15 +24,15 @@
 
 .order-menu__type,
 .order-menu__location {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
 
 .order-menu__type img,
 .order-menu__location img {
-    height: 20px;
-    width: auto;
+  height: 20px;
+  width: auto;
 }
 
 .order-menu__product-text,
@@ -41,8 +41,9 @@
 }
 
 .order-menu__business-images {
-    display: flex;
-    column-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 10px;
 }
 
 .order-menu__business-image {
@@ -64,8 +65,8 @@
 }
 
 .order-menu__switch-buttons {
-    display: flex;
-    /* width: 100%; */
+  display: flex;
+  /* width: 100%; */
 }
 
 .order-menu__switch-button {
@@ -82,20 +83,20 @@
 }
 
 .order-menu__switch-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    border-radius: 10px;
-    transition: left 0.3s;
-    z-index: 1;
-    background-color: var(--color-highlight-color);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+  transition: left 0.3s;
+  z-index: 1;
+  background-color: var(--color-highlight-color);
 }
 
 .order-menu__switch-button-text-stamps {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 /* Section for order payment message */
@@ -139,16 +140,16 @@
     width: 16px;
 }
 
-.order-menu__product-image {
-    display: flex;
-}
+// .order-menu__product-image {
+//   display: flex;
+// }
 
-.order-menu__product-image img {
-    width: 64px;
-    height: 64px;
-    object-fit: cover;
-    border-radius: 10px;
-}
+// .order-menu__product-image img {
+//   width: 64px;
+//   height: 64px;
+//   //   object-fit: cover;
+//   border-radius: 10px;
+// }
 
 .order-menu__product-image-text {
     position: relative;
@@ -200,9 +201,9 @@
 }
 
 .order-menu__add-button:hover {
-    background-color: #164c36;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  background-color: #164c36;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .order-menu_add-button-text {
@@ -210,12 +211,12 @@
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .order-menu__delete-button {
-    background: none;
-    border: none;
+  background: none;
+  border: none;
 }
 
 .order-menu__delete-buttons {

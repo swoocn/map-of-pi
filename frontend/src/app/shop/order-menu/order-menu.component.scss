@@ -2,3 +2,91 @@
 
 @import '../.././../assets/styles/shop/order-menu/header.scss';
 @import '../.././../assets/styles/shop/order-menu/main.scss';
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f2f5f7;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  background-color: #fff;
+  box-shadow: 0 5px 10px 0 rgba(#000, 0.15);
+  border-radius: 10px;
+
+  margin: 1rem;
+}
+
+.card-img {
+  padding-bottom: 56.25%;
+  position: relative;
+  img {
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  line-height: 1.33;
+  font-weight: 700;
+  &.skeleton {
+    min-height: 28px;
+    border-radius: 4px;
+  }
+}
+
+.card-intro {
+  margin-top: 0.75rem;
+  line-height: 1.5;
+  &.skeleton {
+    min-height: 72px;
+    border-radius: 4px;
+  }
+}
+
+.skeleton {
+  background-color: #e2e5e7;
+
+  background-image: linear-gradient(
+    90deg,
+    rgba(#fff, 0),
+    rgba(#fff, 0.5),
+    rgba(#fff, 0)
+  );
+  background-size: 40px 100%;
+  background-repeat: no-repeat;
+  background-position: left -40px top 0;
+  animation: shine 1s ease infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: right -40px top 0;
+  }
+}
+
+.container {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}

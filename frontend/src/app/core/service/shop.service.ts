@@ -6,10 +6,14 @@ import { IShopData } from '../model/business';
   providedIn: 'root',
 })
 export class ShopService {
+  // private baseUrl = 'http://localhost:8001';
   private baseUrl = 'https://api-mapofpi.vercel.app';
   allShops: any[] = [];
 
   coordinates: number[] = [];
+  country: string = '';
+  city: string = '';
+  region: string = '';
 
   constructor() {}
 
@@ -31,6 +35,17 @@ export class ShopService {
     this.coordinates = arr;
   }
 
+  setCountry(name: string) {
+    this.country = name;
+  }
+
+  setCity(name: string) {
+    this.city = name;
+  }
+  setRegion(name: string) {
+    this.region = name;
+  }
+
   getUserPosition() {
     return this.coordinates;
   }
@@ -46,15 +61,17 @@ export class ShopService {
       email: shopData.shopEmail,
       transactionEnabled: shopData.isPiPaymentEnabled,
       coordinates: this.coordinates,
+      country: this.country,
+      city: this.city,
+      region: this.region,
     };
 
-    console.log('Registered image : ', data.image);
     try {
       const response = await axios.post(`${this.baseUrl}/shops/register`, { ...data }, this.getConfig());
-      console.log('Response while creating shop : ' + response);
       return response.data;
-    } catch (error) {
-      throw new Error('Error registering shop: ');
+    } catch (error: any) {
+      console.log('Error while creating shop:', error);
+      throw new Error(error);
     }
   }
 
@@ -77,8 +94,24 @@ export class ShopService {
   }
 
   async addProductToShop(shopId: string, productData: any) {
+    const product = {
+      name: productData.itemName,
+      description: productData.description,
+      price: productData.itemPrice,
+      time: productData.prepTime,
+      image: productData.image,
+    };
     try {
-      const response = await axios.post(`${this.baseUrl}/add-product/${shopId}`, productData, this.getConfig());
+      const response = await axios.post(`${this.baseUrl}/shops/add-product/${shopId}`, { ...product }, this.getConfig());
+      return response.data;
+    } catch (error) {
+      throw new Error('Error adding product to shop: ');
+    }
+  }
+
+  async deleteProductFromShop(productId: string) {
+    try {
+      const response = await axios.delete(`${this.baseUrl}/shops/products/${productId}`, { ...this.getConfig });
       return response.data;
     } catch (error) {
       throw new Error('Error adding product to shop: ');
