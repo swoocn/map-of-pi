@@ -4,14 +4,14 @@
     <button mat-icon-button (click)="navigateBack()">
       <mat-icon>arrow_back</mat-icon>
     </button>
-    <span [routerLink]="['/home']">
-      <button mat-icon-button>
+    <span>
+      <button mat-icon-button [routerLink]="['/home']">
         <mat-icon>home</mat-icon>
       </button>
     </span>
   </div>
   } @else {
-  <button mat-icon-button>
+  <button mat-icon-button [routerLink]="['/home']">
     <mat-icon>home</mat-icon>
   </button>
   }
@@ -19,7 +19,8 @@
   <div class="image-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
     <img id="logo-img" [src]="imageUrl" alt="Map of Pi" width="50" height="50" [class.hovered-img]="isHovered" />
     <div class="text-container">
-      <p>{{ 'CORE.APP_NAME' | translate }}</p>
+      <!-- <p>{{ 'CORE.APP_NAME' | translate }}</p> -->
+      <p>Map of Pi</p>
     </div>
   </div>
 

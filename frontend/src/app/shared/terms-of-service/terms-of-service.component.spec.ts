@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
-import { InformationComponent } from './information.component';
+import { TermsOfServiceComponent } from './terms-of-service.component';
 
-describe('InformationComponent', () => {
-  let component: InformationComponent;
-  let fixture: ComponentFixture<InformationComponent>;
+describe('TermsOfServiceComponent', () => {
+  let component: TermsOfServiceComponent;
+  let fixture: ComponentFixture<TermsOfServiceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InformationComponent, TranslateModule.forRoot()]
+      imports: [TermsOfServiceComponent, TranslateModule.forRoot()]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(InformationComponent);
+    fixture = TestBed.createComponent(TermsOfServiceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

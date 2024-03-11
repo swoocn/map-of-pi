@@ -3,11 +3,12 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { Map, marker, Layer } from 'leaflet';
 import { GeolocationService } from '../../core/service/geolocation.service';
 import { SnackService } from '../../core/service/snack.service';
-import { take } from 'rxjs';
 import { dummyCoordinates } from '../../core/model/business';
 import { Router, RouterModule } from '@angular/router';
 import { ShopService } from '../../core/service/shop.service';
 import axios from 'axios';
+import 'leaflet-routing-machine';
+import * as L from 'leaflet';
 
 @Component({
   selector: 'app-map',
@@ -49,34 +50,10 @@ export class MapComponent implements OnInit {
   }
 
   locateMe(): void {
-    this.geolocationService
-      .getCurrentPosition()
-      .pipe(take(1))
-      .subscribe({
-        next: (coords: GeolocationCoordinates) => {
-          this.layer = marker([coords.latitude, coords.longitude], {
-            icon: this.geolocationService.getUserMarkerIcon(),
-          })
-            .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-            .openPopup();
-
-          this.map.addLayer(this.layer);
-          this.map.flyTo([coords.latitude, coords.longitude], 15);
-
-          // Add all other coordinates to the map
-          this.addAllCoordinatesToMap();
-
-          this.cdr.detectChanges();
-        },
-        error: (error: string) => {
-          this.snackService.showError(`Geolocation error: ${error}`);
-        },
-      });
+    this.track();
   }
 
   async track() {
-    this.snackService.showMessage(`Locating your position`);
-
     console.log('Coordinates from shop in track: ', this.shopService.getUserPosition());
 
     const location = await axios.get('https://ipapi.co/json/');
@@ -89,7 +66,7 @@ export class MapComponent implements OnInit {
       const userMarker = marker([coord[0], coord[1]], {
         icon: this.geolocationService.getUserMarkerIcon(),
       })
-        .bindPopup('User location')
+        .bindPopup(`<div class=""> You're Here</div>`)
         .openPopup();
 
       this.map.addLayer(userMarker);
@@ -150,8 +127,89 @@ export class MapComponent implements OnInit {
         .addEventListener('click', (e) => {
           const commingBtn = document.querySelectorAll('#comming');
           commingBtn.forEach((btn) => {
-            btn.addEventListener('click', () => {
-              this.snackService.showMessage('This feature is in development');
+            btn.addEventListener('click', async () => {
+              const location = await axios.get('https://ipapi.co/json/');
+
+              const { data } = location;
+
+              const userLocation = [[data.latitude, data.longitude]];
+
+              const shopLocation = [shop.coordinates[0], shop.coordinates[1]];
+
+              this.map.closePopup();
+
+              const creatingMarkers = (i: number, waypoints: any, n: number) => {
+                let icon;
+
+                if (i === 0) {
+                  icon = this.geolocationService.getUserMarkerIcon();
+                } else if (i === n - 1) {
+                  icon = this.geolocationService.getMarkerIcon();
+                } else {
+                  icon = this.geolocationService.getMiddleIcon();
+                }
+
+                const newMarker = L.marker(waypoints.latLng, {
+                  icon: icon,
+                }).addTo(this.map);
+
+                newMarker.getElement()?.setAttribute('data-custom-type', i === 0 ? 'user' : i === n - 1 ? 'shop' : 'middle');
+
+                newMarker.addEventListener('click', (e) => {
+                  const customType = e.target.getElement()?.getAttribute('data-custom-type');
+
+                  switch (customType) {
+                    case 'user':
+                      this.snackService.showMessage(`Dear Soleil00 You"re located her`);
+                      break;
+                    case 'shop':
+                      newMarker.bindPopup(`
+                            <div class="p-4">
+                                <div class="text-lg font-bold mb-2">${shop.name}</div>
+                                <div>${shop.name} is located here and you are about to take routes towards it. It will approximately take you 23 min by car.</div>
+                                <button id="cancelBtn" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md">Cancel</button>
+                            </div>
+                        `);
+
+                      // Wait for the popup to open before attaching the event listener
+                      newMarker.on('popupopen', () => {
+                        const cancelBtn = document.getElementById('cancelBtn');
+                        if (cancelBtn) {
+                          cancelBtn.addEventListener('click', () => {
+                            // routeControl.removeFrom(this.map);
+                            this.map.removeControl(routeControl);
+                            newMarker.removeFrom(this.map);
+                            console.log('Button clicked');
+                          });
+                        }
+                      });
+
+                      break;
+                    case 'middle':
+                      this.snackService.showMessage('Middle clicked');
+                      break;
+                    default:
+                      this.snackService.showMessage('Unknown marker clicked');
+                  }
+                });
+              };
+
+              const routeControl = (window as any).L.Routing.control({
+                waypoints: [(window as any).L.latLng(userLocation[0], userLocation[1]), (window as any).L.latLng(shopLocation[0], shopLocation[1])],
+                showAlternatives: true,
+                createMarker: creatingMarkers,
+                altLineOptions: {
+                  styles: [
+                    { color: 'black', opacity: 0.15, weight: 9 },
+                    { color: 'white', opacity: 0.8, weight: 6 },
+                    { color: 'blue', opacity: 0.5, weight: 2 },
+                  ],
+                },
+              });
+
+              console.log('from routing : ', { ...routeControl });
+              console.log('type of routes : ', typeof routeControl);
+              routeControl.addTo(this.map);
             });
           });
 

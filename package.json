@@ -5,5 +5,8 @@
     "scripts": {
         "install": "npm install --prefix frontend && npm install --prefix backend",
         "build": "npm run -C frontend build"
+    },
+    "dependencies": {
+        "leaflet-routing-machine": "^3.2.12"
     }
 }

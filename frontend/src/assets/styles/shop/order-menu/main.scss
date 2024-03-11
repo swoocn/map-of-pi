@@ -1,10 +1,24 @@
 /* Business info and business image section */
 .order-menu__content {
+    /* min-height: 100vh; */
+    letter-spacing: 0.7px;
+    flex-grow: 1;
     margin: 10px;
+    // margin-bottom: 5rem;
+    // margin-top: 2rem;
+    padding-bottom: 150px;
+}
+
+.inner-wrapper {
+  max-width: 300px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 .order-menu__business-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 0;
 }
 
@@ -23,9 +37,7 @@
 
 .order-menu__product-text,
 .order-menu__location-address {
-    font-size: 0.8rem;
-    margin: 0;
-    padding: 0;
+    font-size: 0.7rem;
 }
 
 .order-menu__business-images {
@@ -34,8 +46,9 @@
 }
 
 .order-menu__business-image {
-    width: 94px;
-    height: 114px;
+    margin: 0 auto;
+    width: 74px;
+    height: 94px;
     border-radius: 10px;
     margin-top: 1rem;
     object-fit: cover;
@@ -43,12 +56,10 @@
 
 /* Menu switch section*/
 .order-menu__switch-section {
-    max-width: 300px;
-    max-width: 300px;
     background-color: #ffffff;
     position: relative;
     border-radius: 10px;
-    margin-top: 1.2rem;
+    margin-top: 1rem;
     border: 1px solid var(--color-text-color);
 }
 
@@ -59,17 +70,15 @@
 
 .order-menu__switch-button {
     flex: 1;
-    padding: 10px 20px;
-    font-size: 0.6rem;
+    padding: 0.2rem 1rem;
+    font-size: 0.7rem;
     border: none;
     outline: none;
     cursor: pointer;
     background-color: transparent;
-    /* Buttons are transparent */
     transition: background-color 0.3s;
     position: relative;
     z-index: 2;
-    /* Make sure buttons are above the colored pseudo-element */
 }
 
 .order-menu__switch-section::before {
@@ -91,47 +100,43 @@
 
 /* Section for order payment message */
 .order-menu__highlight {
-    position: relative;
-    max-width: 300px;
-    max-width: 300px;
-    height: 30px;
-    margin-top: 1.2rem;
-    background-color: #FAD09E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+    margin-top: 1rem;
+    background-color: #fad09e;
 }
 
 .order-menu__highlight-text {
     text-align: center;
-    padding: 0.5rem;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: bold;
 }
 
 /* Section for menu products and images */
 .order-menu__products {
-    max-width: 300px;
+    max-width: 19rem;
 }
 
 .order-menu__product-info {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .order-menu__product-text {
     flex: 1;
-    font-weight: bold;
-    margin-top: 1.2rem;
     margin-bottom: 0.8rem;
 }
 
 .order-menu__product-amount {
     margin-right: 1rem;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .order-menu__pi-logo {
-    width: 18px;
+    width: 16px;
 }
 
 .order-menu__product-image {
@@ -147,51 +152,49 @@
 
 .order-menu__product-image-text {
     position: relative;
-    bottom: 1.3rem;
-    padding: 10px;
-    font-size: 0.7rem;
+    bottom: 1.2rem;
+    padding: 0.5rem;
+    font-size: 0.6rem;
 }
 
 .order-menu__product-quantity {
     position: relative;
-    bottom: 2rem;
+    bottom: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-bottom: -1.5rem;
 }
 
 .order-menu__quantity-button--decrease,
 .order-menu__quantity-input,
 .order-menu__quantity-button--increase {
-    margin: 3px;
+    margin: 0.2rem;
 }
 
 .order-menu__quantity-input {
-    width: 50px;
-    height: 30px;
+    width: 0.4rem;
+    height: 5px;
     border-radius: 5px;
     border: 2px solid var(--color-text-color);
-    padding: 10px;
-    text-align: center;
+    padding: 0.5rem;
 }
 
 .order-menu__quantity-button {
     border-radius: 50px;
     border: 2px solid var(--color-text-color);
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 .order-menu__add-button {
-    margin-left: 10px;
-    width: 40px;
-    height: 25px;
+    margin-left: 0.7rem;
+    padding: 0.4rem;
+    width: 3rem;
     border-radius: 10px;
     background-color: var(--color-highlight-color);
     color: #ffffff;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s transform 0.2s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border: none;
 }
@@ -203,7 +206,7 @@
 }
 
 .order-menu_add-button-text {
-    font-size: 12px;
+    font-size: 0.7rem;
 }
 
 .hidden {
@@ -216,16 +219,78 @@
 }
 
 .order-menu__delete-buttons {
-    width: 30px;
+    width: 2rem;
     height: auto;
 }
 
-/* Responsiveness for larger screens */
-@media (min-width: 576px) {
+@media (min-width: 768px) {
     .order-menu__content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -46%);
+      margin: 0 auto;
+      margin-top: 3rem;
+    }
+  
+    .inner-wrapper {
+      max-width: 700px;
+      background-color: #ffffff;
+      padding: 3rem;
+    }
+  
+    .order-menu__business-label {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+    }
+  
+    .order-menu__products {
+      min-width: 35rem;
+    }
+  
+    .order-menu__switch-section {
+      min-width: 34rem;
+      padding: 0.5rem;
+    }
+  
+    .order-menu__highlight {
+      min-width: 35rem;
+      height: auto;
+    }
+  
+    .order-menu__highlight-text {
+      font-size: 0.7rem;
+    }
+  
+    .order-menu__switch-button-text {
+      font-size: 0.9rem;
+    }
+  
+    .order-menu__switch-button-text-stamps {
+      font-size: 0.9rem;
+    }
+  
+    .order-menu__product-image img {
+      width: 84px;
+      height: 84px;
+    }
+  
+    .order-menu__product-image-text {
+      max-width: 25rem;
+      font-size: 1rem;
+    }
+  
+    .order-menu__business-image {
+      width: 178px;
+      height: 158px;
+      border-radius: 10px;
+      margin-top: 1rem;
+      object-fit: cover;
+    }
+    .order-menu__business-name {
+      font-size: 1.7rem;
+      margin-bottom: 0;
+    }
+  
+    .order-menu__product-text,
+    .order-menu__location-address {
+      font-size: 1rem;
     }
 }

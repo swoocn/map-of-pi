@@ -7,7 +7,7 @@ import axios from 'axios';
   providedIn: 'root',
 })
 export class GeolocationService {
-  private readonly initZoomLevel = 15;
+  private readonly initZoomLevel = 18;
   initCoords: number[] = [];
   private readonly geolocationTrigger = new Subject<void>();
   private readonly maxZoomLevel = 18;
@@ -72,6 +72,18 @@ export class GeolocationService {
       iconUrl: 'assets/marker-icon.png',
       iconRetinaUrl: 'assets/marker-icon.png',
       shadowUrl: 'assets/marker-shadow.png',
+    });
+  }
+  getMiddleIcon(): Icon {
+    return icon({
+      ...Icon.Default.prototype.options,
+      iconUrl: 'assets/images/map/yellow.png',
+      iconRetinaUrl: 'assets/marker-icon.png',
+      shadowUrl: 'assets/marker-shadow.png',
+      iconSize: [41, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41],
     });
   }
 

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-information',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './information.component.html',
   styleUrl: './information.component.scss'
 })
@@ -16,10 +16,27 @@ export class InformationComponent {
   version: string = 'Alpha V1.0';
   logo: string = "../../assets/images/logo.svg";
 
-  date: string = '3/8/2024';
-  updateItems: string[] = [
-    'Added footer.', 
-    'Added information popup for latest updates.', 
+  updateItems: { date: string, updates: string[] }[] = [
+    {
+      date: '3/10/2024',
+      updates: [
+        'Added Terms of Service section.'
+      ]
+    },
+    {
+      date: '3/9/2024',
+      updates: [
+        'Added GPS navigation feature.',
+        'Added Privacy Policy section.'
+      ]
+    },
+    {
+      date: '3/8/2024',
+      updates: [
+        'Added Footer.',
+        'Added Information Popup to share latest updates.'
+      ]
+    }
   ];
   email: string = 'info@mapofpi.com';
 

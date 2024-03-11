@@ -7,22 +7,23 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  background-color: #f1f7ff;
+  margin: 0;
 }
 
 .content {
   flex: 1;
+  flex-grow: 1;
 }
 
 .footer {
-  position: sticky;
-  width: 100%;
-  bottom: 0;
   padding: 10px;
-  background: linear-gradient(to right, var(--color-background-color), #eaeaea);
   text-align: center;
   font-family: var(--font-family-main);
+  background: linear-gradient(to right, #f1f7ff, #eaeaea);
   border-top: 1px solid #dcdcdc;
-  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .footer__links,
@@ -43,8 +44,8 @@ body {
 }
 
 .footer__icon {
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
 }
 
 .footer__legal-link {
@@ -65,13 +66,18 @@ body {
 }
 
 @media (min-width: 567px) {
+  .footer {
+    padding: 20px 0;
+    margin-top: 15rem;
+  }
+
   .footer__icon {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
 
   .footer__legal-link {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .footer__logo {

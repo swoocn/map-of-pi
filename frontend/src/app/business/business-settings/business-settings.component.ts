@@ -21,6 +21,7 @@ export class BusinessSettingsComponent {
   router: Router = inject(Router);
   showPopup: boolean = false;
   selectedImages: any[] = [];
+  email: string = 'i@gmail.com'
 
   registerShopForm = new FormGroup({
     shopName: new FormControl('', Validators.required),

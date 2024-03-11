@@ -1,4 +1,4 @@
-.privacy-policy-content {
+.terms-of-service-content {
     text-align: left;
     padding: 50px;
     padding-bottom: 150px;
@@ -19,5 +19,9 @@
     ul {
       list-style-type: none;
       margin-bottom: 20px;
+    }
+
+    a {
+        font-weight: bold;
     }
 }
