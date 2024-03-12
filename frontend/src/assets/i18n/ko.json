@@ -67,6 +67,31 @@
         "UNDER_CONSTRUCTION": "이 기능은 아직 완전히 구현되지 않았습니다"
       }
     },
+    "CONFIGURATION": {
+      "LABELS": {
+        "SHOP_NAME": "가게 이름",
+        "MENU": "메뉴",
+        "ACCEPT_ORDERS_WITHOUT_PAYMENT_MESSAGE": "결제 없이 주문 받기",
+        "ACCEPT_PI_TRANSACTIONS_MESSAGE": "Pi 거래 수락"
+      },
+      "ADD_PRODUCT_MENU": {
+        "LABELS": {
+          "ADD_PRODUCT_INTO_SHOP_MESSAGE": "상점에 제품 추가",
+          "PRODUCT_NAME": "제품명",
+          "PRODUCT_IMAGES": "제품 이미지",
+          "ADD_IMAGE": "이미지 추가",
+          "PRICE": "가격",
+          "DESCRIPTION": "설명",
+          "FOOD_SERVICE": {
+            "TIME_PREPARATION_MESSAGE": "이 요리를 준비하는 데 얼마나 걸리나요?"
+          }
+        },
+        "BUTTONS": {
+          "LOADING": "로딩 중...",
+          "CONFIRM": "확인"
+        }
+      }
+    },
     "ADD_PRODUCT": {
       "LABELS": {
         "PRODUCT_NAME": "제품 이름",

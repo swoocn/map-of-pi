@@ -20,6 +20,15 @@ export class InformationComponent {
     {
       date: '3/12/2024',
       updates: [
+        'Temporary removal of Dark Mode feature.',
+        'Added Translation for Business Configuration Menu.',
+        'Added Translation for Add Products Menu.',
+        'Added Business Search functionality.'
+      ]
+    },
+    {
+      date: '3/11/2024',
+      updates: [
         'Added Translation for Business Marker Dialog.',
         'Added Translation for Shopping Order Menu.',
         'Updated Social Media links.',
@@ -32,20 +41,6 @@ export class InformationComponent {
         'Added Terms of Service section.'
       ]
     },
-    {
-      date: '3/9/2024',
-      updates: [
-        'Added GPS navigation feature.',
-        'Added Privacy Policy section.'
-      ]
-    },
-    {
-      date: '3/8/2024',
-      updates: [
-        'Added Footer.',
-        'Added Information Popup to share latest updates.'
-      ]
-    }
   ];
   email: string = 'info@mapofpi.com';
 

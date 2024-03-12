@@ -26,8 +26,10 @@ export class BusinessSettingsComponent {
     shopName: new FormControl('', Validators.required),
     shopType: new FormControl('', Validators.required),
     shopAddress: new FormControl('', Validators.required),
-    shopPhone: new FormControl('', [Validators.required, Validators.minLength(10)]),
-    shopEmail: new FormControl('', [Validators.required, Validators.email]),
+    shopPhone: new FormControl('0000000000'),
+    shopEmail: new FormControl('no-email.xxx'),
+    // shopPhone: new FormControl('', [Validators.required, Validators.minLength(10)]),
+    // shopEmail: new FormControl('', [Validators.required, Validators.email]),
     shopImage: new FormArray([]),
     shopDescription: new FormControl('', Validators.required),
   });
@@ -77,9 +79,10 @@ export class BusinessSettingsComponent {
           this.snackService.showMessage('Business successfully registered');
           this.router.navigate(['business-config', response.newShop._id]);
           // this.router.navigate(['manage-business', response.data._id]);
-          this.snackService.showMessage(` redirecting to ${response.data.name} shop`);
+          this.snackService.showMessage(`Redirecting to ${response.data.name} shop`);
         } else {
-          this.snackService.showError(`Email address is already registered to a business. Please try a different email address.🙏`);
+          // this.snackService.showError(`Email address is already registered to a business. Please try a different email address.🙏`);
+          this.snackService.showError(`Business failed to register`);
           console.log(response);
         }
       });

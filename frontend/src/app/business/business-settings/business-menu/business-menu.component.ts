@@ -2,13 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit, ViewChild, ElementRef, ChangeDetectionStrategy, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { ShopService } from '../../../core/service/shop.service';
 import { SnackService } from '../../../core/service/snack.service';
 
 @Component({
   selector: 'app-business-menu',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, TranslateModule],
   templateUrl: './business-menu.component.html',
   styleUrl: './business-menu.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,9 +1,9 @@
 <main class="mb-[100px]">
   <section class="menu-settings__section">
-    <div class="mb-3">Shop name {{ shop.name }}</div>
+    <div class="mb-3">{{ 'BUSINESS.CONFIGURATION.LABELS.SHOP_NAME' | translate }} {{ shop.name }}</div>
     <div class="menu-settings__toggle">
       <label for="menu-toggle" class="menu-settings__label"
-        >Menu <span class="toggle-status">{{ menuStatusLabel }}</span>
+        >{{ 'BUSINESS.CONFIGURATION.LABELS.MENU' | translate }} <span class="toggle-status">{{ menuStatusLabel }}</span>
         <input
           type="checkbox"
           id="menu-toggle"
@@ -16,7 +16,7 @@
     </div>
     <div class="menu-settings__toggle hidden" #orderToggleDiv>
       <label for="order-toggle" class="menu-settings__label"
-        >Accept orders without payment
+        >{{ 'BUSINESS.CONFIGURATION.LABELS.ACCEPT_ORDERS_WITHOUT_PAYMENT_MESSAGE' | translate }}
         <span class="toggle-status">{{ orderStatusLabel }}</span>
         <input
           type="checkbox"
@@ -29,7 +29,7 @@
     </div>
     <div class="menu-settings__toggle hidden" #paymentToggleDiv>
       <label for="payment-toggle" class="menu-settings__label"
-        >Accept Pi Transactions
+        >{{ 'BUSINESS.CONFIGURATION.LABELS.ACCEPT_PI_TRANSACTIONS_MESSAGE' | translate }}
         <span class="toggle-status">{{ paymentStatusLabel }}</span>
         <input
           type="checkbox"
@@ -72,12 +72,12 @@
       </button>
 
       <!-- Modal title -->
-      <h2 class="modal__title">Add Product into your shop</h2>
+      <h2 class="modal__title">{{ 'BUSINESS.CONFIGURATION.ADD_PRODUCT_MENU.LABELS.ADD_PRODUCT_INTO_SHOP_MESSAGE' | translate }}</h2>
 
       <!-- product name-->
       <div class="flex flex-col gap-0 w-full mb-2">
         <label for="item-name" class="modal__label font-bold"
-          >Product name</label
+          >{{ 'BUSINESS.CONFIGURATION.ADD_PRODUCT_MENU.LABELS.PRODUCT_NAME' | translate }}</label
         >
         <input
           type="text"
@@ -89,7 +89,7 @@
       <!-- product images -->
       <div class="flex flex-col gap-1 w-full mb-3">
         <label for="item-name" class="modal__label text-gray-700 font-bold"
-          >Product images</label
+          >{{ 'BUSINESS.CONFIGURATION.ADD_PRODUCT_MENU.LABELS.PRODUCT_IMAGES' | translate }}</label
         >
         <input
           type="file"
@@ -109,7 +109,7 @@
             "
             alt="Add item button"
             class="w-6 h-6 mr-2" />
-          Add Image
+            {{ 'BUSINESS.CONFIGURATION.ADD_PRODUCT_MENU.LABELS.ADD_IMAGE' | translate }}
         </label>
         <div id="image-preview" class="modal__image-preview">
           <img
@@ -129,7 +129,7 @@
       <!-- product price -->
 
       <div class="flex flex-col gap-1 mb-3 w-full">
-        <label for="item-price" class="text-gray-700 font-bold">Price</label>
+        <label for="item-price" class="text-gray-700 font-bold">{{ 'BUSINESS.CONFIGURATION.ADD_PRODUCT_MENU.LABELS.PRICE' | translate }}</label>
         <div class="relative">
           <input
             type="text"
@@ -152,7 +152,7 @@
       <!-- Preparation time input group -->
       <div class="flex gap-0 flex-col mb-3">
         <label for="prep-time" class="modal__label font-bold"
-          >How long to prepare this meal?</label
+          >{{ 'BUSINESS.CONFIGURATION.ADD_PRODUCT_MENU.LABELS.FOOD_SERVICE.TIME_PREPARATION_MESSAGE' | translate }}</label
         >
         <input
           type="text"
@@ -164,7 +164,7 @@
       <!-- Description input group -->
       <div class="modal__description">
         <label for="description" class="modal__label font-bold"
-          >Description</label
+          >{{ 'BUSINESS.CONFIGURATION.ADD_PRODUCT_MENU.LABELS.DESCRIPTION' | translate }}</label
         >
         <textarea
           id="description"
@@ -181,9 +181,9 @@
           class="modal__confirm-btn"
           (click)="addProductToShop()">
           @if (isLoading) {
-            Loading..
+            {{ 'BUSINESS.CONFIGURATION.ADD_PRODUCT_MENU.BUTTONS.LOADING' | translate }}
           } @else {
-            Confirm
+            {{ 'BUSINESS.CONFIGURATION.ADD_PRODUCT_MENU.BUTTONS.CONFIRM' | translate }}
           }
         </button>
       </div>

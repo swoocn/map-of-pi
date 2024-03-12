@@ -57,9 +57,9 @@ describe('HeaderComponent', () => {
       expect(languageSwitcher).toBeTruthy();
     });
 
-    it('should contain dark mode toggler component', () => {
-      const darkModeToggler = optionalControls.querySelector('app-dark-mode-toggler');
-      expect(darkModeToggler).toBeTruthy();
-    });
+    // it('should contain dark mode toggler component', () => {
+    //   const darkModeToggler = optionalControls.querySelector('app-dark-mode-toggler');
+    //   expect(darkModeToggler).toBeTruthy();
+    // });
   });
 });

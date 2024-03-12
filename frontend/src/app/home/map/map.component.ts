@@ -11,11 +11,12 @@ import { GeolocationService } from '../../core/service/geolocation.service';
 import { ShopService } from '../../core/service/shop.service';
 import { SnackService } from '../../core/service/snack.service';
 import { dummyCoordinates } from '../../core/model/business';
+import { SearchBarComponent } from '../search-bar/search-bar.component';
 
 @Component({
   selector: 'app-map',
   standalone: true,
-  imports: [LeafletModule, RouterModule],
+  imports: [SearchBarComponent, LeafletModule, RouterModule],
   templateUrl: './map.component.html',
   styleUrl: './map.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -27,9 +28,11 @@ export class MapComponent implements OnInit {
   id: string = '65e2d67a38e1e60afd74378d';
   navigator: Router = inject(Router);
   showPopup: boolean = false;
+  searchBarQuery: string = '';
   allShops: any[] = [];
+  filteredShops: any[] = [];
   userPositions: any[] = [];
-
+  
   // Translation strings
   distanceMessage!: string;
   onlinePiOrdersAllowedMessage!: string;
@@ -71,6 +74,7 @@ export class MapComponent implements OnInit {
       const shops: any[] = response.data?.data;
 
       this.allShops = shops;
+      this.filteredShops = shops;
 
       // Wait for translation update before adding coordinates to the map
       this.updateTranslatedStrings();
@@ -83,7 +87,6 @@ export class MapComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-
     this.track();
   }
 
@@ -95,6 +98,18 @@ export class MapComponent implements OnInit {
 
   locateMe(): void {
     this.track();
+  }
+
+  // Filter shops based on search query
+  filterShops(query: string): void {
+    console.log("filterShops called");
+    this.filteredShops = this.allShops.filter(shop =>
+      shop.name.toLowerCase().includes(query.toLowerCase())
+    );
+    console.log("Filtered shops:", this.filteredShops);
+    // Update the map markers to reflect the filtered shops
+    this.removeAllMarkersFromMap();
+    this.addAllCoordinatesToMap(this.filteredShops);
   }
 
   private updateTranslatedStrings(): void {
@@ -128,8 +143,10 @@ export class MapComponent implements OnInit {
     });
   }
 
-  addAllCoordinatesToMap(): void {
-    this.allShops.forEach((shop: any, index: number) => {
+  addAllCoordinatesToMap(shops?: any[]): void {
+    const shopsToAdd = shops ?? this.allShops;
+
+    shopsToAdd.forEach((shop: any, index: number) => {
       const markerLayer = marker([shop.coordinates[0], shop.coordinates[1]], {
         icon: this.geolocationService.getMarkerIcon(),
       }).bindPopup(this.generatePopupContent(shop))

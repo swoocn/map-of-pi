@@ -67,6 +67,31 @@
         "UNDER_CONSTRUCTION": "This functionality is not fully built yet"
       }
     },
+    "CONFIGURATION": {
+      "LABELS": {
+        "SHOP_NAME": "Shop Name",
+        "MENU": "Menu",
+        "ACCEPT_ORDERS_WITHOUT_PAYMENT_MESSAGE": "Accept orders without payment",
+        "ACCEPT_PI_TRANSACTIONS_MESSAGE": "Accept Pi Transactions"
+      },
+      "ADD_PRODUCT_MENU": {
+        "LABELS": {
+          "ADD_PRODUCT_INTO_SHOP_MESSAGE": "Add Product into your shop",
+          "PRODUCT_NAME": "Product Name",
+          "PRODUCT_IMAGES": "Product Images",
+          "ADD_IMAGE": "Add Image",
+          "PRICE": "Price",
+          "DESCRIPTION": "Description",
+          "FOOD_SERVICE": {
+            "TIME_PREPARATION_MESSAGE": "How long to prepare this meal?"
+          }
+        },
+        "BUTTONS": {
+          "LOADING": "Loading..",
+          "CONFIRM": "Confirm"
+        }
+      }
+    },
     "ADD_PRODUCT": {
       "LABELS": {
         "PRODUCT_NAME": "Product Name",

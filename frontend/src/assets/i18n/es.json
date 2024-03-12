@@ -67,6 +67,31 @@
         "UNDER_CONSTRUCTION": "Esta funcionalidad aún no está completamente desarrollada"
       }
     },
+    "CONFIGURATION": {
+      "LABELS": {
+        "SHOP_NAME": "Nombre de la tienda",
+        "MENU": "Menú",
+        "ACCEPT_ORDERS_WITHOUT_PAYMENT_MESSAGE": "Aceptar pedidos sin pago",
+        "ACCEPT_PI_TRANSACTIONS_MESSAGE": "Aceptar transacciones de Pi"
+      },
+      "ADD_PRODUCT_MENU": {
+        "LABELS": {
+          "ADD_PRODUCT_INTO_SHOP_MESSAGE": "Agregar producto a tu tienda",
+          "PRODUCT_NAME": "Nombre del producto",
+          "PRODUCT_IMAGES": "Imágenes del producto",
+          "ADD_IMAGE": "Agregar imagen",
+          "PRICE": "Precio",
+          "DESCRIPTION": "Descripción",
+          "FOOD_SERVICE": {
+            "TIME_PREPARATION_MESSAGE": "¿Cuánto tiempo lleva preparar esta comida?"
+          }
+        },
+        "BUTTONS": {
+          "LOADING": "Cargando...",
+          "CONFIRM": "Confirmar"
+        }
+      }
+    },
     "ADD_PRODUCT": {
       "LABELS": {
         "PRODUCT_NAME": "Nombre del Producto",
