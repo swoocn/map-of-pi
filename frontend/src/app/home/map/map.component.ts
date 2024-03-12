@@ -13,6 +13,8 @@ import { SnackService } from '../../core/service/snack.service';
 import { dummyCoordinates } from '../../core/model/business';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 
+import { CustomMarkerOptions } from './marker-options.interface';
+
 @Component({
   selector: 'app-map',
   standalone: true,
@@ -131,11 +133,14 @@ export class MapComponent implements OnInit {
 
     const coordinates = [[data.latitude, data.longitude]];
 
-    coordinates.map((coord) => {
-      const userMarker = marker([coord[0], coord[1]], {
+    coordinates.forEach((coord) => {
+      const userMarkerOptions: CustomMarkerOptions = {
         icon: this.geolocationService.getUserMarkerIcon(),
-      })
-        .bindPopup(`<div class=""> You're Here</div>`)
+        isCurrentUser: true
+      };
+
+      const userMarker = marker([coord[0], coord[1]], userMarkerOptions)
+        .bindPopup(`<div class="">You're Here</div>`)
         .openPopup();
 
       this.map.addLayer(userMarker);
@@ -248,9 +253,10 @@ export class MapComponent implements OnInit {
     });
   }
 
+  // remove all map markers except for user position
   private removeAllMarkersFromMap(): void {
     this.map.eachLayer((layer) => {
-      if (layer instanceof L.Marker) {
+      if (layer instanceof L.Marker && !(layer.options as CustomMarkerOptions)?.isCurrentUser) {
         this.map.removeLayer(layer);
       }
     });
