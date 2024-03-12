@@ -12,13 +12,4 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 
 export class FooterComponent {
-  showPopup: boolean = false;
-
-  displayPopup(): void {
-    this.showPopup = true;
-  }
-
-  hidePopup(): void {
-    this.showPopup = false;
-  }
 }

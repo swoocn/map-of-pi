@@ -1,4 +1,4 @@
-@use "../node_modules/@angular/material/" as mat;
+@use '../node_modules/@angular/material/' as mat;
 
 @import './assets/styles/fonts.scss';
 @import './assets/styles/reset.scss';
@@ -9,11 +9,14 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body { height: 100%; }
-body { 
-  margin: 0; 
-  font-family: Roboto, "Helvetica Neue", sans-serif; 
-  min-width: 21rem;
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  min-width: 18rem;
   background-image: url('./assets/images/background.svg');
   background-color: rgba(255, 255, 255, 0.15);
   background-size: cover;
@@ -28,21 +31,24 @@ $dark-accent: mat.define-palette(mat.$green-palette);
 $dark-warn: mat.define-palette(mat.$yellow-palette);
 
 // define dark mode theme
-$angular-dark-theme: mat.define-dark-theme((
-  color: (
-    primary: $dark-primary,
-    accent: $dark-accent,
-    warn: $dark-warn,
+$angular-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+      warn: $dark-warn,
+    ),
   )
-));
+);
 
-.dark-mode { 
-  @include mat.all-component-colors($angular-dark-theme); 
+.dark-mode {
+  @include mat.all-component-colors($angular-dark-theme);
   background-color: #111d11;
   color: #ffffff;
   background-blend-mode: multiply;
 
-  .business-registration__input, .business-registration__select {
+  .business-registration__input,
+  .business-registration__select {
     background-color: #092709;
   }
 

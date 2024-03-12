@@ -14,6 +14,15 @@
     "LATEST_UPDATES": "최신 업데이트",
     "REPORTING_MESSAGE": "결함을 보고해주세요"
   }, 
+  "BUSINESS_MARKER_DIALOG": {
+    "DISTANCE_MESSAGE": "당신으로부터 떨어진 거리",
+    "ONLINE_PI_ORDERS_ALLOWED_MESSAGE": "온라인 Pi 주문 허용됨",
+    "MENU_ITEMS_AVAILABLE_MESSAGE": "메뉴 항목 사용 가능",
+    "BUTTONS": {
+        "VISIT_SHOP": "가게 방문하기",
+        "TAKE_ROUTE": "경로 선택하기"
+    }
+  },
   "BUSINESS": {
     "REGISTRATION": {
       "LABELS": {
@@ -85,6 +94,14 @@
       "BUTTONS": {
         "SUBMIT": "제출"
       }
+    }
+  },
+  "SHOPPING": {
+    "ORDER_SCREEN": {
+      "MENU": "메뉴",
+      "HIGHLIGHT_MESSAGE": "온라인으로 주문하고 직접 결제할 수 있습니다",
+      "BUY_NOW_MESSAGE": "지금 구매하기",
+      "NO_PRODUCTS_MESSAGE": "이 비즈니스에는 제품이 없습니다."
     }
   },
   "PRIVACY_POLICY": {

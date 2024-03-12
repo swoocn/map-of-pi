@@ -14,6 +14,15 @@
     "LATEST_UPDATES": "Latest Updates",
     "REPORTING_MESSAGE": "Please report defects to" 
   },
+  "BUSINESS_MARKER_DIALOG": {
+    "DISTANCE_MESSAGE": "Away from you",
+    "ONLINE_PI_ORDERS_ALLOWED_MESSAGE": "Online Pi orders allowed",
+    "MENU_ITEMS_AVAILABLE_MESSAGE": "Menu items available", 
+    "BUTTONS": {
+      "VISIT_SHOP": "Visit Shop",
+      "TAKE_ROUTE": "Take Route"
+    }
+  },
   "BUSINESS": {
     "REGISTRATION": {
       "LABELS": {
@@ -85,6 +94,14 @@
       "BUTTONS": {
         "SUBMIT": "Submit"
       }
+    }
+  },
+  "SHOPPING": {
+    "ORDER_SCREEN": {
+      "MENU": "Menu",
+      "HIGHLIGHT_MESSAGE": "You can order online and pay in person",
+      "BUY_NOW_MESSAGE": "Buy Now",
+      "NO_PRODUCTS_MESSAGE": "This business has no products."
     }
   },
   "PRIVACY_POLICY": {

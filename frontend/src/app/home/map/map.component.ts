@@ -1,14 +1,16 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { Map, marker, Layer } from 'leaflet';
-import { GeolocationService } from '../../core/service/geolocation.service';
-import { SnackService } from '../../core/service/snack.service';
-import { dummyCoordinates } from '../../core/model/business';
 import { Router, RouterModule } from '@angular/router';
-import { ShopService } from '../../core/service/shop.service';
+import { TranslateService } from '@ngx-translate/core';
 import axios from 'axios';
 import 'leaflet-routing-machine';
 import * as L from 'leaflet';
+
+import { GeolocationService } from '../../core/service/geolocation.service';
+import { ShopService } from '../../core/service/shop.service';
+import { SnackService } from '../../core/service/snack.service';
+import { dummyCoordinates } from '../../core/model/business';
 
 @Component({
   selector: 'app-map',
@@ -16,7 +18,7 @@ import * as L from 'leaflet';
   imports: [LeafletModule, RouterModule],
   templateUrl: './map.component.html',
   styleUrl: './map.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MapComponent implements OnInit {
   layer?: Layer;
@@ -28,12 +30,20 @@ export class MapComponent implements OnInit {
   allShops: any[] = [];
   userPositions: any[] = [];
 
+  // Translation strings
+  distanceMessage!: string;
+  onlinePiOrdersAllowedMessage!: string;
+  menuItemsAvailable!: string;
+  visitShop!: string;
+  takeRoute!: string;
+
   coordinates = dummyCoordinates;
+
   constructor(
-    private readonly cdr: ChangeDetectorRef,
     private readonly geolocationService: GeolocationService,
     private readonly snackService: SnackService,
     private shopService: ShopService,
+    private translateService: TranslateService,
   ) {
     this.options = this.geolocationService.getMapOptions();
     this.geolocationService.geolocationTriggerEvent$.subscribe(() => {
@@ -41,6 +51,40 @@ export class MapComponent implements OnInit {
     });
 
     this.userPositions = this.shopService.getUserPosition();
+
+    this.translateService.onLangChange.subscribe(() => {
+      // console.log('Language changed. Updating translated strings...');
+      this.removeAllMarkersFromMap();
+      // Update translated strings here
+      this.updateTranslatedStrings();
+      // console.log('Translated strings updated:', this.distanceMessage, this.onlinePiOrdersAllowedMessage, this.menuItemsAvailable, this.visitShop, this.takeRoute);
+      this.addAllCoordinatesToMap();
+    });
+  }
+  
+  async ngOnInit(): Promise<void> {
+    try {
+      const response = await axios.get('https://api-mapofpi.vercel.app/shops');
+
+      console.log('From Map of Pi : ', response.data?.data);
+
+      const shops: any[] = response.data?.data;
+
+      this.allShops = shops;
+
+      // Wait for translation update before adding coordinates to the map
+      this.updateTranslatedStrings();
+      this.addAllCoordinatesToMap();
+
+      console.log(
+        'All shops after fetching them from DB ',
+        this.allShops.map((shop) => shop.coordinates),
+      );
+    } catch (error) {
+      console.log(error);
+    }
+
+    this.track();
   }
 
   onMapReady(map: Map): void {
@@ -53,6 +97,14 @@ export class MapComponent implements OnInit {
     this.track();
   }
 
+  private updateTranslatedStrings(): void {
+    this.distanceMessage = this.translateService.instant('BUSINESS_MARKER_DIALOG.DISTANCE_MESSAGE');
+    this.onlinePiOrdersAllowedMessage = this.translateService.instant('BUSINESS_MARKER_DIALOG.DISTANCE_MESSAGE');
+    this.menuItemsAvailable = this.translateService.instant('BUSINESS_MARKER_DIALOG.MENU_ITEMS_AVAILABLE_MESSAGE');
+    this.visitShop = this.translateService.instant('BUSINESS_MARKER_DIALOG.BUTTONS.VISIT_SHOP');
+    this.takeRoute = this.translateService.instant('BUSINESS_MARKER_DIALOG.BUTTONS.TAKE_ROUTE');
+  }
+
   async track() {
     console.log('Coordinates from shop in track: ', this.shopService.getUserPosition());
 
@@ -60,7 +112,7 @@ export class MapComponent implements OnInit {
 
     const { data } = location;
 
-    console.log('user data: ', data);
+    console.log('User data: ', data);
 
     const coordinates = [[data.latitude, data.longitude]];
 
@@ -80,51 +132,7 @@ export class MapComponent implements OnInit {
     this.allShops.forEach((shop: any, index: number) => {
       const markerLayer = marker([shop.coordinates[0], shop.coordinates[1]], {
         icon: this.geolocationService.getMarkerIcon(),
-      })
-        .bindPopup(
-          `<div class="max-w-sm rounded-md overflow-hidden">
-  <img class="w-full" src="${shop.image}" alt="Shop Image">
-  <div class="flex items-center justify-between my-2">
-    <div class="font-bold text-md ">${shop.name}</div>
-    <img src="assets/shops/star.png" alt="rating"  class="max-w-[50px] w-full"/>
-  </div>
-  <div class="space-y-1">
-    <div class="flex items-center">
-      <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="11" />
-        <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-      </svg>
-      <div class="ml-1">
-        23 km 
-        <code class="text-sm font-bold text-gray-900">Away </code> from you
-      </div>
-    </div>
-    <div class="flex items-center">
-      <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="11" />
-        <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-      </svg>
-      <div class="ml-1">
-        Online
-        <code class="text-sm font-bold text-gray-900">Pi orders</code> allowed
-      </div>
-    </div>
-    <div class="flex items-center">
-      <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="11" />
-        <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-      </svg>
-      <div class="ml-1">15 menu available</div>
-    </div>
-  </div>
-
-<div class="flex items-center justify-center gap-3">
-
-  <div class="bg-red-400 w-[100px]  text-center rounded-md text-white py-1 mt-1" id="${shop._id}">Visit Shop</div>
-  <div class="bg-blue-400 w-[100px]  text-center rounded-md text-white py-1 mt-1" id="comming">Take Route</div>
-</div>
-</div>`,
-        )
+      }).bindPopup(this.generatePopupContent(shop))
         .addTo(this.map)
         .addEventListener('click', (e) => {
           const commingBtn = document.querySelectorAll('#comming');
@@ -162,7 +170,7 @@ export class MapComponent implements OnInit {
 
                   switch (customType) {
                     case 'user':
-                      this.snackService.showMessage(`Dear Soleil00 You"re located her`);
+                      this.snackService.showMessage(`Dear Soleil00 You"re located here`);
                       break;
                     case 'shop':
                       newMarker.bindPopup(`
@@ -223,31 +231,61 @@ export class MapComponent implements OnInit {
     });
   }
 
+  private removeAllMarkersFromMap(): void {
+    this.map.eachLayer((layer) => {
+      if (layer instanceof L.Marker) {
+        this.map.removeLayer(layer);
+      }
+    });
+  }
+
   clicked(id: any): void {
     // this.navigator.navigate(['manage-business', id]);
     // this.navigator.navigate(['shop', 'order-menu']);
     this.navigator.navigate(['view-shop', id]);
   }
 
-  async ngOnInit(): Promise<void> {
-    try {
-      const response = await axios.get('https://api-mapofpi.vercel.app/shops');
-
-      console.log('From Map of Pi : ', response.data?.data);
-
-      const shops: any[] = response.data?.data;
-
-      this.allShops = shops;
-      this.addAllCoordinatesToMap();
-
-      console.log(
-        'All shops after fetching them from DB ',
-        this.allShops.map((shop) => shop.coordinates),
-      );
-    } catch (error) {
-      console.log(error);
-    }
-
-    this.track();
+  private generatePopupContent(shop: any): string {
+    return `
+      <div class="max-w-sm rounded-md overflow-hidden">
+        <img class="w-full" src="${shop.image}" alt="Shop Image">
+          <div class="flex items-center justify-between my-2">
+            <div class="font-bold text-md ">${shop.name}</div>
+            <img src="assets/shops/star.png" alt="rating"  class="max-w-[50px] w-full"/>
+          </div>
+          <div class="space-y-1">
+            <div class="flex items-center">
+              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+              <div class="ml-1">
+                <code class="text-sm font-bold text-gray-900">23 km</code> ${this.distanceMessage}
+              </div>
+            </div>
+            <div class="flex items-center">
+              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+              <div class="ml-1">
+                ${this.onlinePiOrdersAllowedMessage}
+              </div>
+            </div>
+            <div class="flex items-center">
+              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+              <div class="ml-1"><code class="text-sm font-bold text-gray-900">15</code> ${this.menuItemsAvailable}</div>
+            </div>
+          </div>
+        
+        <div class="flex items-center justify-center gap-3">
+      
+        <div class="bg-red-400 w-[100px]  text-center rounded-md text-white py-1 mt-1" id="${shop._id}">${this.visitShop}</div>
+        <div class="bg-blue-400 w-[100px]  text-center rounded-md text-white py-1 mt-1" id="comming">${this.takeRoute}</div>
+      </div>
+    </div>`;
   }
 }

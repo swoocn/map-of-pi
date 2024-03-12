@@ -76,13 +76,13 @@
             class="order-menu__switch-button"
             aria-label="Switch to products menu"
             (click)="switchToProductsMenu()">
-            <span class="order-menu__switch-button-text">Menu</span>
+            <span class="order-menu__switch-button-text">{{ 'SHOPPING.ORDER_SCREEN.MENU' | translate }}</span>
           </button>
         </div>
       </section>
 
       <div class="bg-yellow-400 my-3 rounded-md">
-        <p class="text-center py-1.5 font-bold">{{ highlightText }}</p>
+        <p class="text-center py-1.5 font-bold">{{ 'SHOPPING.ORDER_SCREEN.HIGHLIGHT_MESSAGE' | translate }}</p>
       </div>
 
       <!-- Section for menu products and images-->
@@ -164,13 +164,13 @@
               <button
                 class="bg-red-500 px-4 py-1.5 rounded-md text-white"
                 (click)="orderProduct(product.price)">
-                Buy now
+                {{ 'SHOPPING.ORDER_SCREEN.BUY_NOW_MESSAGE' | translate }}
               </button>
             </div>
           </div>
         } @else {
           <div class="text-center flex justify-center items-center mt-5">
-            <div>This shop has no products.</div>
+            <div>{{ 'SHOPPING.ORDER_SCREEN.NO_PRODUCTS_MESSAGE' | translate }}</div>
 
             <!-- <div>the length is {{ shop.products.length }}</div> -->
           </div>

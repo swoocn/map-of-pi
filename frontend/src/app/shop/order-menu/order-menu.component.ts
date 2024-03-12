@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { ShopService } from '../../core/service/shop.service';
 import { CurrentUserService } from '../../core/service/current-user.service';
 import { PaymentsService } from '../../core/service/payments.service';
@@ -9,7 +10,7 @@ import { PaymentsService } from '../../core/service/payments.service';
 @Component({
   selector: 'app-order-menu',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, TranslateModule],
   templateUrl: './order-menu.component.html',
   styleUrl: './order-menu.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
