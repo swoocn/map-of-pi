@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterTestingModule } from '@angular/router/testing';
 import { InformationComponent } from './information.component';
 
 describe('InformationComponent', () => {
@@ -8,7 +9,7 @@ describe('InformationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InformationComponent, TranslateModule.forRoot()]
+      imports: [InformationComponent, RouterTestingModule, TranslateModule.forRoot()]
     })
     .compileComponents();
     
