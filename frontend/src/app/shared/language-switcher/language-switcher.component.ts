@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 export interface LangMenuItem {
   code: string;
   name: string;
+  imageUrl: string;
 }
 
 @Component({
@@ -21,9 +22,9 @@ export interface LangMenuItem {
 })
 export class LanguageSwitcherComponent {
   protected readonly languages: LangMenuItem[] = [
-    { code: 'en', name: 'English' },
-    { code: 'es', name: 'Spanish' },
-    { code: 'ko', name: 'Korean' }
+    { code: 'en', name: 'English', imageUrl: '../../../assets/images/shared/language/en.svg' },
+    { code: 'es', name: 'Spanish', imageUrl: '../../../assets/images/shared/language/es.svg' },
+    { code: 'ko', name: 'Korean', imageUrl: '../../../assets/images/shared/language/ko.svg' }
   ];
 
   constructor(private readonly translateService: TranslateService) {}

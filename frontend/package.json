@@ -31,6 +31,7 @@
     "@ngx-translate/http-loader": "^8.0.0",
     "@pinetwork-js/sdk": "^0.7.0",
     "axios": "^1.6.7",
+    "language-icons": "^0.3.0",
     "leaflet": "^1.9.4",
     "leaflet-routing-machine": "^3.2.12",
     "rxjs": "~7.8.0",
