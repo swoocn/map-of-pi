@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Icon, icon, latLng, MapOptions, tileLayer } from 'leaflet';
+import { Icon, icon, Map, MapOptions, tileLayer } from 'leaflet';
 import axios from 'axios';
 
 @Injectable({
@@ -11,9 +11,12 @@ export class GeolocationService {
   initCoords: number[] = [];
   private readonly geolocationTrigger = new Subject<void>();
   private readonly maxZoomLevel = 18;
+  private readonly minZoomLevel = 2;
   private readonly tileLayer = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
   readonly geoLoading = signal<boolean>(false);
   readonly geolocationTriggerEvent$ = this.geolocationTrigger.asObservable();
+
+  private map!: Map;
 
   triggerGeolocation(): void {
     this.geolocationTrigger.next();
@@ -50,6 +53,7 @@ export class GeolocationService {
       layers: [
         tileLayer(this.tileLayer, {
           maxZoom: this.maxZoomLevel,
+          minZoom: this.minZoomLevel,
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         }),
       ],
