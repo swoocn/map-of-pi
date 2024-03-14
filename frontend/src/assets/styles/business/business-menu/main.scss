@@ -3,6 +3,7 @@
   top: 1.5rem;
   font-family: var(--font-family-main);
   font-weight: lighter;
+  font-size: 1.0rem;
 }
 
 .menu-settings__section {
@@ -23,9 +24,11 @@
 }
 
 .menu-setting__floating-button-section {
-  position: fixed;
+  position: relative;
   bottom: 100px;
-  right: 15px;
+  padding-top: 100px;
+  left: 50%;
+  // right: 15px;
 }
 
 .menu-setting__floating-button {

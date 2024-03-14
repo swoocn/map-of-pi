@@ -50,7 +50,11 @@ export class OrderMenuComponent implements OnInit {
       alt: 'Close-up of a coffee cup on a table',
     },
     {
-      url: '../../../assets/images/shopping/mock/coffee-shop-image_2.jpg',
+      url: '../../../assets/images/shopping/mock/coffee-shop-image_3.jpg',
+      alt: 'External view of coffee shop',
+    },
+    {
+      url: '../../../assets/images/shopping/mock/coffee-1.jpg',
       alt: 'Close-up of a coffee cup on a table',
     },
   ];

@@ -42,6 +42,10 @@
     </div>
   </section>
 
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-2 sm:grid-cols-2 gap-2" #itemsDisplayArea></div>
+  </div>
+
   <section class="menu-setting__floating-button-section" #addItemButtonSection>
     <button
       class="menu-setting__floating-button hidden"
@@ -50,13 +54,9 @@
       <i class="fa-solid fa-circle-plus"></i>
     </button>
   </section>
-
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-2 sm:grid-cols-2 gap-2" #itemsDisplayArea></div>
-  </div>
 </main>
 
-<!-- add product to shop model starts here -->
+<!-- add product to shop modal starts here -->
 <div
   class="modal"
   #addItemModal
@@ -82,13 +82,13 @@
         <input
           type="text"
           id="item-name"
-          class="appearance-none border border-gray-300 rounded-md py-2 px-4 leading-tight focus:outline-none focus:border-blue-500"
+          class="appearance-none border border-gray-300 rounded-md py-2 px-4 leading-tight focus:outline-none focus:border-green-500"
           formControlName="itemName" />
       </div>
 
       <!-- product images -->
       <div class="flex flex-col gap-1 w-full mb-3">
-        <label for="item-name" class="modal__label text-gray-700 font-bold"
+        <label for="item-name" class="modal__label font-bold"
           >{{ 'BUSINESS.CONFIGURATION.ADD_PRODUCT_MENU.LABELS.PRODUCT_IMAGES' | translate }}</label
         >
         <input
@@ -129,12 +129,12 @@
       <!-- product price -->
 
       <div class="flex flex-col gap-1 mb-3 w-full">
-        <label for="item-price" class="text-gray-700 font-bold">{{ 'BUSINESS.CONFIGURATION.ADD_PRODUCT_MENU.LABELS.PRICE' | translate }}</label>
+        <label for="item-price" class="font-bold">{{ 'BUSINESS.CONFIGURATION.ADD_PRODUCT_MENU.LABELS.PRICE' | translate }}</label>
         <div class="relative">
           <input
             type="text"
             id="item-price"
-            class="border border-gray-300 w-full rounded-md px-3 py-2 focus:outline-none focus:border-blue-500"
+            class="border border-gray-300 w-full rounded-md px-3 py-2 focus:outline-none focus:border-green-500"
             formControlName="itemPrice" />
           <span
             class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
@@ -157,7 +157,7 @@
         <input
           type="text"
           id="prep-time"
-          class="appearance-none border border-gray-300 rounded-md py-2 px-4 leading-tight focus:outline-none focus:border-blue-500"
+          class="appearance-none border border-gray-300 rounded-md py-2 px-4 leading-tight focus:outline-none focus:border-green-500"
           formControlName="prepTime" />
       </div>
 
@@ -168,7 +168,7 @@
         >
         <textarea
           id="description"
-          class="border border-gray-300 rounded-md w-full px-3 py-2 focus:outline-none focus:border-blue-500 resize-none"
+          class="border border-gray-300 rounded-md w-full px-3 py-2 focus:outline-none focus:border-green-500 resize-none"
           maxlength="50"
           rows="4"
           formControlName="description"></textarea>

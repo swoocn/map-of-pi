@@ -29,6 +29,7 @@ body {
   background-attachment: fixed;
 }
 
+/* TODO; Refactor and attempt to use Angular Material consistently */
 @include mat.all-component-themes($app-light-theme);
 // dark mode toggle
 .dark-mode {
@@ -38,6 +39,14 @@ body {
   .business-registration__input,
   .business-registration__select {
     background-color: #666060;
+  }
+  div[class^="inner-wrapper"] {
+    color: #ffffff;
+    background-color: #7e7777;
+  }
+  div[class^="modal"] {
+    color: #ffffff;
+    background-color: #7e7777;
   }
   
 }

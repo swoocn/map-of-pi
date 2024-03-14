@@ -3,6 +3,7 @@
   top: 23%;
   left: 50%;
   transform: translate(-50%, -15%);
+  font-size: 1.0rem;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -38,8 +39,9 @@
 
 .modal__title {
   font-family: var(--font-family-main);
-  font-size: 0.8rem;
-  margin: 10px 0;
+  //font-size: 0.8rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -48,7 +50,7 @@
   justify-content: center;
   text-align: start;
   margin-bottom: 0.3rem;
-  font-size: 0.7rem;
+  // font-size: 0.7rem;
 }
 
 .modal__input {
@@ -141,7 +143,7 @@
   display: block;
   justify-content: start;
   margin-bottom: 0.3rem;
-  font-size: 0.7rem;
+  // font-size: 0.7rem;
 }
 
 .modal__textarea {

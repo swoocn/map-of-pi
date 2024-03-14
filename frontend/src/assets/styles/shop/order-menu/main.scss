@@ -24,7 +24,7 @@
 .order-menu__type,
 .order-menu__location {
   display: flex;
-  align-items: center;
+  // align-items: center;
   column-gap: 10px;
 }
 
@@ -47,8 +47,8 @@
 
 .order-menu__business-image {
     margin: 0 auto;
-    width: 74px;
-    height: 94px;
+    width: 105px;
+    height: 125px;
     border-radius: 10px;
     margin-top: 1rem;
     object-fit: cover;
@@ -72,6 +72,7 @@
     flex: 1;
     padding: 0.2rem 1rem;
     font-size: 0.7rem;
+    color: #000;
     border: none;
     outline: none;
     cursor: pointer;
