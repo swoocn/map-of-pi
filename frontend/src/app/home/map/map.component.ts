@@ -4,8 +4,8 @@ import { Map, marker, Layer } from 'leaflet';
 import { Router, RouterModule } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import axios from 'axios';
-import 'leaflet-routing-machine';
 import * as L from 'leaflet';
+import 'leaflet-routing-machine';
 
 import { GeolocationService } from '../../core/service/geolocation.service';
 import { ShopService } from '../../core/service/shop.service';
@@ -71,7 +71,7 @@ export class MapComponent implements OnInit {
     try {
       const response = await axios.get('https://api-mapofpi.vercel.app/shops');
 
-      console.log('From Map of Pi : ', response.data?.data);
+      // console.log('From Map of Pi : ', response.data?.data);
 
       const shops: any[] = response.data?.data;
 
@@ -82,10 +82,10 @@ export class MapComponent implements OnInit {
       this.updateTranslatedStrings();
       this.addAllCoordinatesToMap();
 
-      console.log(
-        'All shops after fetching them from DB ',
-        this.allShops.map((shop) => shop.coordinates),
-      );
+      // console.log(
+      //   'All shops after fetching them from DB ',
+      //   this.allShops.map((shop) => shop.coordinates),
+      // );
     } catch (error) {
       console.log(error);
     }
@@ -129,7 +129,7 @@ export class MapComponent implements OnInit {
 
     const { data } = location;
 
-    console.log('User data: ', data);
+    // console.log('User data: ', data);
 
     const coordinates = [[data.latitude, data.longitude]];
 
@@ -251,7 +251,7 @@ export class MapComponent implements OnInit {
             }
           });
       } else {
-          console.error(`Incomplete coordinates for shop ${shop.name}`);
+          //console.error(`Incomplete coordinates for shop ${shop.name}`);
       }
     });
   }
