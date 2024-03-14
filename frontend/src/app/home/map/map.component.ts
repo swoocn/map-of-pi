@@ -116,7 +116,7 @@ export class MapComponent implements OnInit {
 
   private updateTranslatedStrings(): void {
     this.distanceMessage = this.translateService.instant('BUSINESS_MARKER_DIALOG.DISTANCE_MESSAGE');
-    this.onlinePiOrdersAllowedMessage = this.translateService.instant('BUSINESS_MARKER_DIALOG.DISTANCE_MESSAGE');
+    this.onlinePiOrdersAllowedMessage = this.translateService.instant('BUSINESS_MARKER_DIALOG.ONLINE_PI_ORDERS_ALLOWED_MESSAGE');
     this.menuItemsAvailable = this.translateService.instant('BUSINESS_MARKER_DIALOG.MENU_ITEMS_AVAILABLE_MESSAGE');
     this.visitShop = this.translateService.instant('BUSINESS_MARKER_DIALOG.BUTTONS.VISIT_SHOP');
     this.takeRoute = this.translateService.instant('BUSINESS_MARKER_DIALOG.BUTTONS.TAKE_ROUTE');
@@ -199,7 +199,7 @@ export class MapComponent implements OnInit {
                             <div class="p-4">
                                 <div class="text-lg font-bold mb-2">${shop.name}</div>
                                 <div>${shop.name} is located here and you are about to take routes towards it. It will approximately take you 23 min by car.</div>
-                                <button id="cancelBtn" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md">Cancel</button>
+                                <button id="cancelBtn" class="mt-4 px-4 py-2 bg-orange-600 text-white rounded-md">Cancel</button>
                             </div>
                         `);
 
@@ -278,7 +278,7 @@ export class MapComponent implements OnInit {
           </div>
           <div class="space-y-1">
             <div class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="h-6 w-6 flex-none fill-gray-100 stroke-green-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="11" />
                 <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
               </svg>
@@ -287,7 +287,7 @@ export class MapComponent implements OnInit {
               </div>
             </div>
             <div class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="h-6 w-6 flex-none fill-gray-100 stroke-green-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="11" />
                 <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
               </svg>
@@ -296,7 +296,7 @@ export class MapComponent implements OnInit {
               </div>
             </div>
             <div class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="h-6 w-6 flex-none fill-gray-100 stroke-green-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="11" />
                 <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
               </svg>
@@ -304,10 +304,10 @@ export class MapComponent implements OnInit {
             </div>
           </div>
         
-        <div class="flex items-center justify-center gap-3">
+        <div class="flex items-center mt-3 justify-center gap-3">
       
-        <div class="bg-red-400 w-[100px]  text-center rounded-md text-white py-1 mt-1" id="${shop._id}">${this.visitShop}</div>
-        <div class="bg-blue-400 w-[100px]  text-center rounded-md text-white py-1 mt-1" id="comming">${this.takeRoute}</div>
+        <div class="bg-red-800 w-[100px]   text-center rounded-md text-white py-1 mt-1" id="${shop._id}">${this.visitShop}</div>
+        <div class="bg-blue-800 w-[100px]   text-center rounded-md text-white py-1 mt-1" id="comming">${this.takeRoute}</div>
       </div>
     </div>`;
   }

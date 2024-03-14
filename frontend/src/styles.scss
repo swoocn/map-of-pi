@@ -1,4 +1,8 @@
 @use '../node_modules/@angular/material/' as mat;
+@import '../node_modules/@angular/material/core/theming/theming';
+
+@import './assets/styles/themes/light-mode/light-template.scss';
+@import './assets/styles/themes/dark-mode/dark-template.scss';
 
 @import './assets/styles/fonts.scss';
 @import './assets/styles/reset.scss';
@@ -25,38 +29,15 @@ body {
   background-attachment: fixed;
 }
 
-// define custom dark theme colors
-$dark-primary: mat.define-palette(mat.$amber-palette);
-$dark-accent: mat.define-palette(mat.$green-palette);
-$dark-warn: mat.define-palette(mat.$yellow-palette);
-
-// define dark mode theme
-$angular-dark-theme: mat.define-dark-theme(
-  (
-    color: (
-      primary: $dark-primary,
-      accent: $dark-accent,
-      warn: $dark-warn,
-    ),
-  )
-);
-
+@include mat.all-component-themes($app-light-theme);
+// dark mode toggle
 .dark-mode {
-  @include mat.all-component-colors($angular-dark-theme);
-  background-color: #111d11;
-  color: #ffffff;
-  background-blend-mode: multiply;
+  @include mat.all-component-colors($app-dark-theme);
 
+  // account for non-mat elements.
   .business-registration__input,
   .business-registration__select {
-    background-color: #092709;
+    background-color: #666060;
   }
-
-  .popup {
-    background-color: #111d11;
-  }
-
-  .input {
-    background-color: #111d11;
-  }
+  
 }

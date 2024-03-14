@@ -1,4 +1,4 @@
-<main class="business-registration">
+<main class="business-registration mat-app-background">
   <form [formGroup]="registerShopForm" (ngSubmit)="send()">
   <section class="business-registration__section">
     <div class="business-registration__field">
@@ -50,8 +50,8 @@
     <div class="business-registration__field business-registration__field-middle">
       <label for="" class="business-registration__label"></label>
       <label for="image"
-        class="business-registration__label flex gap-5 mb-3 items-center bg-blue-200 p-3 rounded-md"><img
-          src="../../../assets/images/business/upload.jpg" alt="upload icon" class="w-[50px] h-[50px]" />
+        class="business-registration__label flex gap-5 mb-3 items-center bg-green-200 p-3 rounded-md" style="background-color: #1d724b;">
+        <img src="../../../assets/images/business/upload.jpg" alt="upload icon" class="w-[50px] h-[50px]" />
         <div>{{ 'BUSINESS.REGISTRATION.LABELS.BUSINESS_IMAGES' | translate }}</div>
       </label>
       <input type="file" id="image" name="image" (change)="onFileChange($event)" formControlName="shopImage"

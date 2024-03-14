@@ -2,11 +2,12 @@
     padding: 1rem;
     font-family: var(--font-family-main);
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
 }
 
 .business-registration__section {
     position: relative;
+    // font-size: 1.0rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%);
@@ -58,7 +59,7 @@
 }
 
 .business-registration__item {
-    font-size: 0.8rem;
+    // font-size: 0.8rem;
     padding: 1rem;
     margin-bottom: 1rem; 
     border-radius: 10px;
@@ -79,7 +80,7 @@
     padding: 0.7rem;
     background-color: #1d724b;
     color: #ffffff;
-    font-size: 0.9rem;
+    // font-size: 0.9rem;
     border-radius: 10px;
     outline: none;
     border: none;
@@ -99,11 +100,11 @@
 
 @media(min-width: 768px) {
     .business-registration-header__title {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     .business-registration__label {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .business-registration__section {

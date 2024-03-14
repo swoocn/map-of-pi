@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
-import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Router, RouterLink } from '@angular/router';
+
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
+
 import { SnackService } from '../../core/service/snack.service';
 import { ShopService } from '../../core/service/shop.service';
 
@@ -16,7 +18,7 @@ import { ShopService } from '../../core/service/shop.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BusinessSettingsComponent {
-  businessTypes: string[] = ['Restaurant', 'Retail Store', 'Servicing', 'Construction', 'Transportation'];
+  businessTypes: string[] =[];
   router: Router = inject(Router);
   showPopup: boolean = false;
   selectedImages: any[] = [];
@@ -36,7 +38,24 @@ export class BusinessSettingsComponent {
   constructor(
     private snackService: SnackService,
     private shopServices: ShopService,
-  ) {}
+    private translateService: TranslateService
+  ) {
+    // initialize business types.
+    this.translateBusinessTypes();
+    this.translateService.onLangChange.subscribe(() => {
+      this.translateBusinessTypes();
+    });
+  }
+
+  translateBusinessTypes() {
+    this.businessTypes = [
+      'RESTAURANT',
+      'RETAIL_STORE',
+      'SERVICE',
+      'CONSTRUCTION',
+      'TRANSPORTATION'
+    ].map(key => this.translateService.instant(`BUSINESS.REGISTRATION.LABELS.BUSINESS_TYPES.${key}`));
+  }
 
   onFileChange(event: any) {
     if (event.target.files) {
