@@ -28,6 +28,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+.mat-app-background {
+  background-color: rgba(221, 221, 221, 0.062);
+}
 
 /* TODO; Refactor and attempt to use Angular Material consistently */
 @include mat.all-component-themes($app-light-theme);
@@ -35,6 +38,9 @@ body {
 .dark-mode {
   @include mat.all-component-colors($app-dark-theme);
 
+  .mat-app-background {
+    background-color: rgba(0, 0, 0, 0.822);
+  }
   // account for non-mat elements.
   .business-registration__input,
   .business-registration__select {
