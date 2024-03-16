@@ -1,39 +1,53 @@
+main {
+    font-family: var(--font-family-main);
+}
+
 /* Loyalty Card Styling */
 .loyalty-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: auto;
+    margin-top: 4rem;
+    padding: 30px;
     max-width: 300px;
     background-color: #F1F7FF;
-    margin-top: 4rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    letter-spacing: .7px;
+    letter-spacing: 1.5px;
 }
 
 /* Header Styling */
 .loyalty-card__header {
+    font-size: 1rem;
     position: relative;
     width: 100%;
-    margin-bottom: 1rem;
 }
 
 .loyalty-card__header-back-button {
     position: absolute;
     left: 0;
     top: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
 }
 
 .loyalty-card__header-title {
     flex-grow: 1;
     text-align: center;
-    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+    margin-left: 1rem;
 }
 
 /* Toggle Section */
 .loyalty-card__toggle-container {
     display: flex;
     align-items: center;
+    font-size: 1.2rem;
 }
 
 .loyalty-card__toggle-checkbox {
@@ -56,11 +70,23 @@
     transition: background-color .4s;
 }
 
+.loyalty-card__form-label {
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.loyalty-card__toggle-label, 
+.loyalty-card__toggle-text {
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
 
 .loyalty-card__toggle-label::before {
     content: "";
     position: absolute;
     top: -2px;
+    left: -9px;
     width: 24px;
     height: 24px;
     background-color: #9e9e9e;
@@ -79,7 +105,8 @@
 
 .loyalty-card__toggle-checkbox:checked + .loyalty-card__toggle-label::before {
     transform: translateX(26px);
-    background-color: #1d724b;
+    border: 6px solid #1d724b;
+    background-color: #FFFFFF;
 }
 
 .loyalty-card__toggle-checkbox + .loyalty-card__toggle-label {
@@ -98,6 +125,8 @@
     border-radius: 10px;
     border: 2px solid #1d724b;
     padding: 0.6rem;
+    font-size: 1.1rem;
+    max-width: 500px;
 }
 
 .loyalty-card__form-submit-button {
@@ -114,7 +143,7 @@
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    letter-spacing: .7px;
+    letter-spacing: 1.5px;
 }
 
 .loyalty-card__form-submit-button:active {
@@ -133,19 +162,61 @@
 /* Responsive Design For Larger Screens */
 @media (min-width: 768px) {
     .loyalty-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        max-width: 400px;
+        max-width: 600px;
+        padding: 4rem;
+        margin-bottom: 10rem;
     }
 
-    .loyalty-card__form {
-        width: 100%;
-        max-width: 300px;
+    .loyalty-card__header {
+        font-size: 2.2rem;
+    }
+
+    .loyalty-card__header-title {
+        font-size: 2.8rem;
+    }
+    
+    .loyalty-card__form-input {
+        padding: 1.6rem;
+        font-size: 1.2rem; 
+        font-weight: 600;  
     }
 
     .loyalty-card__toggle-text {
         margin-left: 2rem;
+        font-size: 2rem;
+    }
+
+    .loyalty-card__form-label {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .loyalty-card__form-submit-button {
+        width: 100%;
+        height: 4rem;
+        font-size: 1.4rem;
+        margin-top: 2rem;
+    }
+
+    .loyalty-card__form-control {
+        margin-top: 2.5rem;
+    }
+
+    .loyalty-card__toggle-label::before {
+        top: -2px;
+        left: 0;
+        width: 36px;
+        height: 36px;
+    }
+
+    .loyalty-card__toggle-label {
+        position: relative;
+        display: block;
+        width: 56px;
+        height: 32px;
+        background-color: #ccc;
+        border-radius: 34px;
+        cursor: pointer;
+        transition: background-color .4s;
     }
 }
