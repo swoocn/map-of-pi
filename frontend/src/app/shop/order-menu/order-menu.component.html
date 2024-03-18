@@ -1,87 +1,193 @@
-<header class="order-menu__header">
+<ng-container *ngIf="isShop; else loadingSkeleton">
+  <!-- <header class="order-menu__header">
     <div></div>
     <div></div>
     <button class="order-menu__header__cart-button" aria-label="Shopping cart">
-        <img src="../../../assets/images/shopping/Shopping-cart-icon.svg" alt="Shopping cart">
-        <span class="order-menu__header__cart-count">{{ cartItemCount }}</span>
+      <img
+        src="../../../assets/images/shopping/Shopping-cart-icon.svg"
+        alt="Shopping cart" />
+      <span class="order-menu__header__cart-count">{{ cartItemCount }}</span>
     </button>
-</header>
+  </header> -->
 
-<main class="order-menu__content">
-    <!-- Business Information Section -->
-    <section class="order-menu__section">
-        <h1 class="order-menu__business-name">{{ businessName }}</h1>
+  <main class="order-menu__content">
+    <div class="inner-wrapper">
+      <!-- Business Information Section -->
+      <section class="order-menu__section mb-2">
+        <div class="flex justify-between items-center mb-1">
+          <div class="">{{ shop.name }}</div>
+          <div class="flex items-center">
+            <span>{{ shop.rating }}</span>
+            <ng-container *ngFor="let star of getStars(shop.rating)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-yellow-400"
+                viewBox="0 0 20 20"
+                fill="currentColor">
+                <path
+                  [ngClass]="{ 'fill-current': star.fill }"
+                  d="M10 1l2.59 5.17L18 7.5l-4.33 4.16L15.5 18 10 14.33 4.5 18l1.83-6.34L2 7.5l5.41-.33L10 1zm0 2.83L7.5 7.5H2l5.41 4.16L10 15.17l2.59-3.51L18 7.5h-5.5L10 3.83z" />
+              </svg>
+            </ng-container>
+          </div>
+        </div>
+
         <div class="order-menu__type">
-            <img src="../../../assets/images/shopping/coffee-cup-icon.svg" alt="Coffee shop icon"
-                class="order-menu__product-image">
-            <p class="order-menu__product-text">{{ businessType }}</p>
+          <img
+            src="../../../assets/images/shopping/coffee-cup-icon.svg"
+            alt="Coffee shop icon"
+            class="order-menu__product-image" />
+          <p class="order-menu__product-text">{{ businessType }}</p>
         </div>
         <div class="order-menu__location">
-            <img src="../../../assets/images/shopping/location-marker.svg" alt="Location marker"
-                class="order-menu__location-marker">
-            <address class="order-menu__location-address">
-                {{ businessAddress }}
-            </address>
+          <img
+            src="../../../assets/images/shopping/location-marker.svg"
+            alt="Location marker"
+            class="order-menu__location-marker" />
+          <address class="order-menu__location-address">
+            {{ shop.address }}
+          </address>
         </div>
-    </section>
+      </section>
 
-    <!-- Image Gallery Section -->
-    <section class="order-menu__image-section">
+      <!-- Image Gallery Section -->
+      <section class="order-menu__image-section">
         <div class="order-menu__business-images">
-            <img *ngFor="let image of businessImages" [src]="image.url" [alt]="image.alt"
-                class="order-menu__business-image">
+          <img
+            *ngFor="let image of businessImages"
+            [src]="image.url"
+            [alt]="image.alt"
+            class="order-menu__business-image" />
         </div>
-    </section>
+      </section>
 
-    <!-- Menu switch section-->
-    <section class="order-menu__switch-section">
+      <!-- Menu switch section-->
+      <section class="order-menu__switch-section">
         <div class="order-menu__switch-buttons">
-            <button class="order-menu__switch-button" aria-label="Switch to stamp menu" (click)="switchToStampsMenu()">
-                <span class="order-menu__switch-button-text-stamps">{{ stampsButtonText }}</span>
-            </button>
-            <button class="order-menu__switch-button" aria-label="Switch to products menu"
-                (click)="switchToProductsMenu()">
-                <span class="order-menu__switch-button-text">Menu</span>
-            </button>
+          <button
+            class="order-menu__switch-button"
+            aria-label="Switch to stamp menu"
+            (click)="switchToStampsMenu()">
+            <span class="order-menu__switch-button-text-stamps">{{
+              stampsButtonText
+            }}</span>
+          </button>
+          <button
+            class="order-menu__switch-button"
+            aria-label="Switch to products menu"
+            (click)="switchToProductsMenu()">
+            <span class="order-menu__switch-button-text">{{ 'SHOPPING.ORDER_SCREEN.MENU' | translate }}</span>
+          </button>
         </div>
-    </section>
+      </section>
 
-    <div class="order-menu__highlight">
-        <p class="order-menu__highlight-text">{{ highlightText }}</p>
+      <div class="bg-yellow-400 my-3 rounded-md">
+        <p class="text-center py-1.5 font-bold text-black">{{ 'SHOPPING.ORDER_SCREEN.HIGHLIGHT_MESSAGE' | translate }}</p>
+      </div>
+
+      <!-- Section for menu products and images-->
+      <section class="order-menu__products mb-[100px]">
+        @if (shop.products.length > 0) {
+          <div
+            class="order-menu__product shadow-md rounded-md p-2 mb-4"
+            *ngFor="let product of shop.products"
+            [attr.data-id]="product.id">
+            <div class="flex justify-between items-center mb-2">
+              <div class="font-bold">{{ product.name }}</div>
+              <div class="flex gap-3">
+                <div class="font-bold">{{ product.price }}</div>
+                <div class="flex items-center">
+                  <div class="mr-0.4">Test</div>
+                  <img
+                    src="../../../assets/images/shopping/Pi-amount-logo.svg"
+                    alt="Logo of Pi transactions"
+                    class="order-menu__pi-logo" />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex gap-1 items-center">
+              <img
+                [src]="product.image"
+                [alt]="product.name"
+                class="w-[65px] h-[65px]" />
+              <div>
+                {{ product.description }}
+              </div>
+            </div>
+
+            <!-- <div class="flex items-center justify-end">
+              <button
+                class="order-menu__quantity-button order-menu__quantity-button--decrease"
+                aria-label="Decrease quantity"
+                (click)="decreaseQuantity(product)">
+                -
+              </button>
+
+              <input
+                type="text"
+                class="order-menu__quantity-input"
+                [(ngModel)]="product.quantity"
+                min="1"
+                aria-label="Quantity" />
+              <button
+                class="order-menu__quantity-button order-menu__quantity-button--increase"
+                aria-label="Increase quantity"
+                (click)="increaseQuantity(product)">
+                +
+              </button>
+
+              <button
+                class="order-menu__add-button"
+                aria-label="Add items to shopping cart"
+                (click)="addToCart(product)">
+                <span
+                  class="order-menu_add-button-text"
+                  aria-label="Add items to shopping cart"
+                  >Add</span
+                >
+              </button>
+
+              <button
+                class="order-menu__delete-button"
+                *ngIf="product.showDeleteButton"
+                aria-label="Delete quantity button"
+                (click)="removeFromCart(product)">
+                <img
+                  src="../../../assets/images/shopping/delete-button.svg"
+                  alt="Button to delete added items to the shopping cart"
+                  class="order-menu__delete-buttons" />
+              </button>
+            </div> -->
+
+            <div class="flex justify-end">
+              <button
+                class="bg-red-500 px-4 py-1.5 rounded-md text-white"
+                (click)="orderProduct(product.price)">
+                {{ 'SHOPPING.ORDER_SCREEN.BUY_NOW_MESSAGE' | translate }}
+              </button>
+            </div>
+          </div>
+        } @else {
+          <div class="text-center flex justify-center items-center mt-5">
+            <div>{{ 'SHOPPING.ORDER_SCREEN.NO_PRODUCTS_MESSAGE' | translate }}</div>
+
+            <!-- <div>the length is {{ shop.products.length }}</div> -->
+          </div>
+        }
+      </section>
     </div>
+  </main>
+</ng-container>
 
-    <!-- Section for menu products and images-->
-    <section class="order-menu__products">
-        <div class="order-menu__product" *ngFor="let product of products" [attr.data-id]="product.id">
-            <div class="order-menu__product-info">
-                <p class="order-menu__product-text">{{ product.name }}</p>
-                <span class="order-menu__product-amount">{{ product.amount }}</span>
-                <img src="../../../assets/images/shopping/Pi-amount-logo.svg" alt="Logo of Pi transactions"
-                    class="order-menu__pi-logo">
-            </div>
-
-            <div class="order-menu__product-image">
-                <img [src]="product.imageUrl" [alt]="product.imageAlt">
-                <p class="order-menu__product-image-text">{{ product.description }}</p>
-            </div>
-
-            <div class="order-menu__product-quantity">
-                <button class="order-menu__quantity-button order-menu__quantity-button--decrease"
-                        aria-label="Decrease quantity" (click)="decreaseQuantity(product)">-</button>
-                <input type="text" class="order-menu__quantity-input" [(ngModel)]="product.quantity" min="1"
-                        aria-label="Quantity">
-                <button class="order-menu__quantity-button order-menu__quantity-button--increase"
-                        aria-label="Increase quantity" (click)="increaseQuantity(product)">+</button>
-                <button class="order-menu__add-button" *ngIf="product.showAddButton" aria-label="Add items to shopping cart"
-                        (click)="addToCart(product)">
-                    <span class="order-menu_add-button-text" aria-label="Add items to shopping cart">Add</span>
-                </button>
-                <button class="order-menu__delete-button" *ngIf="product.showDeleteButton" aria-label="Delete quantity button"
-                        (click)="removeFromCart(product)">
-                    <img src="../../../assets/images/shopping/delete-button.svg"
-                            alt="Button to delete added items to the shopping cart" class="order-menu__delete-buttons">
-                </button>
-            </div>
-        </div>
-    </section>
-</main>
+<ng-template #loadingSkeleton>
+  <div class="container">
+    <div class="card">
+      <div class="card-img skeleton"></div>
+      <div class="card-body">
+        <h2 class="card-title skeleton"></h2>
+        <p class="card-intro skeleton"></p>
+      </div>
+    </div>
+  </div>
+</ng-template>

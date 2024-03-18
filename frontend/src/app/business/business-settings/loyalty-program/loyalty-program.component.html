@@ -1,1 +1,46 @@
-<p>loyalty-program works!</p>
+<!-- Main loyalty card component container -->
+<div class="loyalty-card">
+
+  <!-- Header -->
+  <header class="loyalty-card__header">
+    <a href="#" class="loyalty-card__header-back-button" aria-label="Go back">&#x3c;</a>
+    <h1 class="loyalty-card__header-title">Loyalty card</h1>
+  </header>
+
+  <!-- Loyalty Card Form -->
+  <main>
+    <form [formGroup]="loyaltyForm" (ngSubmit)="saveSettings()" class="loyalty-card__form">
+      
+      <!-- Toggle Section -->
+      <fieldset class="loyalty-card__toggle-container">
+        <legend class="visually-hidden">Loyalty Card Activation</legend>
+        <input type="checkbox" formControlName="isActive" id="toggle-loyalty" class="loyalty-card__toggle-checkbox" aria-describedby="toggle-description"/>
+        <label for="toggle-loyalty" class="loyalty-card__toggle-label"></label>
+        <span id="toggle-description" class="loyalty-card__toggle-text">
+          <ng-container *ngIf="loyaltyForm.get('isActive')?.value; else offText">The loyalty card is on</ng-container>
+          <ng-template #offText>Turn on the Loyalty card</ng-template>
+        </span>
+      </fieldset>
+
+      <!-- Form Content Section -->
+      <section *ngIf="loyaltyForm.get('isActive')?.value">
+        <div class="loyalty-card__form-control">
+          <label for="stamps-needed" class="loyalty-card__form-label">Stamps needed for free item</label>
+          <input type="number" formControlName="stampsNeeded" id="stamps-needed" class="loyalty-card__form-input"/>
+        </div>
+      
+        <div class="loyalty-card__form-control">
+          <label for="free-item-name" class="loyalty-card__form-label">Name of free item</label>
+          <input type="text" formControlName="freeItemName" id="free-item-name" class="loyalty-card__form-input"/>
+        </div>
+
+        <div class="loyalty-card__form-control">
+          <label for="number-of-items" class="loyalty-card__form-label">Number of free items</label>
+          <input type="number" formControlName="numberOfFreeItems" id="number-of-items" class="loyalty-card__form-input"/>
+        </div>
+
+        <button type="submit" class="loyalty-card__form-submit-button">Save Settings</button>
+      </section>
+    </form>
+  </main>
+</div>

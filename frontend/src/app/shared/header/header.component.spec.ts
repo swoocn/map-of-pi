@@ -6,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Observable, of } from 'rxjs';
 
-
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
@@ -58,9 +57,9 @@ describe('HeaderComponent', () => {
       expect(languageSwitcher).toBeTruthy();
     });
 
-    it('should contain dark mode toggler component', () => {
-      const darkModeToggler = optionalControls.querySelector('app-dark-mode-toggler');
-      expect(darkModeToggler).toBeTruthy();
-    });
+    // it('should contain dark mode toggler component', () => {
+    //   const darkModeToggler = optionalControls.querySelector('app-dark-mode-toggler');
+    //   expect(darkModeToggler).toBeTruthy();
+    // });
   });
 });

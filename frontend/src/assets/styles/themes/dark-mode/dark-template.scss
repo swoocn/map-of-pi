@@ -1,0 +1,116 @@
+/* Built using http://mcg.mbitson.com/#!?darkmode=%23ffc153 */
+
+@use '../../../../../node_modules/@angular/material/' as mat;
+
+$dark-mode-primary-map: (
+    50 : #e0e0e0,
+    100 : #b3b3b3,
+    200 : #808080,
+    300 : #4d4d4d,
+    400 : #262626,
+    500 : #000000, // initial
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #a6a6a6,
+    A200 : #8c8c8c,
+    A400 : #737373,
+    A700 : #666666,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+$dark-mode-accent-map: (
+    50 : #e4eee9,
+    100 : #bbd5c9,
+    200 : #8eb9a5,
+    300 : #619c81,
+    400 : #3f8766,
+    500 : #1d724b, // initial
+    600 : #1a6a44,
+    700 : #155f3b,
+    800 : #115533,
+    900 : #0a4223,
+    A100 : #7affaf,
+    A200 : #47ff91,
+    A400 : #14ff73,
+    A700 : #00f965,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+$dark-mode-warn-map: (
+    50 : #f9e0e0,
+    100 : #f0b3b3,
+    200 : #e68080,
+    300 : #db4d4d,
+    400 : #d42626,
+    500 : #cc0000, // initial
+    600 : #c70000,
+    700 : #c00000,
+    800 : #b90000,
+    900 : #ad0000,
+    A100 : #ffd7d7,
+    A200 : #ffa4a4,
+    A400 : #ff7171,
+    A700 : #ff5858,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+// convert maps into 'palettes'
+$dark-mode-primary-palette: mat.define-palette($dark-mode-primary-map, 400, 900);
+$dark-mode-accent-palette: mat.define-palette($dark-mode-accent-map);
+$dark-mode-warn-palette: mat.define-palette($dark-mode-warn-map);
+
+// create 'theme' from palettes
+$app-dark-theme: mat.define-dark-theme((
+    color: (
+        primary: $dark-mode-primary-palette,
+        accent: $dark-mode-accent-palette,
+        warn: $dark-mode-warn-palette,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+));

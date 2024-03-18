@@ -6,6 +6,23 @@
     "ADD_MY_BUSINESS": "Agregar mi negocio",
     "SEARCH_BAR_PLACEHOLDER": "Buscar negocio..."
   },
+  "FOOTER": {
+    "PRIVACY_POLICY": "Política de privacidad",
+    "TERMS_OF_SERVICE": "Condiciones de servicio"
+  },
+  "INFORMATION_DIALOG": {
+    "LATEST_UPDATES": "Últimas actualizaciones",
+    "REPORTING_MESSAGE": "Por favor, reporte defectos a"
+  },
+  "BUSINESS_MARKER_DIALOG": {
+    "DISTANCE_MESSAGE": "Lejos de ti",
+    "ONLINE_PI_ORDERS_ALLOWED_MESSAGE": "Pedidos Pi en línea permitidos",
+    "MENU_ITEMS_AVAILABLE_MESSAGE": "Artículos del menú disponibles",
+    "BUTTONS": {
+        "VISIT_SHOP": "Visitar Tienda",
+        "TAKE_ROUTE": "Tomar Ruta"
+    }
+  },
   "BUSINESS": {
     "REGISTRATION": {
       "LABELS": {
@@ -50,6 +67,31 @@
         "UNDER_CONSTRUCTION": "Esta funcionalidad aún no está completamente desarrollada"
       }
     },
+    "CONFIGURATION": {
+      "LABELS": {
+        "SHOP_NAME": "Nombre de la tienda",
+        "MENU": "Menú",
+        "ACCEPT_ORDERS_WITHOUT_PAYMENT_MESSAGE": "Aceptar pedidos sin pago",
+        "ACCEPT_PI_TRANSACTIONS_MESSAGE": "Aceptar transacciones de Pi"
+      },
+      "ADD_PRODUCT_MENU": {
+        "LABELS": {
+          "ADD_PRODUCT_INTO_SHOP_MESSAGE": "Agregar producto a tu tienda",
+          "PRODUCT_NAME": "Nombre del producto",
+          "PRODUCT_IMAGES": "Imágenes del producto",
+          "ADD_IMAGE": "Agregar imagen",
+          "PRICE": "Precio",
+          "DESCRIPTION": "Descripción",
+          "FOOD_SERVICE": {
+            "TIME_PREPARATION_MESSAGE": "¿Cuánto tiempo lleva preparar esta comida?"
+          }
+        },
+        "BUTTONS": {
+          "LOADING": "Cargando...",
+          "CONFIRM": "Confirmar"
+        }
+      }
+    },
     "ADD_PRODUCT": {
       "LABELS": {
         "PRODUCT_NAME": "Nombre del Producto",
@@ -77,6 +119,14 @@
       "BUTTONS": {
         "SUBMIT": "Enviar"
       }
+    }
+  },
+  "SHOPPING": {
+    "ORDER_SCREEN": {
+      "MENU": "Menú",
+      "HIGHLIGHT_MESSAGE": "Puedes ordenar en línea y pagar en persona",
+      "BUY_NOW_MESSAGE": "Comprar Ahora",
+      "NO_PRODUCTS_MESSAGE": "Este negocio no tiene productos."
     }
   },
   "PRIVACY_POLICY": {
@@ -119,6 +169,34 @@
 
       "HEADER_8": "Contáctenos",
       "CONTENT_8_1": "Si tiene alguna pregunta o inquietud sobre esta política de privacidad, contáctenos."
+    }
+  },
+  "TERMS_OF_SERVICE": {
+    "TITLE": "Condiciones de servicio",
+    "LAST_UPDATED": "Última actualización",
+    "EMAIL_ADDRESS": "Correo electrónico",
+    "SECTIONS": {
+      "HEADER_1": "Aceptación de los términos",
+      "CONTENT_1_1": "Bienvenido a la aplicación Mapa de Pi, desarrollada por el equipo de Mapa de Pi en colaboración con la Comunidad Pi. Al utilizar esta aplicación, usted acepta cumplir con estos Términos de Servicio, así como con nuestra Política de Privacidad.",
+      
+      "HEADER_2": "Uso de la aplicación",
+      "CONTENT_2_1": "Usted acepta utilizar la aplicación Mapa de Pi de conformidad con todas las leyes y regulaciones aplicables.",
+      "CONTENT_2_2": "No deberá utilizar la aplicación para ningún propósito ilícito o prohibido, ni de ninguna manera que pudiera dañar, deshabilitar, sobrecargar o perjudicar la aplicación.", 
+
+      "HEADER_3": "Propiedad intelectual",
+      "CONTENT_3_1": "La aplicación Mapa de Pi y todo su contenido, características y funcionalidades son propiedad de Mapa de Pi y están protegidos por las leyes de derechos de autor, marcas comerciales y otras leyes de propiedad intelectual.",
+
+      "HEADER_4": "Limitación de responsabilidad",
+      "CONTENT_4_1": "Mapa de Pi no será responsable de ningún daño directo, indirecto, incidental, especial o consecuente que surja de alguna manera relacionada con el uso de la aplicación Mapa de Pi.",
+
+      "HEADER_5": "Indemnización",
+      "CONTENT_5_1": "Usted acepta indemnizar y eximir de responsabilidad a Mapa de Pi y sus afiliados, funcionarios, directores, empleados y agentes de cualquier reclamo, responsabilidad, daño, pérdida o gasto (incluidos honorarios de abogados) que surja de alguna manera relacionado con su uso de la aplicación Mapa de Pi.",
+
+      "HEADER_6": "Ley aplicable",
+      "CONTENT_6_1": "Estos Términos de Servicio estarán regidos por y se interpretarán de acuerdo con las leyes de nuestra jurisdicción definida, sin tener en cuenta sus disposiciones sobre conflicto de leyes.",
+
+      "HEADER_7": "Cambios en estos términos",
+      "CONTENT_7_1": "Nos reservamos el derecho de actualizar o modificar estos Términos de Servicio en cualquier momento sin previo aviso. La versión más reciente se publicará en nuestro sitio web o dentro de la aplicación."
     }
   }
 }

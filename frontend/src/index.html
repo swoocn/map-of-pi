@@ -16,6 +16,11 @@
       property="og:image"
       content="https://mapofpi.concretecode.ch/assets/images/logo.svg" />
     <meta
+      name="description"
+      content="Map of Pi is a business app for buying and selling" />
+    <meta name="keywords" content="map, pi, business, app" />
+    <meta name="author" content="Map of Pi Team" />
+    <meta
       http-equiv="Content-Security-Policy"
       content="font-src 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/ https://fonts.gstatic.com/;" />
     <link
@@ -39,12 +44,21 @@
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet" />
-    <!-- <iframe src="https://openstreetmap.org" allow="geolocation"></iframe> -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
   </head>
+
   <body class="mat-typography">
     <app-root></app-root>
     <noscript
       >Please enable JavaScript to continue using this application.</noscript
     >
+
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
   </body>
 </html>

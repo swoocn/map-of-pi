@@ -49,7 +49,7 @@ export class ActionRowComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       // console.log('The dialog was closed : ' + result);
       if (result === 'true') {
-        console.log('user refused');
+        console.log('User refused');
       } else if (result === 'false') {
         localStorage.setItem('joined', 'true');
       }
@@ -61,9 +61,19 @@ export class ActionRowComponent implements OnInit {
     if (userJoined === 'true') {
       return;
     } else {
-      setTimeout(() => {
-        this.openDialog();
-      }, 6000);
+      if (this.currentUserService.getCurrentUser() !== undefined && this.currentUserService.getCurrentUser() !== null) {
+        setTimeout(() => {
+          // Load current user asynchronously and open dialog once loaded
+          this.currentUserService.getCurrentUser().subscribe((user: any) => {
+            if (user) {
+              this.currentUser = user;
+              this.openDialog();
+            }
+          });
+        }, 6000);
+      } else {
+        console.log('Failed to retrieve user');
+      }
     }
   }
 }

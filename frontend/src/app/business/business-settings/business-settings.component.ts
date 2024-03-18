@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
-import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Router, RouterLink } from '@angular/router';
+
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
+
 import { SnackService } from '../../core/service/snack.service';
 import { ShopService } from '../../core/service/shop.service';
 
@@ -15,18 +17,19 @@ import { ShopService } from '../../core/service/shop.service';
   imports: [TranslateModule, CommonModule, ReactiveFormsModule, MatSlideToggleModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
 export class BusinessSettingsComponent {
-  businessTypes: string[] = ['Restaurant', 'Retail Store', 'Servicing', 'Construction', 'Transportation'];
+  businessTypes: string[] =[];
   router: Router = inject(Router);
   showPopup: boolean = false;
   selectedImages: any[] = [];
+  email: string = 'i@gmail.com'
 
   registerShopForm = new FormGroup({
     shopName: new FormControl('', Validators.required),
     shopType: new FormControl('', Validators.required),
     shopAddress: new FormControl('', Validators.required),
-    shopPhone: new FormControl('', [Validators.required, Validators.minLength(10)]),
+    shopPhone: new FormControl('0000000000'),
+    // shopPhone: new FormControl('', [Validators.required, Validators.minLength(10)]),
     shopEmail: new FormControl('', [Validators.required, Validators.email]),
     shopImage: new FormArray([]),
     shopDescription: new FormControl('', Validators.required),
@@ -35,7 +38,24 @@ export class BusinessSettingsComponent {
   constructor(
     private snackService: SnackService,
     private shopServices: ShopService,
-  ) {}
+    private translateService: TranslateService
+  ) {
+    // initialize business types.
+    this.translateBusinessTypes();
+    this.translateService.onLangChange.subscribe(() => {
+      this.translateBusinessTypes();
+    });
+  }
+
+  translateBusinessTypes() {
+    this.businessTypes = [
+      'RESTAURANT',
+      'RETAIL_STORE',
+      'SERVICE',
+      'CONSTRUCTION',
+      'TRANSPORTATION'
+    ].map(key => this.translateService.instant(`BUSINESS.REGISTRATION.LABELS.BUSINESS_TYPES.${key}`));
+  }
 
   onFileChange(event: any) {
     if (event.target.files) {
@@ -51,7 +71,7 @@ export class BusinessSettingsComponent {
       };
     }
   }
-  
+
   // onFileChange(event: any) {
   //   if (event.target.files && event.target.files.length > 0) {
   //     const reader = new FileReader();
@@ -75,15 +95,14 @@ export class BusinessSettingsComponent {
       this.shopServices.registerShop(this.registerShopForm.value as any).then((response) => {
         if (response.success) {
           this.snackService.showMessage('Business successfully registered');
-          this.router.navigate(['manage-business', response.data._id]);
-          this.snackService.showMessage(` redirecting to ${response.data.name} shop`);
+          this.router.navigate(['business-config', response.newShop._id]);
+          // this.router.navigate(['manage-business', response.data._id]);
+          this.snackService.showMessage(`Redirecting to ${response.data.name} shop`);
         } else {
-          this.snackService.showError('Failed to register business');
+          this.snackService.showError(`Email address is already registered to a business. Please try a different email address.🙏`);
           console.log(response);
         }
       });
-      // console.log(this.selectedImages[0]);
-      // console.log('registered shop : ', this.registerShopForm.value);
     } else {
       this.registerShopForm.markAllAsTouched();
       console.log('Invalid data');

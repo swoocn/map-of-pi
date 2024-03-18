@@ -90,5 +90,33 @@
       "HEADER_8": "Kontaktieren Sie uns",
       "CONTENT_8_1": "Wenn Sie Fragen oder Bedenken zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte "
     }
+  },
+  "TERMS_OF_SERVICE": {
+    "TITLE": "Nutzungsbedingungen",
+    "LAST_UPDATED": "Zuletzt Aktualisiert",
+    "EMAIL_ADDRESS": "E-Mail-Adresse",
+    "SECTIONS": {
+      "HEADER_1": "Akzeptanz der Bedingungen",
+      "CONTENT_1_1": "Willkommen bei der Map of Pi-App, entwickelt vom Map of Pi-Team in Zusammenarbeit mit der Pi-Community. Durch die Nutzung dieser App erklären Sie sich damit einverstanden, sich an diese Nutzungsbedingungen sowie unsere Datenschutzrichtlinie zu halten.",
+      
+      "HEADER_2": "Nutzung der App",
+      "CONTENT_2_1": "Sie erklären sich damit einverstanden, die Map of Pi-App in Übereinstimmung mit allen anwendbaren Gesetzen und Vorschriften zu verwenden.",
+      "CONTENT_2_2": "Sie dürfen die App nicht für rechtswidrige oder verbotene Zwecke verwenden oder auf eine Weise, die die App beschädigen, deaktivieren, überlasten oder beeinträchtigen könnte.", 
+
+      "HEADER_3": "Geistiges Eigentum",
+      "CONTENT_3_1": "Die Map of Pi-App sowie alle Inhalte, Funktionen und Funktionalitäten sind im Besitz von Map of Pi und durch Urheberrecht, Markenrecht und andere Gesetze zum geistigen Eigentum geschützt.",
+
+      "HEADER_4": "Haftungsbeschränkung",
+      "CONTENT_4_1": "Map of Pi haftet nicht für direkte, indirekte, zufällige, besondere oder Folgeschäden, die sich aus oder in Verbindung mit der Nutzung der Map of Pi-App ergeben.",
+
+      "HEADER_5": "Freistellung",
+      "CONTENT_5_1": "Sie erklären sich damit einverstanden, Map of Pi und seine verbundenen Unternehmen, leitenden Angestellten, Direktoren, Mitarbeiter und Beauftragte von allen Ansprüchen, Haftungen, Schäden, Verlusten oder Ausgaben (einschließlich Anwaltskosten) freizustellen und schadlos zu halten, die sich aus oder in irgendeiner Weise auf Ihre Nutzung der Map of Pi-App beziehen.",
+
+      "HEADER_6": "Anwendbares Recht",
+      "CONTENT_6_1": "Diese Nutzungsbedingungen unterliegen dem Recht unserer definierten Gerichtsbarkeit und sind ohne Rücksicht auf deren Kollisionsnormen auszulegen.",
+
+      "HEADER_7": "Änderungen dieser Bedingungen",
+      "CONTENT_7_1": "Wir behalten uns das Recht vor, diese Nutzungsbedingungen jederzeit ohne vorherige Ankündigung zu aktualisieren oder zu ändern. Die aktuellste Version wird auf unserer Website oder innerhalb der App veröffentlicht."
+    }
   }
 }

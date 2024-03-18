@@ -6,6 +6,23 @@
     "ADD_MY_BUSINESS": "Add my business",
     "SEARCH_BAR_PLACEHOLDER": "Search Business..."
   },
+  "FOOTER": {
+    "PRIVACY_POLICY": "Privacy Policy",
+    "TERMS_OF_SERVICE": "Terms of Service"
+  },
+  "INFORMATION_DIALOG": {
+    "LATEST_UPDATES": "Latest Updates",
+    "REPORTING_MESSAGE": "Please report defects to" 
+  },
+  "BUSINESS_MARKER_DIALOG": {
+    "DISTANCE_MESSAGE": "Away from you",
+    "ONLINE_PI_ORDERS_ALLOWED_MESSAGE": "Online Pi orders allowed",
+    "MENU_ITEMS_AVAILABLE_MESSAGE": "Menu items available", 
+    "BUTTONS": {
+      "VISIT_SHOP": "Visit Shop",
+      "TAKE_ROUTE": "Take Route"
+    }
+  },
   "BUSINESS": {
     "REGISTRATION": {
       "LABELS": {
@@ -50,6 +67,31 @@
         "UNDER_CONSTRUCTION": "This functionality is not fully built yet"
       }
     },
+    "CONFIGURATION": {
+      "LABELS": {
+        "SHOP_NAME": "Shop Name",
+        "MENU": "Menu",
+        "ACCEPT_ORDERS_WITHOUT_PAYMENT_MESSAGE": "Accept orders without payment",
+        "ACCEPT_PI_TRANSACTIONS_MESSAGE": "Accept Pi Transactions"
+      },
+      "ADD_PRODUCT_MENU": {
+        "LABELS": {
+          "ADD_PRODUCT_INTO_SHOP_MESSAGE": "Add Product into your shop",
+          "PRODUCT_NAME": "Product Name",
+          "PRODUCT_IMAGES": "Product Images",
+          "ADD_IMAGE": "Add Image",
+          "PRICE": "Price",
+          "DESCRIPTION": "Description",
+          "FOOD_SERVICE": {
+            "TIME_PREPARATION_MESSAGE": "How long to prepare this meal?"
+          }
+        },
+        "BUTTONS": {
+          "LOADING": "Loading..",
+          "CONFIRM": "Confirm"
+        }
+      }
+    },
     "ADD_PRODUCT": {
       "LABELS": {
         "PRODUCT_NAME": "Product Name",
@@ -77,6 +119,14 @@
       "BUTTONS": {
         "SUBMIT": "Submit"
       }
+    }
+  },
+  "SHOPPING": {
+    "ORDER_SCREEN": {
+      "MENU": "Menu",
+      "HIGHLIGHT_MESSAGE": "You can order online and pay in person",
+      "BUY_NOW_MESSAGE": "Buy Now",
+      "NO_PRODUCTS_MESSAGE": "This business has no products."
     }
   },
   "PRIVACY_POLICY": {
@@ -119,6 +169,34 @@
 
       "HEADER_8": "Contact Us",
       "CONTENT_8_1": "If you have any questions or concerns about this Privacy Policy, please contact us "
+    }
+  },
+  "TERMS_OF_SERVICE": {
+    "TITLE": "Terms of Service",
+    "LAST_UPDATED": "Last Updated",
+    "EMAIL_ADDRESS": "Email Address",
+    "SECTIONS": {
+      "HEADER_1": "Acceptance of Terms",
+      "CONTENT_1_1": "Welcome to the Map of Pi app, developed by the Map of Pi team in collaboration with the Pi Community. By using this app, you agree to abide by these Terms of Service, as well as our Privacy Policy.",
+      
+      "HEADER_2": "Use of the App",
+      "CONTENT_2_1": "You agree to use the Map of Pi app in compliance with all applicable laws and regulations.",
+      "CONTENT_2_2": "You shall not use the app for any unlawful or prohibited purpose, or in any way that could damage, disable, overburden, or impair the app.", 
+
+      "HEADER_3": "Intellectual Property",
+      "CONTENT_3_1": "The Map of Pi app and all content, features, and functionality are owned by Map of Pi and are protected by copyright, trademark, and other intellectual property laws.",
+
+      "HEADER_4": "Limitation of Liability",
+      "CONTENT_4_1": "Map of Pi shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in any way connected with the use of the Map of Pi app.",
+
+      "HEADER_5": "Indemnification",
+      "CONTENT_5_1": "You agree to indemnify and hold harmless Map of Pi and its affiliates, officers, directors, employees, and agents from any and all claims, liabilities, damages, losses, or expenses (including attorneys' fees) arising out of or in any way related to your use of the Map of Pi app.",
+
+      "HEADER_6": "Governing Law",
+      "CONTENT_6_1": "These Terms of Service shall be governed by and construed in accordance with the laws of our defined jurisdiction, without regard to its conflict of law provisions.",
+
+      "HEADER_7": "Changes to These Terms",
+      "CONTENT_7_1": "We reserve the right to update or modify these Terms of Service at any time without prior notice. The latest version will be posted on our website or within the app."
     }
   }
 }

@@ -1,25 +1,35 @@
 import { CommonModule } from '@angular/common';
-import { Component, AfterViewInit, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, ChangeDetectionStrategy, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { ShopService } from '../../../core/service/shop.service';
+import { SnackService } from '../../../core/service/snack.service';
 
 @Component({
   selector: 'app-business-menu',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, TranslateModule],
   templateUrl: './business-menu.component.html',
   styleUrl: './business-menu.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
-export class BusinessMenuComponent implements AfterViewInit {
+export class BusinessMenuComponent implements AfterViewInit, OnInit {
   @ViewChild('menuToggle') menuToggle!: ElementRef<HTMLInputElement>;
   @ViewChild('orderToggleDiv') orderToggleDiv!: ElementRef<HTMLDivElement>;
   @ViewChild('paymentToggleDiv') paymentToggleDiv!: ElementRef<HTMLDivElement>;
-  @ViewChild('addItemButtonSection') addItemButtonSection!: ElementRef<HTMLDivElement>;
+  @ViewChild('addItemButtonSection')
+  addItemButtonSection!: ElementRef<HTMLDivElement>;
   @ViewChild('floatingButton') floatingButton!: ElementRef<HTMLButtonElement>;
 
   @ViewChild('itemsDisplayArea') itemsDisplayArea!: ElementRef;
   @ViewChild('addItemModal') addItemModal!: ElementRef;
+
+  shopId: string = '';
+  shop: any;
+  params: ActivatedRoute = inject(ActivatedRoute);
+  isLoading: boolean = false;
+  length: number = 0;
 
   businessProductsForm: FormGroup;
 
@@ -32,29 +42,26 @@ export class BusinessMenuComponent implements AfterViewInit {
   previewImageSrc: string | undefined;
   isPreviewImageVisible: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {
-    // Initialize the form group in the constructor
+  constructor(
+    private formBuilder: FormBuilder,
+    private shopServices: ShopService,
+    private snackService: SnackService,
+  ) {
     this.businessProductsForm = this.formBuilder.group({
-      itemName: [''], // Initialize with default values if needed
+      itemName: [''],
       itemPrice: [''],
       prepTime: [''],
-      description: ['']
+      description: [''],
+      image: [''],
     });
+
+    this.shopId = this.params.snapshot.params['id'];
   }
 
   // wait until all components are fully initialized
   ngAfterViewInit(): void {
     this.loadToggleStates();
-    this.loadItems(); // Load stored items on initialization
-
-    // Attach event listener to the items display area for event delegation
-    this.itemsDisplayArea.nativeElement.addEventListener('click', (event: { target: HTMLElement; }) => {
-      const target = event.target as HTMLElement;
-      if (target && target.classList.contains('delete-item-btn')) {
-        const itemId = target.getAttribute('data-id')!;
-        this.deleteItem(itemId);
-      }
-    });
+    this.loadShopProduct();
   }
 
   /**
@@ -111,7 +118,7 @@ export class BusinessMenuComponent implements AfterViewInit {
     // Initial state update
     this.updateSliderAppearance();
 
-    console.log("menuToggle.nativeElement.checked: ", this.menuToggle.nativeElement.checked);
+    console.log('menuToggle.nativeElement.checked: ', this.menuToggle.nativeElement.checked);
 
     if (this.menuToggle && this.menuToggle.nativeElement.checked) {
       this.orderToggleDiv.nativeElement.classList.remove('hidden');
@@ -219,48 +226,35 @@ export class BusinessMenuComponent implements AfterViewInit {
     localStorage.setItem('items', JSON.stringify(items));
   }
 
-  // Function to load items from localStorage and display them
-  loadItems(): void {
-    const storedItems = localStorage.getItem('items');
-    if (storedItems) {
-      const items = JSON.parse(storedItems) || [];
-      const itemsDisplayArea = this.itemsDisplayArea.nativeElement;
-      itemsDisplayArea.innerHTML = ''; // Clear previous content
-      items.forEach((item: any) => {
-        this.addItemToDisplayArea(item);
-      });
-    }
-    this.adjustFloatingButtonPosition();
-  }
-
-  // Function to delete an item
-  deleteItem(itemId: string): void {
-    const storedItems = localStorage.getItem('items');
-    if (storedItems) {
-      const items = JSON.parse(storedItems) || [];
-      const updatedItems = items.filter((item: { id: string; }) => item.id !== itemId);
-      localStorage.setItem('items', JSON.stringify(updatedItems));
-      this.loadItems(); // Reload items to update the display
-    }
-    this.adjustFloatingButtonPosition();
-  }
-
-  // Function to add an item to the display area
   addItemToDisplayArea(item: any): void {
     const itemsDisplayArea = this.itemsDisplayArea.nativeElement;
     const itemElement = document.createElement('div');
     itemElement.classList.add('item');
     itemElement.setAttribute('data-id', item.id);
+
+    const truncatedDescription = item.description?.length > 20 ? item.description.substring(0, 20) + '...' : item.description;
+
     itemElement.innerHTML = `
-        <img src="${item.imagePreview}" alt="${item.itemName}" style="width: 60px; height: auto;">
-        <div class="item-text">
-            <h3>${item.itemName}</h3>
-            <p>${item.description}</p>
-            <p>${item.itemPrice} Pi</p>
-            <p>${item.prepTime}</p>
-            <button class="delete-item-btn" data-id="${item.id}">Delete</button>
-        </div>`;
+          <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img class="w-full h-24 object-cover object-center" src="https://picsum.photos/200" alt="Product Image">
+      <div class="p-1">
+        <div class="text-gray-900 font-bold text-xl mb-1">${item.name}</div>
+        <div class="text-gray-700 text-base mb-1">${truncatedDescription}</div>
+        <div class="text-gray-700 text-base mb-1">PI ${item.price}</div>
+        <div class="flex justify-between items-center ">
+          <button id='delete-${item._id}' class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Delete</button>
+          
+        </div>
+      </div>
+    </div>`;
     itemsDisplayArea.appendChild(itemElement);
+
+    const deleteBtn = document.getElementById(`delete-${item._id}`);
+
+    deleteBtn?.addEventListener('click', () => {
+      // this.snackService.showMessage(`${item._id} deleted`);
+      this.deleteProductFromShop(item._id);
+    });
   }
 
   // Function to adjust the floating button's position based on the items display area's height
@@ -269,7 +263,7 @@ export class BusinessMenuComponent implements AfterViewInit {
     const itemsDisplayArea = this.itemsDisplayArea.nativeElement;
     const displayAreaBottom = itemsDisplayArea.getBoundingClientRect().bottom;
     const viewportHeight = window.innerHeight;
-    let newBottomPosition = viewportHeight - displayAreaBottom + -700; // Add a 20px offset from the bottom of the items display area
+    const newBottomPosition = viewportHeight - displayAreaBottom + -700; // Add a 20px offset from the bottom of the items display area
 
     floatingButton.style.bottom = `${newBottomPosition}px`;
   }
@@ -301,5 +295,55 @@ export class BusinessMenuComponent implements AfterViewInit {
 
     // Adjust floating button position if necessary
     this.adjustFloatingButtonPosition();
+  }
+
+  async addProductToShop() {
+    this.isLoading = true;
+
+    const response = await this.shopServices.addProductToShop(this.shopId, this.businessProductsForm.value);
+
+    if (response.success) {
+      this.loadShopProduct();
+      this.isLoading = false;
+      this.hideModal(new Event('click'));
+      this.snackService.showMessage('Product added successfully 🎉');
+    } else {
+      this.isLoading = false;
+      this.snackService.showMessage('Something went wrong 😟😥');
+    }
+
+    console.log('From adding product to shop', response);
+  }
+
+  deleteProductFromShop(id: string) {
+    const response: any = this.shopServices.deleteProductFromShop(id);
+    console.log('From delete :', response.data);
+
+    this.loadShopProduct();
+
+    this.snackService.showMessage('Product deleted successfully');
+  }
+
+  loadShopProduct() {
+    const itemsDisplayArea = this.itemsDisplayArea.nativeElement;
+    itemsDisplayArea.innerHTML = '';
+    this.shopServices.getShop(this.shopId).then((res) => {
+      this.shop = res.data;
+      this.length = res.data.products.length;
+
+      res.data.products.map((product: any) => this.addItemToDisplayArea(product));
+
+      console.log('Populated product from shop', res.data);
+    });
+  }
+
+  ngOnInit(): void {
+    this.shopServices.getShop(this.shopId).then((res) => {
+      this.shop = res.data;
+      this.length = res.data.products.length;
+
+      console.log('Populated product from shop', res.data.products);
+      this.loadShopProduct();
+    });
   }
 }

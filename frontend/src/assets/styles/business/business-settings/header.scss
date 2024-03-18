@@ -32,6 +32,7 @@
     align-items: center;
     font-size: 1rem;
     font-weight: bold;
+    letter-spacing: 0.5px;
 }
   
 .business-registration-header__title {
@@ -39,4 +40,15 @@
     line-height: 24px;
     font-size: 1.125rem;
     font-weight: 600;
+}
+
+@media(min-width: 576px) {
+    .business-registration-header__brand {
+        font-size: 1.3rem;
+    }
+
+    .business-registration-header__logo {
+        width: 30px;
+        height: auto;
+    }
 }

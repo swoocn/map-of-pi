@@ -1,15 +1,12 @@
-<div class="w-full min-w-40 fixed top-17 z-500 flex justify-center">
+<div class="w-full min-w-40 fixed top-17 z-5 flex justify-center">
   <div class="w-full max-w-lg pl-14 pr-4">
     <form>
       <mat-form-field class="w-full">
         <mat-label>{{ 'HOME.SEARCH_BAR_PLACEHOLDER' | translate }}</mat-label>
-        <input type="text" matInput [formControl]="searchBarControl" [matAutocomplete]="auto" />
-        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-          @for (option of filteredOptions$ | async; track option) {
-            <mat-option [value]="option">{{ option }}</mat-option>
-          }
-        </mat-autocomplete>
+        <input type="text" matInput [formControl]="searchBarControl" (input)="emitSearchQuery($event)" />
       </mat-form-field>
     </form>
   </div>
 </div>
+
+

@@ -1,0 +1,145 @@
+.popup {
+    width: 300px;
+    max-width: 300px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 10;
+    cursor: crosshair;
+}
+
+.popup .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.popup .logo img {
+    max-width: 150px;
+    max-height: auto;
+}
+
+.popup .title {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #1D724B;
+    padding: 5px 10px;
+    border-bottom: 3px solid #FFC153;
+}
+
+.popup .title h1 {
+    color: #FFC153;
+    margin: 0;
+    font-size: 24px;
+    text-align: center; 
+}
+
+.popup .version {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    
+}
+
+.popup .update-notes {
+    border-radius: 10px;
+    margin: 10px 10px 10px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #e6e2dd;
+    overflow-y: auto;
+}
+
+.popup .update-notes h3 {
+    font-size: 16px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.popup .update-notes h4 {
+    margin-left: 10px;
+    margin-bottom: -5px;
+    font-size: 14px;
+    font-weight: bold;  
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 40px;
+}
+
+li {
+    font-size: 14px;
+    line-height: 1.0;
+    padding-top: 10px;
+}
+
+ul li:last-child {
+    padding-bottom: 10px;
+}
+
+.defects-contact {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.defects-contact span {
+    font-size: 12px;
+    color: #ff0000;
+}
+
+// Footer-inherited styles
+.social-media {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: linear-gradient(to right, var(--color-background-color), #eaeaea);
+    text-align: center;
+    font-family: var(--font-family-main);
+    border-top: 1px solid #dcdcdc;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+  
+.social-media__links {
+    margin-bottom: 0.5rem;
+}
+  
+.social-media__link,
+.social-media__icon {
+    padding: 2px; /* Increases the touchable area */
+    margin: 0 4px; /* Adjusts spacing around links */
+}
+  
+.social-media__link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.social-media__icon {
+    width: 25px;
+    height: 25px;
+}
+
+.legal {
+    text-align: center;
+}
+  
+.legal-link {
+    margin: 5px 5px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+  
+.legal-link:hover,
+.social-media__link:hover .social-media__icon {
+    opacity: 0.7;
+}

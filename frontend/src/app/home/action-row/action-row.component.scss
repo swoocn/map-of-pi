@@ -1,0 +1,10 @@
+.action-row-container {
+    position: absolute;
+    bottom: 15%; /* Adjust this value as needed */
+    width: 100%;
+    min-width: 80px;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+}

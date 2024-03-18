@@ -1,16 +1,17 @@
 import { Injectable, signal } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Icon, icon, latLng, MapOptions, tileLayer } from 'leaflet';
+import { Icon, icon, LatLng, LatLngBounds, MapOptions, tileLayer } from 'leaflet';
 import axios from 'axios';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GeolocationService {
-  private readonly initZoomLevel = 15;
+  private readonly initZoomLevel = 18;
   initCoords: number[] = [];
   private readonly geolocationTrigger = new Subject<void>();
   private readonly maxZoomLevel = 18;
+  private readonly minZoomLevel = 2;
   private readonly tileLayer = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
   readonly geoLoading = signal<boolean>(false);
   readonly geolocationTriggerEvent$ = this.geolocationTrigger.asObservable();
@@ -46,15 +47,24 @@ export class GeolocationService {
   }
 
   getMapOptions(): MapOptions {
+    const southWest = new LatLng(-90, -180);
+    const northEast = new LatLng(90, 180);
+    const bounds = new LatLngBounds(southWest, northEast);
+
     return {
       layers: [
         tileLayer(this.tileLayer, {
+          noWrap: true,
           maxZoom: this.maxZoomLevel,
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          minZoom: this.minZoomLevel,
+          // attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         }),
       ],
       zoom: this.initZoomLevel,
+      zoomControl: false,
       center: [37.5665, 126.978],
+      maxBounds: bounds,
+      attributionControl: false,
     };
   }
 
@@ -72,6 +82,18 @@ export class GeolocationService {
       iconUrl: 'assets/marker-icon.png',
       iconRetinaUrl: 'assets/marker-icon.png',
       shadowUrl: 'assets/marker-shadow.png',
+    });
+  }
+  getMiddleIcon(): Icon {
+    return icon({
+      ...Icon.Default.prototype.options,
+      iconUrl: 'assets/images/map/yellow.png',
+      iconRetinaUrl: 'assets/marker-icon.png',
+      shadowUrl: 'assets/marker-shadow.png',
+      iconSize: [41, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41],
     });
   }
 
